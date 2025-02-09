@@ -26,11 +26,11 @@ export const AboutMe = () => {
       <div
         className={`flex flex-col md:flex-row w-full items-center gap-7 rounded-xl p-4 text-slate-500 shadow-md lg:text-left dark:border dark:border-slate-800 bg-slate-100 dark:bg-slate-700 dark:text-zinc-300 ${poppins.className}`}
       >
-        <div className='w-full'>{/* Something on left */}</div>
+        {/* <div className='w-full'></div> */}
         <div className='w-full text-center text-3xl font-extrabold'>
           Web Journal
         </div>
-        <div className='w-full'>{/* Something on right */}</div>
+        {/* <div className='w-full'></div> */}
       </div>
 
       <div className='flex w-full flex-col items-center gap-7 lg:flex-row'>
@@ -53,7 +53,7 @@ export const AboutMe = () => {
                 target='_blank'
                 className='hidden rounded-2xl bg-green-200 px-3 py-1 text-sm text-green-700 md:block'
               >
-                &#8226; Available for work
+                #OpenToWork
               </a>
             )}
             {isAvailableLink && (
@@ -62,7 +62,7 @@ export const AboutMe = () => {
                 target='_blank'
                 className='block rounded-2xl bg-green-200 px-3 py-1 text-sm text-green-700 md:hidden'
               >
-                &#8226; Available
+                #OpenToWork
               </a>
             )}
           </div>

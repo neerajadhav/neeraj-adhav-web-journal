@@ -56,7 +56,7 @@ export const Skills = () => {
         {skills.map((skillSet, index) => (
           <div
             key={index}
-            className="group relative flex flex-col rounded-xl bg-white/60 p-5 shadow-lg transition-all duration-500 hover:scale-[1.02] hover:bg-white/80 dark:bg-slate-800/80 dark:hover:bg-slate-700/90"
+            className="group relative flex flex-col rounded-xl bg-white/60 p-5 shadow-lg transition-all duration-0 hover:bg-white/80 dark:bg-slate-800/80 dark:hover:bg-slate-700/90"
           >
             <div className="mb-3 flex items-center gap-3">
               {skillSet.icon}
