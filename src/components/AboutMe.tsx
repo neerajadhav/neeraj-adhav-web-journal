@@ -67,7 +67,7 @@ export const AboutMe = () => {
             )}
           </div>
           <div className='mb-4 mr-4 flex flex-col gap-3'>
-            <h1 className='w-full text-2xl text-slate-950 sm:text-3xl dark:text-zinc-100'>Hi There! I am <span className='font-bold underline underline-offset-4'>{`${publication.author.name}!`}</span></h1>
+            <h1 className='w-full text-2xl text-slate-950 sm:text-3xl dark:text-zinc-100'>Hi there! I am <span className='font-bold underline underline-offset-4'>{`${publication.author.name}!`}</span></h1>
             {publication.author.bio && (
               <div
                 className='text-slate-500 lg:text-left dark:text-zinc-300 w-full'

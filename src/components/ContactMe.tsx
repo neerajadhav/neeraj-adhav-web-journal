@@ -21,7 +21,7 @@ export const ContactMe = () => {
       </div>
       <p className='text-sm text-slate-500 dark:text-zinc-300'>
         Source Code at {' '}
-        <a href='//github.com/neerajadhav' target='_blank'>
+        <a href='//github.com/neerajadhav/floaty-hashnode-headless' target='_blank'>
           GitHub
         </a>
       </p>
