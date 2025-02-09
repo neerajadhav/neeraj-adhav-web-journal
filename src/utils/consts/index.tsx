@@ -31,9 +31,16 @@ export const PROJECTS: {
   imageUrl?: string;
 }[] = [
   {
-    name: 'Project 1',
+    name: 'React Fake Shop',
+    url: 'github.com/neerajadhav/ReactFakeShop',
+    demoLink: 'fakeshop-neeraj.netlify.app/',
+    imageUrl:
+      'https://raw.githubusercontent.com/neerajadhav/ReactFakeShop/refs/heads/main/thumbnail.png',
   },
   {
-    name: 'Project 2',
+    name: 'Dotfiles Manager',
+    imageUrl: 'https://i.redd.it/20xt0rtgtzpb1.png',
+    url: 'github.com/neerajadhav/.dotfiles',
+    demoLink:'www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2F20xt0rtgtzpb1.png',
   },
 ];

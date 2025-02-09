@@ -10,7 +10,7 @@ export const Projects = () => {
         <h2 className='text-2xl font-semibold dark:text-zinc-100'>Projects</h2>
         <Link
           href={'/projects'}
-          className='hidden flex-row items-center gap-2 rounded-full px-3 py-1 text-sm hover:bg-slate-600 hover:text-white md:flex dark:hover:bg-slate-950 dark:hover:text-zinc-300'
+          className='hidden flex-row items-center gap-2 rounded-full border border-slate-400 px-4 py-2 text-sm font-medium text-slate-700 transition-all hover:bg-slate-700 hover:text-white md:flex dark:border-slate-600 dark:text-zinc-300 dark:hover:bg-slate-950'
         >
           All projects <ArrowRightIcon className='h-4 w-4' />
         </Link>
@@ -22,7 +22,7 @@ export const Projects = () => {
       </div>
       <Link
         href={'/projects'}
-        className='mt-6 flex flex-row items-center gap-2 self-center rounded-full px-4 py-2 text-sm shadow-sm hover:bg-slate-600 hover:text-white sm:text-base md:hidden dark:text-zinc-300 dark:hover:bg-slate-950'
+        className='mt-6 flex flex-row items-center gap-2 self-center rounded-full bg-blue-600 px-5 py-2 text-sm font-medium text-white shadow-md transition-all hover:bg-blue-700 sm:text-base md:hidden'
       >
         All projects <ArrowRightIcon className='h-4 w-4' />
       </Link>

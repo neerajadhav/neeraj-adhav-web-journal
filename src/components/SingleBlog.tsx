@@ -33,7 +33,7 @@ export const SingleBlog = (props: SingleBlogProps) => {
 
   return (
     <Link
-      href={`/blog/${slug}`}
+      href={`/${slug}`}
       className='group w-full items-center rounded-2xl border border-zinc-100 px-4 py-4 text-slate-950 hover:border-zinc-200 sm:max-w-72 md:max-w-80 lg:max-w-96 dark:border-slate-800 dark:hover:border-slate-700'
     >
       <article className='relative flex w-full flex-col gap-3'>
