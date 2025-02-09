@@ -45,8 +45,8 @@ export const AboutMe = () => {
             />
           </div>
         )}
-        <div className='flex max-w-full flex-1 flex-col'>
-          <div className='mb-4 flex w-full flex-col items-center justify-between gap-2 sm:flex-row lg:gap-0'>
+        <div className='flex w-full flex-1 flex-col items-start'>
+          <div className='mb-4 flex flex-col items-center justify-between gap-2 sm:flex-row lg:gap-0'>
             {isAvailableLink && (
               <a
                 href={isAvailableLink}
@@ -66,18 +66,18 @@ export const AboutMe = () => {
               </a>
             )}
           </div>
-          <div className='mb-4 mr-4 flex flex-col gap-3 items-center'>
-            <h1 className='w-full text-2xl font-semibold text-slate-950 sm:text-3xl dark:text-zinc-100'>{`Hi There! I am ${publication.author.name}!`}</h1>
+          <div className='mb-4 mr-4 flex flex-col gap-3'>
+            <h1 className='w-full text-2xl text-slate-950 sm:text-3xl dark:text-zinc-100'>Hi There! I am <span className='font-bold underline underline-offset-4'>{`${publication.author.name}!`}</span></h1>
             {publication.author.bio && (
               <div
-                className='text-justify text-slate-500 lg:text-left dark:text-zinc-300'
+                className='text-slate-500 lg:text-left dark:text-zinc-300 w-full'
                 dangerouslySetInnerHTML={{
                   __html: publication.author.bio.html || '',
                 }}
               />
             )}
             {publication.author.location && (
-              <p className='flex w-full items-center justify-center gap-2 text-sm text-slate-500 dark:text-zinc-300'>
+              <p className='flex w-full items-center gap-2 text-sm text-slate-500 dark:text-zinc-300'>
                 <FontAwesomeIcon icon={faLocationDot} />
                 {publication.author.location}
               </p>
