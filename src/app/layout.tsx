@@ -9,6 +9,7 @@ import { Metadata, ResolvingMetadata } from 'next';
 import { Inter } from 'next/font/google';
 import { PublicationQuery, usePublicationQuery } from '../../generated/graphq';
 import './globals.css';
+import Head from 'next/head';
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 config.autoAddCss = false;
 
@@ -113,6 +114,10 @@ export default async function RootLayout({
 
   return (
     <html lang='en'>
+      <Head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <meta name="theme-color" content="#000000" />
+      </Head>
       <body className={`${inter.className} bg-slate-300 dark:bg-slate-950`}>
         <ReactQueryProvider>
           <HydrationBoundary state={dehydrate(queryClient)}>

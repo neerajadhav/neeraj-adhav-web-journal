@@ -24,10 +24,10 @@ export const AboutMe = () => {
   return (
     <div className='flex w-full flex-col items-center gap-7 rounded-3xl bg-white p-4 shadow-md dark:border dark:border-slate-800 dark:bg-slate-900'>
       <div
-        className={`flex flex-col md:flex-row w-full items-center gap-7 rounded-xl p-4 text-slate-500 shadow-md lg:text-left dark:border dark:border-slate-800 bg-slate-100 dark:bg-slate-700 dark:text-zinc-300 ${poppins.className}`}
+        className={`flex w-full flex-col items-center gap-7 rounded-xl bg-slate-100 p-4 text-slate-500 shadow-md md:flex-row lg:text-left dark:border dark:border-slate-800 dark:bg-slate-700 dark:text-zinc-300 ${poppins.className}`}
       >
         {/* <div className='w-full'></div> */}
-        <div className='w-full text-center text-3xl font-extrabold'>
+        <div className='w-full text-center text-2xl lg:text-3xl font-extrabold'>
           Web Journal
         </div>
         {/* <div className='w-full'></div> */}
@@ -66,7 +66,7 @@ export const AboutMe = () => {
               </a>
             )}
           </div>
-          <div className='mb-4 mr-4 flex flex-col gap-3'>
+          <div className='mb-4 mr-4 flex flex-col gap-3 items-center'>
             <h1 className='w-full text-2xl font-semibold text-slate-950 sm:text-3xl dark:text-zinc-100'>{`Hi There! I am ${publication.author.name}!`}</h1>
             {publication.author.bio && (
               <div
@@ -76,13 +76,13 @@ export const AboutMe = () => {
                 }}
               />
             )}
+            {publication.author.location && (
+              <p className='flex w-full items-center justify-center gap-2 text-sm text-slate-500 dark:text-zinc-300'>
+                <FontAwesomeIcon icon={faLocationDot} />
+                {publication.author.location}
+              </p>
+            )}
           </div>
-          {publication.author.location && (
-            <p className='flex w-full items-center gap-2 text-sm text-slate-500 dark:text-zinc-300'>
-              <FontAwesomeIcon icon={faLocationDot} />
-              {publication.author.location}
-            </p>
-          )}
         </div>
       </div>
     </div>

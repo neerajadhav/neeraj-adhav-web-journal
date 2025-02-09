@@ -60,7 +60,7 @@ export const Skills = () => {
           >
             <div className="mb-3 flex items-center gap-3">
               {skillSet.icon}
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-zinc-200">
+              <h3 className="text-lg lg:text-xl font-semibold text-slate-900 dark:text-zinc-200">
                 {skillSet.category}
               </h3>
             </div>
