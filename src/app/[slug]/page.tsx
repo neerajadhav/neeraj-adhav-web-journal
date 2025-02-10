@@ -13,6 +13,7 @@ import handleMathJax from '@/utils/handle-math-jax';
 import { CoverImage } from '@/components/CoverImage';
 import { notFound } from 'next/navigation';
 import { formatDate } from '@/utils/consts/format-date';
+import PageHeader from '@/components/PageHeader';
 
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 
@@ -68,8 +69,9 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
 
   return (
     <Container>
-      <article className='w-full rounded-3xl bg-white px-4 py-8 shadow-md md:px-8 dark:border dark:border-slate-800 dark:bg-slate-900'>
+      <article className='w-full rounded-3xl bg-white p-4 shadow-md md:p-8 dark:border dark:border-slate-800 dark:bg-slate-900'>
         <div className='mb-4 flex w-full flex-col gap-5 text-slate-950 dark:text-zinc-300'>
+        <PageHeader />
           <h1 className='mb-2 w-full text-center text-2xl font-bold md:text-3xl dark:text-zinc-100'>
             {post.title}
           </h1>

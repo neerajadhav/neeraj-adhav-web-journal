@@ -1,11 +1,10 @@
 'use client';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Tomorrow } from 'next/font/google'; // Import Google Font
 import Image from 'next/image';
 import { usePublicationQuery } from '../../generated/graphq';
+import PageHeader from './PageHeader';
 
-const poppins = Tomorrow({ subsets: ['latin'], weight: '800' }); // Load font with weight
 
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 
@@ -23,16 +22,7 @@ export const AboutMe = () => {
 
   return (
     <div className='flex w-full flex-col items-center gap-7 rounded-3xl bg-white p-4 shadow-md dark:border dark:border-slate-800 dark:bg-slate-900'>
-      <div
-        className={`flex w-full flex-col items-center gap-7 rounded-xl bg-slate-100 p-4 text-slate-500 shadow-md md:flex-row lg:text-left dark:border dark:border-slate-800 dark:bg-slate-700 dark:text-zinc-300 ${poppins.className}`}
-      >
-        {/* <div className='w-full'></div> */}
-        <div className='w-full text-center text-2xl lg:text-3xl font-extrabold'>
-          Web Journal
-        </div>
-        {/* <div className='w-full'></div> */}
-      </div>
-
+      <PageHeader />
       <div className='flex w-full flex-col items-center gap-7 lg:flex-row'>
         {publication.author.profilePicture && (
           <div className='flex aspect-square w-full overflow-hidden rounded-xl sm:max-w-52'>
@@ -67,10 +57,13 @@ export const AboutMe = () => {
             )}
           </div>
           <div className='mb-4 mr-4 flex flex-col gap-3'>
-            <h1 className='w-full text-2xl text-slate-950 sm:text-3xl dark:text-zinc-100'>Hi there! I am <span className='font-bold underline underline-offset-4'>{`${publication.author.name}!`}</span></h1>
+            <h1 className='w-full text-2xl text-slate-950 sm:text-3xl dark:text-zinc-100'>
+              Hi there! I am{' '}
+              <span className='font-bold underline underline-offset-4'>{`${publication.author.name}!`}</span>
+            </h1>
             {publication.author.bio && (
               <div
-                className='text-slate-500 lg:text-left dark:text-zinc-300 w-full'
+                className='w-full text-slate-500 lg:text-left dark:text-zinc-300'
                 dangerouslySetInnerHTML={{
                   __html: publication.author.bio.html || '',
                 }}
