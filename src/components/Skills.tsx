@@ -15,27 +15,27 @@ export const Skills = () => {
   const skills = [
     {
       category: 'Programming Languages',
-      icon: <CodeBracketIcon className='h-8 w-8 text-yellow-500' />,
+      icon: <div className='border-2 bg-slate-900 rounded-full p-2 dark:border-slate-600'><CodeBracketIcon className='h-5 w-5 text-green-500' /></div>,
       skills: ['JavaScript', 'Python', 'C++', 'TypeScript'],
     },
     {
       category: 'Frameworks',
-      icon: <ServerIcon className='h-8 w-8 text-green-500' />,
+      icon: <div className='border-2 bg-slate-900 rounded-full p-2 dark:border-slate-600'><ServerIcon className='h-5 w-5 text-green-500' /></div>,
       skills: ['Django', 'FastAPI', 'Next.js'],
     },
     {
       category: 'Libraries',
-      icon: <CpuChipIcon className='h-8 w-8 text-blue-500' />,
+      icon: <div className='border-2 bg-slate-900 rounded-full p-2 dark:border-slate-600'><CpuChipIcon className='h-5 w-5 text-green-500' /></div>,
       skills: ['React', 'ShadCN'],
     },
     {
       category: 'Markup & Styling',
-      icon: <PaintBrushIcon className='h-8 w-8 text-purple-500' />,
+      icon: <div className='border-2 bg-slate-900 rounded-full p-2 dark:border-slate-600'><PaintBrushIcon className='h-5 w-5 text-green-500' /></div>,
       skills: ['HTML', 'CSS', 'Tailwind CSS'],
     },
     {
       category: 'Favorite Linux Distros',
-      icon: <ComputerDesktopIcon className='h-8 w-8 text-red-500' />,
+      icon: <div className='border-2 bg-slate-900 rounded-full p-2 dark:border-slate-600'><ComputerDesktopIcon className='h-5 w-5 text-green-500' /></div>,
       skills: ['Arch Linux', 'NixOS', 'Linux Mint', 'Ubuntu'],
     },
   ];
@@ -62,7 +62,7 @@ export const Skills = () => {
           >
             <div className='mb-3 flex items-center gap-3'>
               {skillSet.icon}
-              <h3 className='text-lg font-semibold text-slate-900 lg:text-xl dark:text-zinc-200'>
+              <h3 className='text-lg font-semibold text-slate-900 dark:text-zinc-200'>
                 {skillSet.category}
               </h3>
             </div>
