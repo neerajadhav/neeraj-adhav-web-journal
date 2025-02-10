@@ -69,7 +69,7 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
 
   return (
     <Container>
-      <article className='w-full rounded-3xl bg-white p-4 shadow-md md:p-8 dark:border dark:border-slate-800 dark:bg-slate-900'>
+      <article className='w-full max-w-3xl mx-auto rounded-3xl bg-white p-4 shadow-md md:p-8 dark:border dark:border-slate-800 dark:bg-slate-900'>
         <div className='mb-4 flex w-full flex-col gap-5 text-slate-950 dark:text-zinc-300'>
         <PageHeader />
           <h1 className='mb-2 w-full text-center text-2xl font-bold md:text-3xl dark:text-zinc-100'>
