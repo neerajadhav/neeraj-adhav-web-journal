@@ -6,9 +6,11 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import { Metadata, ResolvingMetadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Literata, Open_Sans, Roboto, Ubuntu } from 'next/font/google';
 import { PublicationQuery, usePublicationQuery } from '../../generated/graphq';
 import './globals.css';
+
+const ubuntu = Open_Sans({ subsets: ['latin'], weight: '400' }); // Load font with weight
 
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 config.autoAddCss = false;
@@ -104,7 +106,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-slate-300 dark:bg-slate-950`}>
+      <body className={`${ubuntu.className} bg-slate-300 dark:bg-slate-950`}>
         <ReactQueryProvider>
           <HydrationBoundary state={dehydrate(queryClient)}>
             {children}

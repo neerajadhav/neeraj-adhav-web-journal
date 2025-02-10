@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .hashnode-content-style {
-  @apply prose break-words text-slate-950 lg:prose-lg dark:prose-invert first:prose-h1:mt-0 first:prose-h2:mt-0 first:prose-h3:mt-0 first:prose-h4:mt-0 first:prose-h5:mt-0 prose-p:leading-snug first:prose-p:mt-0 prose-a:leading-snug prose-a:underline hover:prose-a:bg-primary-50 prose-blockquote:leading-snug prose-figure:leading-snug prose-figcaption:leading-snug prose-pre:leading-snug prose-ol:leading-snug prose-ul:leading-snug prose-li:leading-snug prose-th:leading-snug prose-td:leading-snug prose-img:max-w-full dark:text-neutral-50 dark:hover:prose-a:bg-neutral-800 dark:hover:prose-a:text-primary-500 dark:prose-pre:bg-neutral-900;
+  @apply prose break-words text-slate-950 lg:prose-lg dark:prose-invert first:prose-h1:mt-0 first:prose-h2:mt-0 first:prose-h3:mt-0 first:prose-h4:mt-0 first:prose-h5:mt-0 prose-p:leading-8 first:prose-p:mt-0 prose-a:leading-8 prose-a:underline hover:prose-a:bg-primary-50 prose-blockquote:leading-8 prose-figure:leading-8 prose-figcaption:leading-8 prose-pre:leading-8 prose-ol:leading-8 prose-ul:leading-8 prose-li:leading-8 prose-th:leading-8 prose-td:leading-8 prose-img:max-w-full dark:text-neutral-50 dark:hover:prose-a:bg-neutral-800 dark:hover:prose-a:text-primary-500 dark:prose-pre:bg-neutral-900;
 }
 
 /* Override to remove the backtick */
