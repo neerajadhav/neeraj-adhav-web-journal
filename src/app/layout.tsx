@@ -9,7 +9,7 @@ import { Metadata, ResolvingMetadata } from 'next';
 import { Inter } from 'next/font/google';
 import { PublicationQuery, usePublicationQuery } from '../../generated/graphq';
 import './globals.css';
-import Head from 'next/head';
+
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 config.autoAddCss = false;
 
@@ -21,18 +21,12 @@ export async function generateMetadata(
   const queryClient = getQueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: usePublicationQuery.getKey({
-      host,
-    }),
-    queryFn: usePublicationQuery.fetcher({
-      host,
-    }),
+    queryKey: usePublicationQuery.getKey({ host }),
+    queryFn: usePublicationQuery.fetcher({ host }),
   });
 
   const data = queryClient.getQueryData<PublicationQuery>(
-    usePublicationQuery.getKey({
-      host,
-    })
+    usePublicationQuery.getKey({ host })
   );
 
   if (!data?.publication) return {};
@@ -43,12 +37,16 @@ export async function generateMetadata(
       data.publication.descriptionSEO ||
       `${data.publication.author.name}'s Blog` ||
       '',
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://neerajadhav.in'),
+    icons: {
+      icon: '/favicon.ico',
+    },
     twitter: {
       card: 'summary_large_image',
       title:
         data.publication.displayTitle ||
         data.publication.title ||
-        'Hashnode Blog Starter Kit',
+        'Web Journal',
       description:
         data.publication.descriptionSEO ||
         data.publication.title ||
@@ -89,35 +87,23 @@ export async function generateMetadata(
 
 export default async function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   const queryClient = getQueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: usePublicationQuery.getKey({
-      host,
-    }),
-    queryFn: usePublicationQuery.fetcher({
-      host,
-    }),
+    queryKey: usePublicationQuery.getKey({ host }),
+    queryFn: usePublicationQuery.fetcher({ host }),
   });
 
   const data = queryClient.getQueryData<PublicationQuery>(
-    usePublicationQuery.getKey({
-      host,
-    })
+    usePublicationQuery.getKey({ host })
   );
 
   if (!data?.publication)
     throw new Error('Please check the host name in your .env file');
 
   return (
-    <html lang='en'>
-      <Head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <meta name="theme-color" content="#000000" />
-      </Head>
+    <html lang="en">
       <body className={`${inter.className} bg-slate-300 dark:bg-slate-950`}>
         <ReactQueryProvider>
           <HydrationBoundary state={dehydrate(queryClient)}>
