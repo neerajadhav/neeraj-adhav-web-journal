@@ -58,20 +58,19 @@ export const Skills = () => {
         {skills.map((skillSet, index) => (
           <div
             key={index}
-            className='group relative flex flex-col rounded-xl border dark:border-0 bg-white/60 p-5 transition-all duration-0 hover:bg-slate-50 dark:bg-slate-800/80 dark:hover:bg-slate-700/90'
+            className='group relative flex flex-col rounded-xl border bg-white/50 p-6 shadow-lg transition-all duration-300 hover:bg-white dark:border-0 dark:bg-slate-800/80 dark:hover:bg-slate-700/90'
           >
             <div className='mb-3 flex items-center gap-3'>
-              {skillSet.icon}
+              <div className='flex h-12 w-12 items-center justify-center rounded-xl border bg-white p-3 shadow-md dark:border-slate-600 dark:bg-slate-900'>
+                {skillSet.icon}
+              </div>
               <h3 className='text-lg font-semibold text-slate-900 dark:text-zinc-200'>
                 {skillSet.category}
               </h3>
             </div>
-            <ul className='space-y-1 text-slate-700 dark:text-zinc-400'>
+            <ul className='flex flex-wrap gap-2'>
               {skillSet.skills.map((skill, i) => (
-                <li
-                  key={i}
-                  className='relative flex items-center gap-2 pl-3 before:absolute before:left-0 before:h-1 before:w-1 before:rounded-full before:bg-slate-500 dark:before:bg-zinc-500'
-                >
+                <li key={i} className='rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-900 dark:bg-slate-700 dark:text-zinc-300'>
                   {skill}
                 </li>
               ))}
