@@ -25,13 +25,13 @@ export const AboutMe = () => {
       <PageHeader />
       <div className='flex w-full flex-col items-center gap-7 lg:flex-row'>
         {publication.author.profilePicture && (
-          <div className='flex aspect-square w-full overflow-hidden rounded-xl sm:max-w-52'>
+          <div className='flex w-1/2 overflow-hidden rounded-xl sm:max-w-52 p-3'>
             <Image
               src={publication.author.profilePicture}
               alt='profile pic'
               width={1000}
               height={1000}
-              className='flex-1'
+              className='flex-1 rounded-full'
             />
           </div>
         )}
@@ -59,7 +59,7 @@ export const AboutMe = () => {
           <div className='mb-4 mr-4 flex flex-col gap-3'>
             <h1 className='w-full text-2xl text-slate-950 sm:text-3xl dark:text-zinc-100'>
               Hi there! I am{' '}
-              <span className='font-bold underline underline-offset-4'>{`${publication.author.name}!`}</span>
+              <span className='font-extrabold'>{`${publication.author.name}!`}</span>
             </h1>
             {publication.author.bio && (
               <div
