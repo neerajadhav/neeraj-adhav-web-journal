@@ -15,27 +15,27 @@ export const Skills = () => {
   const skills = [
     {
       category: 'Programming Languages',
-      icon: <div className='border-2 dark:bg-slate-900 rounded-full p-2 dark:border-slate-600'><CodeBracketIcon className='h-5 w-5 text-blue-800 dark:text-green-500' /></div>,
+      icon: <div className='border bg-slate-200 dark:bg-slate-900 rounded-lg p-2 dark:border-slate-600'><CodeBracketIcon className='h-5 w-5 text-blue-800 dark:text-green-500' /></div>,
       skills: ['JavaScript', 'Python', 'C++', 'TypeScript'],
     },
     {
       category: 'Frameworks',
-      icon: <div className='border-2 dark:bg-slate-900 rounded-full p-2 dark:border-slate-600'><ServerIcon className='h-5 w-5 text-blue-800 dark:text-green-500' /></div>,
+      icon: <div className='border bg-slate-200 dark:bg-slate-900 rounded-lg p-2 dark:border-slate-600'><ServerIcon className='h-5 w-5 text-blue-800 dark:text-green-500' /></div>,
       skills: ['Django', 'FastAPI', 'Next.js'],
     },
     {
       category: 'Libraries',
-      icon: <div className='border-2 dark:bg-slate-900 rounded-full p-2 dark:border-slate-600'><CpuChipIcon className='h-5 w-5 text-blue-800 dark:text-green-500' /></div>,
+      icon: <div className='border bg-slate-200 dark:bg-slate-900 rounded-lg p-2 dark:border-slate-600'><CpuChipIcon className='h-5 w-5 text-blue-800 dark:text-green-500' /></div>,
       skills: ['React'],
     },
     {
       category: 'Markup & Styling',
-      icon: <div className='border-2 dark:bg-slate-900 rounded-full p-2 dark:border-slate-600'><PaintBrushIcon className='h-5 w-5 text-blue-800 dark:text-green-500' /></div>,
+      icon: <div className='border bg-slate-200 dark:bg-slate-900 rounded-lg p-2 dark:border-slate-600'><PaintBrushIcon className='h-5 w-5 text-blue-800 dark:text-green-500' /></div>,
       skills: ['HTML', 'CSS', 'Tailwind CSS', 'ShadCN'],
     },
     {
       category: 'Favorite Linux Distros',
-      icon: <div className='border-2 dark:bg-slate-900 rounded-full p-2 dark:border-slate-600'><ComputerDesktopIcon className='h-5 w-5 text-blue-800 dark:text-green-500' /></div>,
+      icon: <div className='border bg-slate-200 dark:bg-slate-900 rounded-lg p-2 dark:border-slate-600'><ComputerDesktopIcon className='h-5 w-5 text-blue-800 dark:text-green-500' /></div>,
       skills: ['Arch Linux', 'NixOS', 'Linux Mint', 'Ubuntu'],
     },
   ];
