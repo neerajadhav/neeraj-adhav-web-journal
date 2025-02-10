@@ -41,7 +41,7 @@ export const Skills = () => {
   ];
 
   return (
-    <div className='flex flex-col items-start rounded-3xl bg-white/80 p-6 text-slate-950 shadow-xl backdrop-blur-md dark:border dark:border-slate-800 dark:bg-slate-900/80 dark:text-zinc-300'>
+    <div className='flex flex-col items-start rounded-3xl bg-white p-6 text-slate-950 shadow-xl backdrop-blur-md dark:border dark:border-slate-800 dark:bg-slate-900/80 dark:text-zinc-300'>
       <div className='mb-6 flex w-full flex-row items-center justify-between'>
       <h2 className='text-2xl font-semibold dark:text-zinc-100'>Tech Stack</h2>
         <Link
@@ -58,7 +58,7 @@ export const Skills = () => {
         {skills.map((skillSet, index) => (
           <div
             key={index}
-            className='group relative flex flex-col rounded-xl border dark:border-0 bg-white/60 p-5 shadow-lg transition-all duration-0 hover:bg-white/80 dark:bg-slate-800/80 dark:hover:bg-slate-700/90'
+            className='group relative flex flex-col rounded-xl border dark:border-0 bg-white/60 p-5 transition-all duration-0 hover:bg-slate-50 dark:bg-slate-800/80 dark:hover:bg-slate-700/90'
           >
             <div className='mb-3 flex items-center gap-3'>
               {skillSet.icon}
