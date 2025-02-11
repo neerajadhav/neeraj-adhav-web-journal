@@ -55,7 +55,7 @@ export default function Blog() {
               Blog
             </h1> */}
             <div className='flex flex-col gap-6 lg:flex-row'>
-              {posts.length > 0 && <Post postInfo={posts[0]} />}
+              {posts.length > 0 && <Post postInfo={posts[0]} first={true} />}
               <div className='flex flex-col gap-6 lg:w-1/3'>
                 {posts.length > 0 && <Post postInfo={posts[1]} />}
                 {posts.length > 0 && <Post postInfo={posts[2]} />}
