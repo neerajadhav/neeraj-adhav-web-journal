@@ -11,9 +11,7 @@ export default async function Home() {
       <AboutMe />
       <Skills />
       <Blogs />
-      <div className='flex flex-col gap-6 lg:flex-row'>
-        <Projects />
-      </div>
+      <Projects />
       <ContactMe />
     </Container>
   );

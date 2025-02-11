@@ -16,7 +16,7 @@ export const Projects = () => {
         </Link>
       </div>
       <div className='mx-auto flex w-full flex-col gap-5 sm:flex-row sm:justify-center md:gap-8'>
-        {PROJECTS.slice(0, 4).map((project) => (
+        {PROJECTS.slice(0, 3).map((project) => (
           <SingleProject project={project} key={project.name} />
         ))}
       </div>
