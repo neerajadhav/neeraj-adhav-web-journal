@@ -1,14 +1,13 @@
 'use client';
 import { ContactMe } from '@/components/ContactMe';
 import { Container } from '@/components/Container';
+import PageHeader from '@/components/PageHeader';
+import { Post } from '@/components/Post';
+import { ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import {
   useInfinitePostsQuery,
   usePostsQuery,
 } from '../../../generated/graphq';
-import { Post } from '@/components/Post';
-import { ExclamationTriangleIcon } from '@heroicons/react/24/outline';
-import { useState } from 'react';
-import PageHeader from '@/components/PageHeader';
 
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 
@@ -24,7 +23,7 @@ export default function Blog() {
         queryFn: ({ pageParam }) =>
           usePostsQuery.fetcher({
             host,
-            pageSize: 10,
+            pageSize: 12,
             page: pageParam as number,
           })(),
         initialPageParam: 1,
