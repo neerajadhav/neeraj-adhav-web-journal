@@ -41,8 +41,8 @@ export default function Blog() {
 
   return (
     <Container>
-      <PageHeader />
-      <div className='bg-erd-min-h-80 rounded-3xl bg-white py-6 text-slate-950 dark:border dark:border-slate-800 dark:bg-slate-900 dark:text-zinc-300'>
+      <div className='bg-erd-min-h-80 rounded-3xl bg-white p-6 text-slate-950 dark:border dark:border-slate-800 dark:bg-slate-900 dark:text-zinc-300 flex flex-col gap-6'>
+        <PageHeader />
         {/* <h1 className='text-3xl font-semibold md:text-4xl dark:text-zinc-100'>
           Blogs
         </h1> */}
@@ -54,7 +54,7 @@ export default function Blog() {
         )}
         {posts.length > 0 && (
           <>
-            <div className='grid w-full grid-cols-1 gap-6 px-5 sm:grid-cols-2 lg:grid-cols-3'>
+            <div className='grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
               {posts.map((post, index) => (
                 <Post key={index} postInfo={post} />
               ))}
