@@ -100,7 +100,7 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
             {post.tags.map((tag) => (
               <li key={tag.id} className='list-none'>
                 <a
-                  href={`https:hashnode.com/n/${tag.slug}`}
+                  href={`//hashnode.com/n/${tag.slug}`}
                   target='_blank'
                   className='rounded-full border border-zinc-100 px-3 py-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-slate-800 dark:hover:border-slate-700 dark:hover:bg-slate-950'
                 >
