@@ -16,7 +16,7 @@ export const CoverImage = ({ title, src, slug, priority = false }: Props) => {
       <Image
         src={src}
         alt={`Cover Image for ${title}`}
-        className='w-full rounded-md object-cover hover:opacity-90'
+        className='w-full rounded-lg object-cover hover:opacity-90'
         fill
         unoptimized
         priority={priority}

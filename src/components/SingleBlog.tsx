@@ -34,7 +34,7 @@ export const SingleBlog = (props: SingleBlogProps) => {
   return (
     <Link
       href={`/${slug}`}
-      className='group w-full items-center rounded-2xl border border-zinc-100 px-4 py-4 text-slate-950 hover:border-zinc-200 sm:max-w-72 md:max-w-80 lg:max-w-96 dark:border-slate-800 dark:hover:border-slate-700'
+      className='group w-full items-center rounded-2xl border border-zinc-100 p-2 text-slate-950 hover:border-zinc-200 sm:max-w-72 md:max-w-80 lg:max-w-96 dark:border-slate-800 dark:hover:border-slate-700'
     >
       <article className='relative flex w-full flex-col gap-3'>
         {coverImageSrc ? (
@@ -42,12 +42,14 @@ export const SingleBlog = (props: SingleBlogProps) => {
         ) : (
           <ImagePlaceholder />
         )}
-        <h3 className='line-clamp-2 text-xl font-semibold dark:text-zinc-100'>
-          {title}
-        </h3>
-        <p className='line-clamp-3 text-justify text-sm leading-snug text-slate-500 dark:text-zinc-300'>
-          {brief}
-        </p>
+        <div className='p-2 flex flex-col gap-3'>
+          <h3 className='line-clamp-2 text-xl font-semibold dark:text-zinc-100'>
+            {title}
+          </h3>
+          <p className='line-clamp-3 text-justify text-sm leading-snug text-slate-500 dark:text-zinc-300'>
+            {brief}
+          </p>
+        </div>
       </article>
     </Link>
   );
