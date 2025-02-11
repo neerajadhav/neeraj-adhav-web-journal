@@ -6,9 +6,9 @@ import {
   usePostsQuery,
 } from '../../../generated/graphq';
 import { Post } from '@/components/Post';
-import { useVirtualizer } from '@tanstack/react-virtual';
-import { useCallback, useEffect, useRef } from 'react';
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline';
+import { useState } from 'react';
+import PageHeader from '@/components/PageHeader';
 
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 
@@ -38,38 +38,14 @@ export default function Blog() {
 
   const posts =
     data.pages.flatMap((page) => page.publication?.postsViaPage.nodes) || [];
-  const parentRef = useRef(null);
-
-  const rowVirtualizer = useVirtualizer({
-    count: hasNextPage ? posts.length + 1 : posts.length,
-    getScrollElement: useCallback(() => parentRef.current, []),
-    estimateSize: useCallback(() => 150, []),
-    overscan: 2,
-    gap: 15,
-  });
-
-  const [lastItem] = [...rowVirtualizer.getVirtualItems()].reverse();
-
-  useEffect(() => {
-    if (!lastItem) {
-      return;
-    }
-
-    if (
-      lastItem.index >= posts.length - 1 &&
-      hasNextPage &&
-      !isFetchingNextPage
-    ) {
-      fetchNextPage();
-    }
-  }, [hasNextPage, fetchNextPage, posts.length, isFetchingNextPage, lastItem]);
 
   return (
     <Container>
-      <div className='flex min-h-80 flex-col items-center gap-5 rounded-3xl bg-white py-6 text-slate-950 dark:border dark:border-slate-800 dark:bg-slate-900 dark:text-zinc-300'>
-        <h1 className='text-3xl font-semibold md:text-4xl dark:text-zinc-100'>
+      <PageHeader />
+      <div className='bg-erd-min-h-80 rounded-3xl bg-white py-6 text-slate-950 dark:border dark:border-slate-800 dark:bg-slate-900 dark:text-zinc-300'>
+        {/* <h1 className='text-3xl font-semibold md:text-4xl dark:text-zinc-100'>
           Blogs
-        </h1>
+        </h1> */}
         {posts.length === 0 && (
           <p className='flex w-full flex-1 items-center justify-center gap-3 text-lg font-semibold'>
             <ExclamationTriangleIcon className='h-8 w-8' />
@@ -77,44 +53,29 @@ export default function Blog() {
           </p>
         )}
         {posts.length > 0 && (
-          <div
-            ref={parentRef}
-            className='flex max-h-[500px] w-full flex-col overflow-auto rounded-lg px-5'
-          >
-            <div
-              className='relative w-full'
-              style={{
-                height: rowVirtualizer.getTotalSize(),
-              }}
-            >
-              {rowVirtualizer.getVirtualItems().map((virtualRow) => {
-                const isLoaderRow = virtualRow.index > posts.length - 1;
-                const post = posts[virtualRow.index];
-
-                return (
-                  <div
-                    key={virtualRow.index}
-                    data-index={virtualRow.index}
-                    className='absolute w-full'
-                    ref={rowVirtualizer.measureElement}
-                    style={{
-                      transform: `translateY(${virtualRow.start}px)`,
-                    }}
-                  >
-                    <Post postInfo={post} />
-                    {isLoaderRow && hasNextPage && (
-                      <p className='w-full text-center'>Loading...</p>
-                    )}
-                    {!hasNextPage && isLoaderRow && (
-                      <p className='w-full text-center'>
-                        You have reached the end
-                      </p>
-                    )}
-                  </div>
-                );
-              })}
+          <>
+            <div className='grid w-full grid-cols-1 gap-6 px-5 sm:grid-cols-2 lg:grid-cols-3'>
+              {posts.map((post, index) => (
+                <Post key={index} postInfo={post} />
+              ))}
             </div>
-          </div>
+            <div className='px-5'>
+              {hasNextPage && (
+                <button
+                  onClick={() => fetchNextPage()}
+                  disabled={isFetchingNextPage}
+                  className='mt-5 w-full flex-row items-center gap-2 rounded-full border border-slate-400 px-4 py-2 text-sm font-medium text-slate-700 transition-all hover:bg-slate-700 hover:text-white dark:border-slate-600 dark:text-zinc-300 dark:hover:bg-slate-950'
+                >
+                  {isFetchingNextPage ? 'Loading...' : 'Load More'}
+                </button>
+              )}
+              {!hasNextPage && (
+                <p className='mt-3 text-center text-gray-500'>
+                  You have reached the end
+                </p>
+              )}
+            </div>
+          </>
         )}
       </div>
       <ContactMe />
