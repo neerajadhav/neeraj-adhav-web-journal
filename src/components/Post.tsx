@@ -62,7 +62,7 @@ export const Post = (props: PostProps) => {
         )}
       </div>
       <div className='flex w-full flex-col px-3 text-slate-950 dark:text-zinc-300'>
-        <h3 className='mb-5 line-clamp-3 text-xl font-semibold md:text-2xl dark:text-zinc-100'>
+        <h3 className='mb-5 line-clamp-3 text-xl font-semibold dark:text-zinc-100'>
           {postInfo.title}
         </h3>
         <div className='mb-3 flex w-full flex-row justify-between text-xs'>

@@ -51,18 +51,17 @@ export default function Blog() {
         )}
         {posts.length > 0 && (
           <>
-            <div className='flex gap-6 flex-col lg:flex-row'>
-              <div className='lg:w-2/3 flex flex-col gap-6'>
-                <h1 className='text-3xl font-semibold md:text-4xl dark:text-zinc-100 text-center lg:text-start'>
-                  Blogs
-                </h1>
-                {posts.length > 0 && <Post postInfo={posts[0]} />}
-              </div>
-              <div className='flex lg:w-1/3 flex-col gap-6'>
+            {/* <h1 className='text-center text-3xl font-semibold md:text-4xl lg:text-start dark:text-zinc-100'>
+              Blog
+            </h1> */}
+            <div className='flex flex-col gap-6 lg:flex-row'>
+              {posts.length > 0 && <Post postInfo={posts[0]} />}
+              <div className='flex flex-col gap-6 lg:w-1/3'>
                 {posts.length > 0 && <Post postInfo={posts[1]} />}
                 {posts.length > 0 && <Post postInfo={posts[2]} />}
               </div>
             </div>
+            <hr className='mb-6 h-px border-0 bg-zinc-200 lg:mb-8 dark:bg-slate-800' />
             <div className='grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
               {posts.slice(1).map((post, index) => (
                 <div key={index + 1} className='mb-4 w-full'>
