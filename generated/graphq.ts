@@ -4909,7 +4909,7 @@ export const PublicationDocument = `
       linkedin
       mastodon
     }
-    posts(first: 2) {
+    posts(first: 4) {
       edges {
         node {
           id

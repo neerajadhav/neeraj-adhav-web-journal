@@ -10,8 +10,8 @@ export default async function Home() {
     <Container>
       <AboutMe />
       <Skills />
+      <Blogs />
       <div className='flex flex-col gap-6 lg:flex-row'>
-        <Blogs />
         <Projects />
       </div>
       <ContactMe />
