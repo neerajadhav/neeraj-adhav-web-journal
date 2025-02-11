@@ -63,7 +63,7 @@ export default function Blog() {
             </div>
             <hr className='mb-6 h-px border-0 bg-zinc-200 lg:mb-8 dark:bg-slate-800' />
             <div className='grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-              {posts.slice(1).map((post, index) => (
+              {posts.slice(3).map((post, index) => (
                 <div key={index + 1} className='mb-4 w-full'>
                   <Post postInfo={post} />
                 </div>
