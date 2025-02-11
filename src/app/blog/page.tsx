@@ -41,11 +41,8 @@ export default function Blog() {
 
   return (
     <Container>
-      <div className='bg-erd-min-h-80 rounded-3xl bg-white p-6 text-slate-950 dark:border dark:border-slate-800 dark:bg-slate-900 dark:text-zinc-300 flex flex-col gap-6'>
+      <div className='bg-erd-min-h-80 flex flex-col gap-6 rounded-3xl bg-white p-6 text-slate-950 dark:border dark:border-slate-800 dark:bg-slate-900 dark:text-zinc-300'>
         <PageHeader />
-        {/* <h1 className='text-3xl font-semibold md:text-4xl dark:text-zinc-100'>
-          Blogs
-        </h1> */}
         {posts.length === 0 && (
           <p className='flex w-full flex-1 items-center justify-center gap-3 text-lg font-semibold'>
             <ExclamationTriangleIcon className='h-8 w-8' />
@@ -54,9 +51,23 @@ export default function Blog() {
         )}
         {posts.length > 0 && (
           <>
+            <div className='flex gap-6 flex-col lg:flex-row'>
+              <div className='lg:w-2/3 flex flex-col gap-6'>
+                <h1 className='text-3xl font-semibold md:text-4xl dark:text-zinc-100 text-center lg:text-start'>
+                  Blogs
+                </h1>
+                {posts.length > 0 && <Post postInfo={posts[0]} />}
+              </div>
+              <div className='flex lg:w-1/3 flex-col gap-6'>
+                {posts.length > 0 && <Post postInfo={posts[1]} />}
+                {posts.length > 0 && <Post postInfo={posts[2]} />}
+              </div>
+            </div>
             <div className='grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-              {posts.map((post, index) => (
-                <Post key={index} postInfo={post} />
+              {posts.slice(1).map((post, index) => (
+                <div key={index + 1} className='mb-4 w-full'>
+                  <Post postInfo={post} />
+                </div>
               ))}
             </div>
             <div className='px-5'>
