@@ -4667,6 +4667,7 @@ export type PublicationQuery = {
       profilePicture?: string | null;
       location?: string | null;
       bio?: { __typename?: 'Content'; html: string; text: string } | null;
+      availableFor?: string | null;
     };
   } | null;
 };
@@ -4930,6 +4931,7 @@ export const PublicationDocument = `
       }
       profilePicture
       location
+      availableFor
     }
   }
 }
