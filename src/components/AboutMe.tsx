@@ -61,7 +61,7 @@ export const AboutMe = () => {
               </a>
             )}
           </div>
-          <div className='mb-4 mr-4 flex w-full flex-col gap-3'>
+          <div className='flex w-full flex-col gap-3'>
             <h1 className='w-full text-2xl text-slate-950 sm:text-3xl dark:text-zinc-100'>
               Hi there! I am{' '}
               <span className='font-extrabold'>{`${publication.author.name}!`}</span>
@@ -85,7 +85,7 @@ export const AboutMe = () => {
                 {publication.author.location}
               </p>
             )}
-            <div className='mt-3 flex w-full flex-row gap-6'>
+            <div className='mt-3 flex w-full flex-row gap-3 lg:gap-6'>
               {resumeLink && (
                 <Link
                   href={resumeLink}
