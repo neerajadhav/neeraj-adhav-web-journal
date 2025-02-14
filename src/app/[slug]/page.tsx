@@ -69,10 +69,10 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
 
   return (
     <Container>
-      <article className='w-full max-w-3xl mx-auto rounded-3xl bg-white p-4 shadow-md md:p-8 dark:border dark:border-slate-800 dark:bg-slate-900'>
+      <article className='mx-auto w-full max-w-3xl rounded-3xl bg-white p-4 shadow-md md:p-8 dark:border dark:border-slate-800 dark:bg-slate-900 print:p-0 print:shadow-none'>
         <div className='mb-4 flex w-full flex-col gap-5 text-slate-950 dark:text-zinc-300'>
-        <PageHeader />
-          <h1 className='mb-2 w-full text-center text-2xl font-bold md:text-3xl dark:text-zinc-100'>
+          <PageHeader />
+          <h1 className='mb-2 w-full text-center text-2xl font-bold md:text-3xl dark:text-zinc-100 print:text-3xl print:font-extrabold'>
             {post.title}
           </h1>
           {post.coverImage?.url && (
@@ -94,9 +94,9 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
         {post.content.markdown && (
           <MarkdownToHtml contentMarkdown={post.content.markdown} />
         )}
-        <hr className='mb-6 lg:mb-8 h-px border-0 bg-zinc-200 dark:bg-slate-800' />
+        <hr className='mb-6 h-px border-0 bg-zinc-200 lg:mb-8 dark:bg-slate-800' />
         {post.tags?.length && (
-          <div className='flex w-full flex-wrap gap-3 text-slate-950 dark:text-zinc-300'>
+          <div className='flex w-full flex-wrap gap-3 text-slate-950 dark:text-zinc-300 print:hidden'>
             {post.tags.map((tag) => (
               <li key={tag.id} className='list-none'>
                 <a
