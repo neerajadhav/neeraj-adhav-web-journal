@@ -1,9 +1,15 @@
 import { ContactMe } from '@/components/ContactMe';
 import { Container } from '@/components/Container';
 import PageHeader from '@/components/PageHeader';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 import MastodonPost from './MastodonPost';
 
 const accessToken = process.env.NEXT_MASTODON_ACCESS_TOKEN as string;
+
+const MASTODON_USERNAME = 'neerajadhav';
+const MASTODON_INSTANCE = 'https://sciences.social';
+const PROFILE_URL = `${MASTODON_INSTANCE}/@${MASTODON_USERNAME}`;
 
 type MediaAttachment = {
   id: string;
@@ -19,22 +25,24 @@ type Account = {
   acct: string;
 };
 
-interface MastodonPostType {
-  id: string;
-  created_at: string;
-  content: string;
-  replies_count: number;
-  reblogs_count: number;
-  favourites_count: number;
-  account: Account;
-  media_attachments: MediaAttachment[];
-  url: string;
-}
+type MastodonPostProps = {
+  post: {
+    id: string;
+    created_at: string;
+    content: string;
+    replies_count: number;
+    reblogs_count: number;
+    favourites_count: number;
+    account: Account;
+    media_attachments: MediaAttachment[];
+    url: string;
+  };
+};
 
-const fetchPosts = async (): Promise<MastodonPostType[]> => {
+const fetchPosts = async () => {
   try {
     const userResponse = await fetch(
-      'https://sciences.social/api/v1/accounts/lookup?acct=neerajadhav',
+      `${MASTODON_INSTANCE}/api/v1/accounts/lookup?acct=${MASTODON_USERNAME}`,
       {
         headers: { Authorization: `Bearer ${accessToken}` },
         cache: 'no-store',
@@ -47,7 +55,7 @@ const fetchPosts = async (): Promise<MastodonPostType[]> => {
     const userId = userData.id;
 
     const postsResponse = await fetch(
-      `https://sciences.social/api/v1/accounts/${userId}/statuses`,
+      `${MASTODON_INSTANCE}/api/v1/accounts/${userId}/statuses?limit=10`,
       {
         headers: { Authorization: `Bearer ${accessToken}` },
         cache: 'no-store',
@@ -64,7 +72,7 @@ const fetchPosts = async (): Promise<MastodonPostType[]> => {
 };
 
 const MastodonFeed = async () => {
-  const posts = await fetchPosts();
+  const posts: MastodonPostProps['post'][] = await fetchPosts();
 
   return (
     <Container>
@@ -72,12 +80,35 @@ const MastodonFeed = async () => {
         <PageHeader />
         <div className='flex w-full flex-row items-center justify-between'>
           <h2 className='text-2xl font-semibold dark:text-zinc-100'>Feed</h2>
+          <a
+            href={PROFILE_URL}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='hidden flex-row items-center gap-2 rounded-full border border-slate-400 px-4 py-2 text-sm font-medium text-slate-700 transition-all hover:bg-slate-700 hover:text-white md:flex dark:border-slate-600 dark:text-zinc-300 dark:hover:bg-slate-950'
+          >
+            Visit Mastodon <ArrowTopRightOnSquareIcon className='h-4 w-4' />
+          </a>
         </div>
         <div className='mx-auto flex flex-col gap-6'>
-          {posts.map((post) => (
-            <MastodonPost key={post.id} post={post} />
-          ))}
+          {posts.length > 0 ? (
+            <>
+              {posts.map((post: MastodonPostProps['post']) => (
+                <MastodonPost key={post.id} post={post} />
+              ))}
+            </>
+          ) : (
+            <p className='text-gray-500 dark:text-gray-400'>
+              No posts available
+            </p>
+          )}
         </div>
+        <Link
+          href={PROFILE_URL}
+          target='_blank'
+          className='flex flex-row items-center gap-2 self-center rounded-full bg-blue-600 px-5 py-2 text-sm font-medium text-white shadow-md transition-all hover:bg-blue-700 sm:text-base md:hidden'
+        >
+          Visit Mastodon <ArrowTopRightOnSquareIcon className='h-4 w-4' />
+        </Link>
       </div>
       <ContactMe />
     </Container>
