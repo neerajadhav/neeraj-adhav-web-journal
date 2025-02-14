@@ -89,7 +89,7 @@ const MastodonFeed = async () => {
             Visit Mastodon <ArrowTopRightOnSquareIcon className='h-4 w-4' />
           </a>
         </div>
-        <div className='mx-auto flex flex-col gap-6'>
+        <div className='mx-auto flex flex-col gap-2'>
           {posts.length > 0 ? (
             <>
               {posts.map((post: MastodonPostProps['post']) => (
