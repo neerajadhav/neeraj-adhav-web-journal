@@ -78,7 +78,7 @@ const MastodonFeed = async () => {
     <Container>
       <div className='flex flex-col gap-5 rounded-3xl bg-white px-4 py-4 dark:border dark:border-slate-800 dark:bg-slate-900'>
         <PageHeader />
-        <div className='flex w-full flex-row items-center justify-between'>
+        <div className='flex w-full flex-row items-center justify-between border-b dark:border-slate-800 pb-4'>
           <h2 className='text-2xl font-semibold dark:text-zinc-100'>Feed</h2>
           <a
             href={PROFILE_URL}
