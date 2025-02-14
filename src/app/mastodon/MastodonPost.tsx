@@ -88,7 +88,7 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
           rel='noopener noreferrer'
           className='text-blue-500 hover:underline'
         >
-          View Thread
+          Join Thread
         </a>
       </div>
     </div>
