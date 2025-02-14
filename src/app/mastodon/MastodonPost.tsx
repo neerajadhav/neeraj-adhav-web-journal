@@ -62,7 +62,7 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
 
       {/* Post Content */}
       <div
-        className='mb-3 text-gray-800 dark:text-gray-200'
+        className='hashnode-content-style mb-3 text-gray-800 dark:text-gray-200 text-justify'
         dangerouslySetInnerHTML={{ __html: post.content }}
       ></div>
 

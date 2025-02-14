@@ -56,7 +56,9 @@ export const Navbar = () => {
   }, [path]);
 
   const handleNavigation = (href: any) => {
-    setLoadingLink(href);
+    if (path != href) {
+      setLoadingLink(href);
+    }
   };
 
   return (
