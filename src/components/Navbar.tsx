@@ -3,14 +3,14 @@
 import {
   CodeBracketIcon,
   HomeIcon as HomeIconOutline,
-  NewspaperIcon as NewspaperIconOutline
+  NewspaperIcon as NewspaperIconOutline,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import {
   HomeIcon as HomeIconSolid,
-  NewspaperIcon as NewspaperIconSolid
+  NewspaperIcon as NewspaperIconSolid,
 } from '@heroicons/react/24/solid';
 import { FaMastodon } from 'react-icons/fa';
 
@@ -48,8 +48,8 @@ const NAVLINKS = [
 export const Navbar = () => {
   const path = usePathname();
   return (
-    <div className='fixed bottom-5 z-20 flex w-full justify-center'>
-      <nav className='flex flex-row gap-3 rounded-full border border-zinc-100 bg-slate-100 px-3 py-2 md:gap-5 dark:border-slate-800 dark:bg-slate-900'>
+    <div className='fixed bottom-0 lg:bottom-5 z-20 flex w-full justify-center'>
+      <nav className='flex w-full lg:w-auto flex-row justify-center gap-3 lg:rounded-full border border-zinc-100 bg-slate-100 px-3 py-2 md:gap-5 dark:border-slate-800 dark:bg-slate-900'>
         {NAVLINKS.map((navlink) => (
           <Link
             href={navlink.href}
@@ -58,7 +58,8 @@ export const Navbar = () => {
             title={navlink.tooltip}
           >
             {path === navlink.href ? navlink.activeIcon : navlink.icon}
-            <span className="sr-only">{navlink.tooltip}</span> {/* For accessibility */}
+            <span className='sr-only'>{navlink.tooltip}</span>{' '}
+            {/* For accessibility */}
           </Link>
         ))}
       </nav>
