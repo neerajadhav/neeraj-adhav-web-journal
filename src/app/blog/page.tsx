@@ -42,6 +42,9 @@ export default function Blog() {
     <Container>
       <div className='bg-erd-min-h-80 flex flex-col gap-6 rounded-3xl bg-white p-4 text-slate-950 dark:border dark:border-slate-800 dark:bg-slate-900 dark:text-zinc-300'>
         <PageHeader />
+        <div className='flex w-full flex-row items-center justify-between'>
+          <h2 className='text-2xl font-semibold dark:text-zinc-100'>Blog</h2>
+        </div>
         {posts.length === 0 && (
           <p className='flex w-full flex-1 items-center justify-center gap-3 text-lg font-semibold'>
             <ExclamationTriangleIcon className='h-8 w-8' />
@@ -60,7 +63,7 @@ export default function Blog() {
                 {posts.length > 0 && <Post postInfo={posts[2]} />}
               </div>
             </div>
-            <hr className='h-px border-0 bg-zinc-200 dark:bg-slate-800 hidden lg:block' />
+            <hr className='hidden h-px border-0 bg-zinc-200 lg:block dark:bg-slate-800' />
             <div className='grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
               {posts.slice(3).map((post, index) => (
                 <div key={index + 1} className='mb-4 w-full'>

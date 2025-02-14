@@ -5,37 +5,57 @@ import {
   ComputerDesktopIcon,
   CpuChipIcon,
   PaintBrushIcon,
-  ServerIcon
+  ServerIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
-import { FaGithub } from "react-icons/fa";
+import { FaGithub } from 'react-icons/fa';
 
 export const Skills = () => {
   const skills = [
     {
       category: 'Programming Languages',
-      icon: <div className='border bg-slate-200 dark:bg-slate-900 rounded-lg p-2 dark:border-slate-600'><CodeBracketIcon className='h-5 w-5 text-blue-800 dark:text-green-500' /></div>,
+      icon: (
+        <div className='rounded-lg border bg-slate-200 p-2 dark:border-slate-600 dark:bg-slate-900'>
+          <CodeBracketIcon className='h-5 w-5 text-blue-800 dark:text-green-500' />
+        </div>
+      ),
       skills: ['JavaScript', 'Python', 'C++', 'TypeScript'],
     },
     {
       category: 'Frameworks',
-      icon: <div className='border bg-slate-200 dark:bg-slate-900 rounded-lg p-2 dark:border-slate-600'><ServerIcon className='h-5 w-5 text-blue-800 dark:text-green-500' /></div>,
+      icon: (
+        <div className='rounded-lg border bg-slate-200 p-2 dark:border-slate-600 dark:bg-slate-900'>
+          <ServerIcon className='h-5 w-5 text-blue-800 dark:text-green-500' />
+        </div>
+      ),
       skills: ['Django', 'FastAPI', 'Next.js'],
     },
     {
       category: 'Libraries',
-      icon: <div className='border bg-slate-200 dark:bg-slate-900 rounded-lg p-2 dark:border-slate-600'><CpuChipIcon className='h-5 w-5 text-blue-800 dark:text-green-500' /></div>,
+      icon: (
+        <div className='rounded-lg border bg-slate-200 p-2 dark:border-slate-600 dark:bg-slate-900'>
+          <CpuChipIcon className='h-5 w-5 text-blue-800 dark:text-green-500' />
+        </div>
+      ),
       skills: ['React'],
     },
     {
       category: 'Markup & Styling',
-      icon: <div className='border bg-slate-200 dark:bg-slate-900 rounded-lg p-2 dark:border-slate-600'><PaintBrushIcon className='h-5 w-5 text-blue-800 dark:text-green-500' /></div>,
+      icon: (
+        <div className='rounded-lg border bg-slate-200 p-2 dark:border-slate-600 dark:bg-slate-900'>
+          <PaintBrushIcon className='h-5 w-5 text-blue-800 dark:text-green-500' />
+        </div>
+      ),
       skills: ['HTML', 'CSS', 'Tailwind CSS', 'ShadCN'],
     },
     {
       category: 'Favorite Linux Distros',
-      icon: <div className='border bg-slate-200 dark:bg-slate-900 rounded-lg p-2 dark:border-slate-600'><ComputerDesktopIcon className='h-5 w-5 text-blue-800 dark:text-green-500' /></div>,
+      icon: (
+        <div className='rounded-lg border bg-slate-200 p-2 dark:border-slate-600 dark:bg-slate-900'>
+          <ComputerDesktopIcon className='h-5 w-5 text-blue-800 dark:text-green-500' />
+        </div>
+      ),
       skills: ['Arch Linux', 'NixOS', 'Linux Mint', 'Ubuntu'],
     },
   ];
@@ -43,7 +63,9 @@ export const Skills = () => {
   return (
     <div className='flex flex-col items-start rounded-3xl bg-white p-6 text-slate-950 shadow-xl backdrop-blur-md dark:border dark:border-slate-800 dark:bg-slate-900/80 dark:text-zinc-300'>
       <div className='mb-6 flex w-full flex-row items-center justify-between'>
-      <h2 className='text-2xl font-semibold dark:text-zinc-100'>Tech Stack</h2>
+        <h2 className='text-2xl font-semibold dark:text-zinc-100'>
+          Tech Stack
+        </h2>
         <Link
           href={'//github.com/neerajadhav'}
           target='_blank'
@@ -70,7 +92,10 @@ export const Skills = () => {
             </div>
             <ul className='flex flex-wrap gap-2'>
               {skillSet.skills.map((skill, i) => (
-                <li key={i} className='rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-900 dark:bg-slate-700 dark:text-zinc-300'>
+                <li
+                  key={i}
+                  className='rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-900 dark:bg-slate-700 dark:text-zinc-300'
+                >
                   {skill}
                 </li>
               ))}

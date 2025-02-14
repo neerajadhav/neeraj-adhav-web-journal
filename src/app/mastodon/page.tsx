@@ -2,6 +2,8 @@ import { Container } from '@/components/Container';
 import MastodonPost from './MastodonPost';
 import PageHeader from '@/components/PageHeader';
 import { ContactMe } from '@/components/ContactMe';
+import Link from 'next/link';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 const accessToken = process.env.NEXT_MASTODON_ACCESS_TOKEN as string;
 
@@ -68,6 +70,9 @@ const MastodonFeed = async () => {
     <Container>
       <div className='flex flex-col gap-5 rounded-3xl bg-white px-4 py-4 dark:border dark:border-slate-800 dark:bg-slate-900'>
         <PageHeader />
+        <div className='flex w-full flex-row items-center justify-between'>
+          <h2 className='text-2xl font-semibold dark:text-zinc-100'>Feed</h2>
+        </div>
         <div className='mx-auto flex flex-col gap-6'>
           {posts.map((post) => (
             <MastodonPost key={post.id} post={post} />
