@@ -1,0 +1,82 @@
+import React from 'react';
+
+type MediaAttachment = {
+  id: string;
+  type: string;
+  url: string;
+  preview_url?: string;
+};
+
+type Account = {
+  username: string;
+  display_name: string;
+  avatar_static: string;
+};
+
+type MastodonPostProps = {
+  post: {
+    id: string;
+    created_at: string;
+    content: string;
+    replies_count: number;
+    reblogs_count: number;
+    favourites_count: number;
+    account: Account;
+    media_attachments: MediaAttachment[];
+  };
+};
+
+const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
+  return (
+    <div className='max-w-lg rounded-xl border bg-white p-4 shadow-md dark:border-gray-700 dark:bg-gray-900'>
+      {/* User Info */}
+      <div className='mb-3 flex items-center space-x-3'>
+        <img
+          src={post.account.avatar_static}
+          alt='Avatar'
+          className='h-10 w-10 rounded-full'
+        />
+        <div>
+          <p className='font-semibold text-gray-900 dark:text-gray-100'>
+            {post.account.display_name}
+          </p>
+          <p className='text-sm text-gray-500 dark:text-gray-400'>
+            @{post.account.username}
+          </p>
+        </div>
+      </div>
+
+      {/* Post Content */}
+      <div
+        className='mb-3 text-gray-800 dark:text-gray-200'
+        dangerouslySetInnerHTML={{ __html: post.content }}
+      ></div>
+
+      {/* Media Attachments */}
+      {post.media_attachments.length > 0 && (
+        <div className='mt-2'>
+          {post.media_attachments.map((media) => (
+            <img
+              key={media.id}
+              src={media.preview_url || media.url}
+              alt='Post Attachment'
+              className='max-h-64 w-full rounded-lg object-cover'
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Post Metadata */}
+      <div className='mt-3 flex justify-between text-sm text-gray-500 dark:text-gray-400'>
+        <p>{new Date(post.created_at).toLocaleString()}</p>
+        {/* <div className="flex space-x-4">
+          <p>💬 {post.replies_count}</p>
+          <p>🔁 {post.reblogs_count}</p>
+          <p>❤️ {post.favourites_count}</p>
+        </div> */}
+      </div>
+    </div>
+  );
+};
+
+export default MastodonPost;
