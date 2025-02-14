@@ -13,6 +13,7 @@ import {
   NewspaperIcon as NewspaperIconSolid,
   CogIcon as CogIconSolid,
 } from '@heroicons/react/24/solid';
+import { FaMastodon } from 'react-icons/fa';
 
 const NAVLINKS = [
   {
@@ -20,6 +21,12 @@ const NAVLINKS = [
     href: '/',
     icon: <HomeIconOutline className='h-6 w-6' />,
     activeIcon: <HomeIconSolid className='h-6 w-6' />,
+  },
+  {
+    name: 'Mastodon',
+    href: '/mastodon',
+    icon: <FaMastodon className='h-6 w-6' />,
+    activeIcon: <FaMastodon className='h-6 w-6' />,
   },
   {
     name: 'Blog',

@@ -68,12 +68,13 @@ const MastodonFeed = async () => {
   return (
     <Container>
       {/* <PageHeader /> */}
-      <div className="mx-auto flex flex-col gap-6">
+      <div className='mx-auto flex flex-col gap-6'>
         {posts.map((post) => (
           <MastodonPost key={post.id} post={post} />
         ))}
       </div>
-      <ContactMe />
+      <br />
+      <br />
     </Container>
   );
 };
