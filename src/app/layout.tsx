@@ -112,6 +112,13 @@ export default async function RootLayout({
       <body className={`${ubuntu.className} bg-slate-300 dark:bg-slate-950`}>
         <ReactQueryProvider>
           <HydrationBoundary state={dehydrate(queryClient)}>
+            <a
+              rel='me'
+              href='https://sciences.social/@neerajadhav'
+              className='hidden'
+            >
+              Mastodon
+            </a>
             {children}
             <SpeedInsights />
             <Navbar />

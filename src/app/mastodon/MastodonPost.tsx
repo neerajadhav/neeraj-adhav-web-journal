@@ -1,4 +1,9 @@
 import React from 'react';
+import TimeAgo from 'javascript-time-ago';
+import en from 'javascript-time-ago/locale/en';
+
+TimeAgo.addDefaultLocale(en);
+const timeAgo = new TimeAgo('en-US');
 
 type MediaAttachment = {
   id: string;
@@ -11,6 +16,7 @@ type Account = {
   username: string;
   display_name: string;
   avatar_static: string;
+  acct: string; // Added to extract the full username including the server
 };
 
 type MastodonPostProps = {
@@ -23,6 +29,7 @@ type MastodonPostProps = {
     favourites_count: number;
     account: Account;
     media_attachments: MediaAttachment[];
+    url: string;
   };
 };
 
@@ -38,10 +45,17 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
         />
         <div>
           <p className='font-semibold text-gray-900 dark:text-gray-100'>
-            {post.account.display_name}
+            {timeAgo.format(new Date(post.created_at))}
           </p>
           <p className='text-sm text-gray-500 dark:text-gray-400'>
-            @{post.account.username}
+            <a
+              href={`https://sciences.social/@${post.account.acct}`}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-blue-500 hover:underline'
+            >
+              @{post.account.acct}
+            </a>
           </p>
         </div>
       </div>
@@ -68,12 +82,14 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
 
       {/* Post Metadata */}
       <div className='mt-3 flex justify-between text-sm text-gray-500 dark:text-gray-400'>
-        <p>{new Date(post.created_at).toLocaleString()}</p>
-        {/* <div className="flex space-x-4">
-          <p>💬 {post.replies_count}</p>
-          <p>🔁 {post.reblogs_count}</p>
-          <p>❤️ {post.favourites_count}</p>
-        </div> */}
+        <a
+          href={post.url}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='text-blue-500 hover:underline'
+        >
+          View Thread
+        </a>
       </div>
     </div>
   );
