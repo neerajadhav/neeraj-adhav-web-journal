@@ -16,7 +16,7 @@ type Account = {
   username: string;
   display_name: string;
   avatar_static: string;
-  acct: string; // Added to extract the full username including the server
+  acct: string;
 };
 
 type MastodonPostProps = {

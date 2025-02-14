@@ -1,9 +1,7 @@
-import { Container } from '@/components/Container';
-import MastodonPost from './MastodonPost';
-import PageHeader from '@/components/PageHeader';
 import { ContactMe } from '@/components/ContactMe';
-import Link from 'next/link';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { Container } from '@/components/Container';
+import PageHeader from '@/components/PageHeader';
+import MastodonPost from './MastodonPost';
 
 const accessToken = process.env.NEXT_MASTODON_ACCESS_TOKEN as string;
 
@@ -18,6 +16,7 @@ type Account = {
   username: string;
   display_name: string;
   avatar_static: string;
+  acct: string;
 };
 
 interface MastodonPostType {
@@ -29,6 +28,7 @@ interface MastodonPostType {
   favourites_count: number;
   account: Account;
   media_attachments: MediaAttachment[];
+  url: string;
 }
 
 const fetchPosts = async (): Promise<MastodonPostType[]> => {
