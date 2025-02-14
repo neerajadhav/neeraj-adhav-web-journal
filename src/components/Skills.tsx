@@ -80,7 +80,7 @@ export const Skills = () => {
         {skills.map((skillSet, index) => (
           <div
             key={index}
-            className='group relative flex flex-col rounded-xl border bg-white/50 p-6 transition-all duration-300 dark:border-0 dark:bg-slate-800/80'
+            className='group relative flex flex-col rounded-xl border bg-white/50 p-4 transition-all duration-300 dark:border-0 dark:bg-slate-800/80'
           >
             <div className='mb-3 flex items-center gap-3'>
               <div className='flex h-12 w-12 items-center justify-center rounded-xl border bg-white p-3 shadow-md dark:border-slate-600 dark:bg-slate-900'>
