@@ -1,6 +1,5 @@
-import React from 'react';
-import MastodonPost from './MastodonPost';
 import { Container } from '@/components/Container';
+import MastodonPost from './MastodonPost';
 import PageHeader from '@/components/PageHeader';
 import { ContactMe } from '@/components/ContactMe';
 
@@ -36,7 +35,7 @@ const fetchPosts = async (): Promise<MastodonPostType[]> => {
       'https://sciences.social/api/v1/accounts/lookup?acct=neerajadhav',
       {
         headers: { Authorization: `Bearer ${accessToken}` },
-        cache: 'no-store', // Ensures fresh data on each request
+        cache: 'no-store',
       }
     );
 
@@ -63,18 +62,19 @@ const fetchPosts = async (): Promise<MastodonPostType[]> => {
 };
 
 const MastodonFeed = async () => {
-  const posts = await fetchPosts(); // Fetching posts on the server
+  const posts = await fetchPosts();
 
   return (
     <Container>
-      {/* <PageHeader /> */}
-      <div className='mx-auto flex flex-col gap-6'>
-        {posts.map((post) => (
-          <MastodonPost key={post.id} post={post} />
-        ))}
+      <div className='flex flex-col gap-5 rounded-3xl bg-white px-4 py-4 dark:border dark:border-slate-800 dark:bg-slate-900'>
+        <PageHeader />
+        <div className='mx-auto flex flex-col gap-6'>
+          {posts.map((post) => (
+            <MastodonPost key={post.id} post={post} />
+          ))}
+        </div>
       </div>
-      <br />
-      <br />
+      <ContactMe />
     </Container>
   );
 };
