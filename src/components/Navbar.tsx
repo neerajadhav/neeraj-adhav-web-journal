@@ -1,17 +1,16 @@
 'use client';
 
+import {
+  CodeBracketIcon,
+  HomeIcon as HomeIconOutline,
+  NewspaperIcon as NewspaperIconOutline
+} from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import {
-  HomeIcon as HomeIconOutline,
-  NewspaperIcon as NewspaperIconOutline,
-  CogIcon as CogIconOutline,
-} from '@heroicons/react/24/outline';
 
 import {
   HomeIcon as HomeIconSolid,
-  NewspaperIcon as NewspaperIconSolid,
-  CogIcon as CogIconSolid,
+  NewspaperIcon as NewspaperIconSolid
 } from '@heroicons/react/24/solid';
 import { FaMastodon } from 'react-icons/fa';
 
@@ -21,24 +20,28 @@ const NAVLINKS = [
     href: '/',
     icon: <HomeIconOutline className='h-6 w-6' />,
     activeIcon: <HomeIconSolid className='h-6 w-6' />,
+    tooltip: 'Home',
   },
   {
     name: 'Mastodon',
     href: '/mastodon',
     icon: <FaMastodon className='h-6 w-6' />,
     activeIcon: <FaMastodon className='h-6 w-6' />,
+    tooltip: 'Mastodon',
   },
   {
     name: 'Blog',
     href: '/blog',
     icon: <NewspaperIconOutline className='h-6 w-6' />,
     activeIcon: <NewspaperIconSolid className='h-6 w-6' />,
+    tooltip: 'Blog',
   },
   {
     name: 'Projects',
     href: '/projects',
-    icon: <CogIconOutline className='h-6 w-6' />,
-    activeIcon: <CogIconSolid className='h-6 w-6' />,
+    icon: <CodeBracketIcon className='h-6 w-6' />,
+    activeIcon: <CodeBracketIcon className='h-6 w-6' />,
+    tooltip: 'Projects',
   },
 ];
 
@@ -51,9 +54,11 @@ export const Navbar = () => {
           <Link
             href={navlink.href}
             key={navlink.name}
-            className={`rounded-full p-3 shadow-sm dark:text-slate-400 dark:hover:bg-slate-50/10 ${path === navlink.href ? 'bg-slate-300 dark:bg-slate-50/10 dark:text-slate-50' : 'bg-white dark:bg-slate-950 dark:text-slate-400'}`}
+            className={`relative rounded-full p-3 shadow-sm dark:text-slate-400 dark:hover:bg-slate-50/10 ${path === navlink.href ? 'bg-slate-300 dark:bg-slate-50/10 dark:text-slate-50' : 'bg-white dark:bg-slate-950 dark:text-slate-400'}`}
+            title={navlink.tooltip}
           >
             {path === navlink.href ? navlink.activeIcon : navlink.icon}
+            <span className="sr-only">{navlink.tooltip}</span> {/* For accessibility */}
           </Link>
         ))}
       </nav>
