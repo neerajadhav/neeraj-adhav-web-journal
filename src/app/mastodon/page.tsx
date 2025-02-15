@@ -82,12 +82,6 @@ const MastodonFeed = async () => {
           text: 'Visit Mastodon',
           icon: <ArrowTopRightOnSquareIcon className='h-4 w-4' />,
         }}
-        button={{
-          href: PROFILE_URL,
-          text: 'Visit Mastodon',
-          icon: <ArrowTopRightOnSquareIcon className='h-5 w-5' />,
-          className: 'bg-gray-800 hover:bg-gray-900',
-        }}
       >
         <div className='mx-auto flex flex-col gap-2'>
           {posts.length > 0 ? (
