@@ -76,12 +76,12 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
 
   return (
     <Container>
-      <article className='mx-auto w-full max-w-4xl border bg-white p-4 dark:border dark:border-slate-800 dark:bg-slate-900 print:border-0 print:p-0 text-justify print:shadow-none'>
-        <div className='mb-4 flex w-full flex-col gap-3 text-slate-950 dark:text-zinc-300'>
+      <article className='mx-auto w-full max-w-4xl border bg-white p-4 dark:border dark:border-gray-800 dark:bg-gray-900 print:border-0 print:p-0 text-justify print:shadow-none'>
+        <div className='mb-4 flex w-full flex-col gap-3 text-gray-950 dark:text-zinc-300'>
           <div className='flex w-full items-center justify-end print:hidden'>
             <div className='flex justify-end'>
               <button
-                className='flex flex-row items-center gap-2 rounded-full border-slate-400 p-2 text-sm font-medium text-slate-700 transition-all hover:bg-slate-700 hover:text-white dark:border-slate-600 dark:text-zinc-300 dark:hover:bg-slate-950'
+                className='flex flex-row items-center gap-2 rounded-full border-gray-400 p-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-700 hover:text-white dark:border-gray-600 dark:text-zinc-300 dark:hover:bg-gray-950'
                 onClick={handlePrint}
               >
                 <PrinterIcon className='h-5 w-5' />
@@ -106,19 +106,19 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
           </div>
         </div>
 
-        <hr className='mb-6 h-px border-0 bg-zinc-200 dark:bg-slate-800' />
+        <hr className='mb-6 h-px border-0 bg-zinc-200 dark:bg-gray-800' />
         {post.content.markdown && (
           <MarkdownToHtml contentMarkdown={post.content.markdown} />
         )}
-        <hr className='mb-4 h-px border-0 bg-zinc-200 dark:bg-slate-800' />
+        <hr className='mb-4 h-px border-0 bg-zinc-200 dark:bg-gray-800' />
         {post.tags?.length && (
-          <div className='flex w-full flex-wrap gap-3 text-slate-950 dark:text-zinc-300 print:hidden'>
+          <div className='flex w-full flex-wrap gap-3 text-gray-950 dark:text-zinc-300 print:hidden'>
             {post.tags.map((tag) => (
               <li key={tag.id} className='list-none'>
                 <a
                   href={`//hashnode.com/n/${tag.slug}`}
                   target='_blank'
-                  className='rounded-full border border-zinc-100 px-3 py-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-slate-800 dark:hover:border-slate-700 dark:hover:bg-slate-950'
+                  className='rounded-full border border-zinc-100 px-3 py-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-gray-800 dark:hover:border-gray-700 dark:hover:bg-gray-950'
                 >
                   #{tag.name}
                 </a>

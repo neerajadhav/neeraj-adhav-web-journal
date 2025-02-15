@@ -32,18 +32,18 @@ export const Navbar = ({ navLinks }: NavbarProps) => {
   };
 
   return (
-    <div className='fixed bottom-0 left-0 z-20 flex w-full justify-center border-t border-zinc-100 lg:static lg:bottom-5 lg:w-auto lg:border-0 dark:border-slate-800 print:hidden'>
-      <nav className='flex w-full flex-row justify-center gap-3 bg-white py-2 md:gap-5 lg:w-auto lg:gap-2 lg:rounded-full lg:bg-transparent dark:bg-slate-900'>
+    <div className='fixed bottom-0 left-0 z-20 flex w-full justify-center border-t border-zinc-100 lg:static lg:bottom-5 lg:w-auto lg:border-0 dark:border-gray-800 print:hidden'>
+      <nav className='flex w-full flex-row justify-center gap-3 bg-white py-2 md:gap-5 lg:w-auto lg:gap-2 lg:rounded-full lg:bg-transparent dark:bg-gray-900'>
         {navLinks.map((navlink) => (
           <Link
             href={navlink.href}
             key={navlink.name}
             passHref
             onClick={() => handleNavigation(navlink.href)}
-            className={`relative rounded-full p-3 shadow-sm lg:rounded-lg lg:px-3 lg:py-2 lg:shadow-none dark:text-slate-400 dark:hover:bg-slate-50/10 ${
+            className={`relative rounded-full p-3 shadow-sm lg:rounded-lg lg:px-3 lg:py-2 lg:shadow-none dark:text-gray-400 dark:hover:bg-gray-50/10 ${
               path === navlink.href
-                ? 'bg-slate-200 hover:bg-slate-200 dark:bg-slate-50/10 dark:text-slate-50'
-                : 'bg-white dark:bg-transparent dark:text-slate-400'
+                ? 'bg-gray-200 hover:bg-gray-200 dark:bg-gray-50/10 dark:text-gray-50'
+                : 'bg-white dark:bg-transparent dark:text-gray-400'
             }`}
             title={navlink.tooltip}
           >

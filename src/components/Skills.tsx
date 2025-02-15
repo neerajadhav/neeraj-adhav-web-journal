@@ -19,12 +19,12 @@ interface SkillItemProps {
 }
 
 const SkillItem: React.FC<SkillItemProps> = ({ icon, category, skills }) => (
-  <div className='group relative flex flex-col rounded-xl border bg-slate-200/30 p-3 transition-all duration-300 dark:border-0 dark:bg-slate-800/80'>
+  <div className='group relative flex flex-col rounded-xl border bg-gray-200/30 p-3 transition-all duration-300 dark:border-0 dark:bg-gray-800/80'>
     <div className='mb-3 flex items-center gap-3'>
-      <div className='flex h-10 w-10 items-center justify-center rounded-lg border bg-white dark:border-slate-600 dark:bg-slate-900'>
+      <div className='flex h-10 w-10 items-center justify-center rounded-lg border bg-white dark:border-gray-600 dark:bg-gray-900'>
         {icon}
       </div>
-      <h3 className='font-semibold text-slate-900 dark:text-zinc-200'>
+      <h3 className='font-semibold text-gray-900 dark:text-zinc-200'>
         {category}
       </h3>
     </div>
@@ -32,7 +32,7 @@ const SkillItem: React.FC<SkillItemProps> = ({ icon, category, skills }) => (
       {skills.map((skill, i) => (
         <li
           key={i}
-          className='rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-900 dark:bg-slate-700 dark:text-zinc-300'
+          className='rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-900 dark:bg-gray-700 dark:text-zinc-300'
         >
           {skill}
         </li>

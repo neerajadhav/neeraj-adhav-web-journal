@@ -21,7 +21,7 @@ export const SocialLinks = () => {
         <a
           href={socialLink as string}
           target='_blank'
-          className='flex rounded-full p-2 text-slate-950 hover:bg-slate-600 hover:text-white hover:shadow-sm dark:text-zinc-300 dark:hover:bg-slate-950 dark:hover:text-zinc-300'
+          className='flex rounded-full p-2 text-gray-950 hover:bg-gray-600 hover:text-white hover:shadow-sm dark:text-zinc-300 dark:hover:bg-gray-950 dark:hover:text-zinc-300'
           key={socialName}
         >
           <FontAwesomeIcon

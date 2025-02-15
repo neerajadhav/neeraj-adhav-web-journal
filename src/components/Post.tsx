@@ -45,7 +45,7 @@ export const Post = (props: PostProps) => {
   return (
     <Link
       href={`/${postInfo.slug}`}
-      className={`flex  ${props.first ? 'w-full lg:w-2/3' : 'w-full'} flex-col items-center gap-4 rounded-xl border border-transparent px-2 py-2 hover:border-zinc-200 dark:hover:border-slate-700`}
+      className={`flex  ${props.first ? 'w-full lg:w-2/3' : 'w-full'} flex-col items-center gap-4 rounded-xl border border-transparent px-2 py-2 hover:border-zinc-200 dark:hover:border-gray-700`}
     >
       <div className='flex aspect-video w-full overflow-hidden rounded-lg'>
         {postInfo.coverImage?.url ? (
@@ -62,7 +62,7 @@ export const Post = (props: PostProps) => {
           <ImagePlaceholder />
         )}
       </div>
-      <div className='flex w-full flex-col px-3 text-slate-950 dark:text-zinc-300'>
+      <div className='flex w-full flex-col px-3 text-gray-950 dark:text-zinc-300'>
         <h3
           className={`mb-5 line-clamp-3 font-semibold dark:text-zinc-100 ${props.first ? 'text-2xl lg:text-4xl' : 'text-xl'}`}
         >
