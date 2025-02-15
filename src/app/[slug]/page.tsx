@@ -1,19 +1,18 @@
 'use client';
-import { Container } from '@/components/Container';
-import { usePostQuery } from '../../../generated/graphq';
-import { useQuery } from '@tanstack/react-query';
 import { ContactMe } from '@/components/ContactMe';
-import { loadIframeResizer } from '@/utils/services/embed';
-import { useEffect, useState } from 'react';
-import { useEmbeds } from '../../../hooks/useEmbeds';
-import { triggerCustomWidgetEmbed } from '@/utils/trigger-custom-widget-embed';
-import { MarkdownToHtml } from '@/components/MarkdownToHtml';
-import { resizeImage } from '@/utils/image';
-import handleMathJax from '@/utils/handle-math-jax';
+import { Container } from '@/components/Container';
 import { CoverImage } from '@/components/CoverImage';
-import { notFound } from 'next/navigation';
+import { MarkdownToHtml } from '@/components/MarkdownToHtml';
 import { formatDate } from '@/utils/consts/format-date';
-import PageHeader from '@/components/PageHeader';
+import handleMathJax from '@/utils/handle-math-jax';
+import { resizeImage } from '@/utils/image';
+import { loadIframeResizer } from '@/utils/services/embed';
+import { triggerCustomWidgetEmbed } from '@/utils/trigger-custom-widget-embed';
+import { useQuery } from '@tanstack/react-query';
+import { notFound } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { usePostQuery } from '../../../generated/graphq';
+import { useEmbeds } from '../../../hooks/useEmbeds';
 
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 
@@ -69,10 +68,9 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
 
   return (
     <Container>
-      <article className='mx-auto w-full max-w-4xl border bg-white p-4 dark:border dark:border-slate-800 dark:bg-slate-900 print:p-0 print:shadow-none'>
+      <article className='mx-auto w-full max-w-4xl border bg-white p-4 dark:border dark:border-slate-800 dark:bg-slate-900 print:shadow-none'>
         <div className='mb-4 flex w-full flex-col gap-5 text-slate-950 dark:text-zinc-300'>
-          <PageHeader />
-          <h1 className='mb-2 w-full text-center text-2xl font-bold md:text-3xl dark:text-zinc-100 print:text-3xl print:font-extrabold'>
+          <h1 className='mb-2 w-full text-center text-2xl font-bold md:text-3xl dark:text-zinc-100 print:text-3xl print:font-extrabold pt-4'>
             {post.title}
           </h1>
           {post.coverImage?.url && (
