@@ -68,9 +68,9 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
 
   return (
     <Container>
-      <article className='mx-auto w-full max-w-4xl border bg-white p-4 dark:border dark:border-slate-800 dark:bg-slate-900 print:shadow-none'>
+      <article className='mx-auto w-full max-w-4xl border bg-white p-4 dark:border dark:border-slate-800 dark:bg-slate-900 print:border-0 print:p-0 print:text-justify print:shadow-none'>
         <div className='mb-4 flex w-full flex-col gap-5 text-slate-950 dark:text-zinc-300'>
-          <h1 className='mb-2 w-full text-center text-2xl font-bold md:text-3xl dark:text-zinc-100 print:text-3xl print:font-extrabold pt-4'>
+          <h1 className='mb-2 w-full pt-4 text-center text-2xl font-bold md:text-3xl dark:text-zinc-100 print:text-3xl print:font-extrabold'>
             {post.title}
           </h1>
           {post.coverImage?.url && (
@@ -92,7 +92,7 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
         {post.content.markdown && (
           <MarkdownToHtml contentMarkdown={post.content.markdown} />
         )}
-        <hr className='h-px border-0 bg-zinc-200 mb-4 dark:bg-slate-800' />
+        <hr className='mb-4 h-px border-0 bg-zinc-200 dark:bg-slate-800' />
         {post.tags?.length && (
           <div className='flex w-full flex-wrap gap-3 text-slate-950 dark:text-zinc-300 print:hidden'>
             {post.tags.map((tag) => (
