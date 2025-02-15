@@ -7,6 +7,14 @@ import { NewspaperIcon as NewspaperIconSolid } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 import { FaMastodon } from 'react-icons/fa';
 import { Navbar } from './Navbar';
+import { Lobster } from 'next/font/google';
+
+// Load the Google Font using next/font
+const logoFont = Lobster({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-roboto',
+});
 
 const NAVLINKS = [
   {
@@ -41,11 +49,15 @@ const NAVLINKS = [
 
 const Header = () => {
   return (
-    <header className='sticky top-0 z-50 mb-2 w-full border-b bg-white dark:border-slate-800 dark:bg-slate-900 print:border-0 print:border-b'>
+    <header
+      className={`sticky top-0 z-50 mb-2 w-full border-b bg-white dark:border-slate-800 dark:bg-slate-900 print:border-0 print:border-b`}
+    >
       <div className='mx-auto max-w-7xl px-4 lg:px-0 print:p-0'>
         <div className='flex h-16 items-center justify-between'>
           {/* Logo */}
-          <div className='text-xl font-bold text-gray-900 dark:text-white'>
+          <div
+            className={`${logoFont.variable} text-xl font-bold text-gray-900 dark:text-white`}
+          >
             <Link href='/'>Neeraj Says</Link>
           </div>
           {/* Desktop Menu */}
