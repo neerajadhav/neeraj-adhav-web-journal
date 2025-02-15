@@ -76,7 +76,7 @@ const MastodonFeed = async () => {
   return (
     <Container>
       <PageSection
-        title='Blogs'
+        title='Feed'
         link={{
           href: PROFILE_URL,
           text: 'Visit Mastodon',
