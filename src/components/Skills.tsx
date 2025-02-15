@@ -63,7 +63,7 @@ export const Skills = () => {
   return (
     <div className='flex flex-col items-start border bg-white p-6 text-slate-950 dark:border dark:border-slate-800 dark:bg-slate-900/80 dark:text-zinc-300'>
       <div className='mb-6 flex w-full flex-row items-center justify-between'>
-        <h2 className='text-2xl font-semibold dark:text-zinc-100'>
+        <h2 className='text-xl font-semibold dark:text-zinc-100'>
           Tech Stack
         </h2>
         <Link

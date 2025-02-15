@@ -7,7 +7,7 @@ export const Projects = () => {
   return (
     <div className='flex w-full flex-col border bg-white p-6 dark:border dark:border-slate-800 dark:bg-slate-900'>
       <div className='mb-6 flex w-full flex-row items-center justify-between text-slate-950 dark:text-zinc-300'>
-        <h2 className='text-2xl font-semibold dark:text-zinc-100'>Projects</h2>
+        <h2 className='text-xl font-semibold dark:text-zinc-100'>Projects</h2>
         <Link
           href={'/projects'}
           className='hidden flex-row items-center gap-2 rounded-full border border-slate-400 px-4 py-2 text-sm font-medium text-slate-700 transition-all hover:bg-slate-700 hover:text-white md:flex dark:border-slate-600 dark:text-zinc-300 dark:hover:bg-slate-950'
