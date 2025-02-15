@@ -3,11 +3,9 @@ import {
   HomeIcon as HomeIconOutline,
   NewspaperIcon as NewspaperIconOutline,
 } from '@heroicons/react/24/outline';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { FaMastodon } from 'react-icons/fa';
-
 import { NewspaperIcon as NewspaperIconSolid } from '@heroicons/react/24/solid';
+import Link from 'next/link';
+import { FaMastodon } from 'react-icons/fa';
 import { Navbar } from './Navbar';
 
 const NAVLINKS = [
@@ -52,7 +50,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Menu */}
-          <Navbar />
+          <Navbar navLinks={NAVLINKS} />
         </div>
       </div>
     </header>
