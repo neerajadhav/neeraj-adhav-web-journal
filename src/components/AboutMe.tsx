@@ -59,7 +59,7 @@ export const AboutMe = () => {
           </div>
         )}
         <div className='flex w-full flex-1 flex-col items-start'>
-          <div className='flex w-full flex-col gap-3 p-3'>
+          <div className='flex w-full flex-col gap-3 p-3 lg:p-0'>
             <h1 className='w-full text-2xl text-slate-950 sm:text-3xl dark:text-zinc-100'>
               Hi there! I am{' '}
               <span className='font-extrabold'>{`${publication.author.name}!`}</span>
@@ -94,7 +94,7 @@ export const AboutMe = () => {
               )}
               <Link
                 href='mailto:neerajadhav@duck.com'
-                className='text-md flex w-1/2 items-center justify-center gap-2 rounded-full border border-slate-400 px-3 py-2 font-medium text-slate-700 transition-all hover:border-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-lg hover:shadow-blue-400 md:flex md:px-4 md:py-2 lg:w-1/6 dark:border-slate-600 dark:bg-white dark:text-black dark:hover:bg-white dark:hover:text-black'
+                className='text-md flex w-1/2 items-center justify-center gap-2 rounded-full border border-blue-400 bg-blue-400 px-3 py-2 font-medium text-white transition-all hover:border-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-lg hover:shadow-blue-400 md:flex md:px-4 md:py-2 lg:w-1/6 dark:border-slate-600 dark:bg-white dark:text-black dark:hover:bg-white dark:hover:text-black'
               >
                 <FaEnvelope className='h-4 w-4' /> Email
               </Link>

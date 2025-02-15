@@ -16,7 +16,7 @@ export const Skills = () => {
     {
       category: 'Programming Languages',
       icon: (
-        <div className='rounded-lg border bg-slate-200 p-2 dark:border-slate-600 dark:bg-slate-900'>
+        <div className='rounded-lg border bg-white p-2 dark:border-slate-600 dark:bg-slate-900'>
           <CodeBracketIcon className='h-5 w-5 text-blue-800 dark:text-green-500' />
         </div>
       ),
@@ -25,7 +25,7 @@ export const Skills = () => {
     {
       category: 'Frameworks',
       icon: (
-        <div className='rounded-lg border bg-slate-200 p-2 dark:border-slate-600 dark:bg-slate-900'>
+        <div className='rounded-lg border bg-white p-2 dark:border-slate-600 dark:bg-slate-900'>
           <ServerIcon className='h-5 w-5 text-blue-800 dark:text-green-500' />
         </div>
       ),
@@ -34,7 +34,7 @@ export const Skills = () => {
     {
       category: 'Libraries',
       icon: (
-        <div className='rounded-lg border bg-slate-200 p-2 dark:border-slate-600 dark:bg-slate-900'>
+        <div className='rounded-lg border bg-white p-2 dark:border-slate-600 dark:bg-slate-900'>
           <CpuChipIcon className='h-5 w-5 text-blue-800 dark:text-green-500' />
         </div>
       ),
@@ -43,7 +43,7 @@ export const Skills = () => {
     {
       category: 'Markup & Styling',
       icon: (
-        <div className='rounded-lg border bg-slate-200 p-2 dark:border-slate-600 dark:bg-slate-900'>
+        <div className='rounded-lg border bg-white p-2 dark:border-slate-600 dark:bg-slate-900'>
           <PaintBrushIcon className='h-5 w-5 text-blue-800 dark:text-green-500' />
         </div>
       ),
@@ -52,7 +52,7 @@ export const Skills = () => {
     {
       category: 'Favorite Linux Distros',
       icon: (
-        <div className='rounded-lg border bg-slate-200 p-2 dark:border-slate-600 dark:bg-slate-900'>
+        <div className='rounded-lg border bg-white p-2 dark:border-slate-600 dark:bg-slate-900'>
           <ComputerDesktopIcon className='h-5 w-5 text-blue-800 dark:text-green-500' />
         </div>
       ),
@@ -80,13 +80,13 @@ export const Skills = () => {
         {skills.map((skillSet, index) => (
           <div
             key={index}
-            className='group relative flex flex-col rounded-xl border bg-white/50 p-4 transition-all duration-300 dark:border-0 dark:bg-slate-800/80'
+            className='group relative flex flex-col rounded-xl border bg-slate-200/30 p-3 transition-all duration-300 dark:border-0 dark:bg-slate-800/80'
           >
             <div className='mb-3 flex items-center gap-3'>
               <div className='flex h-12 w-12 items-center justify-center rounded-xl border bg-white p-3 shadow-md dark:border-slate-600 dark:bg-slate-900'>
                 {skillSet.icon}
               </div>
-              <h3 className='text-lg font-semibold text-slate-900 dark:text-zinc-200'>
+              <h3 className='font-semibold text-slate-900 dark:text-zinc-200'>
                 {skillSet.category}
               </h3>
             </div>
