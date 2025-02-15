@@ -40,7 +40,7 @@ export default function Blog() {
 
   return (
     <Container>
-      <div className='bg-erd-min-h-80 flex flex-col gap-6 rounded-3xl bg-white p-4 text-slate-950 dark:border dark:border-slate-800 dark:bg-slate-900 dark:text-zinc-300'>
+      <div className='bg-erd-min-h-80 flex flex-col gap-6 border bg-white p-4 text-slate-950 dark:border dark:border-slate-800 dark:bg-slate-900 dark:text-zinc-300'>
         <PageHeader />
         <div className='flex w-full flex-row items-center justify-between border-b pb-4 dark:border-slate-800'>
           <h2 className='text-2xl font-semibold dark:text-zinc-100'>Blog</h2>

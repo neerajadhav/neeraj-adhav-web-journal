@@ -6,7 +6,7 @@ import PageHeader from '@/components/PageHeader';
 export default function Project() {
   return (
     <Container>
-      <div className='flex flex-col gap-5 rounded-3xl bg-white px-4 py-4 dark:border dark:border-slate-800 dark:bg-slate-900'>
+      <div className='flex flex-col gap-5 border bg-white px-4 py-4 dark:border dark:border-slate-800 dark:bg-slate-900'>
         <PageHeader />
         <div className='flex w-full flex-row items-center justify-between border-b pb-4 dark:border-slate-800'>
           <h2 className='text-2xl font-semibold dark:text-zinc-100'>
