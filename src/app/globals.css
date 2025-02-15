@@ -53,3 +53,21 @@
   background-color: transparent;
   color: #ddd;
 }
+
+@media print {
+  @page {
+    size: A4;
+    margin: 20mm 10mm;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  article {
+    /* margin: 20mm 10mm !important; */
+    padding: 0;
+    width: 100%;
+  }
+}

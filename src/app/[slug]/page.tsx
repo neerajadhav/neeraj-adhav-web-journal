@@ -13,6 +13,7 @@ import { notFound } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { usePostQuery } from '../../../generated/graphq';
 import { useEmbeds } from '../../../hooks/useEmbeds';
+import { PrinterIcon } from '@heroicons/react/24/outline';
 
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 
@@ -52,11 +53,14 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
     })();
   }, [data, post.id]);
 
-  if (post.hasLatexInPost) {
-    setTimeout(() => {
-      handleMathJax(true);
-    }, 500);
-  }
+  useEffect(() => {
+    if (post.hasLatexInPost) {
+      const timeoutId = setTimeout(() => {
+        handleMathJax(true);
+      }, 500);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [post.hasLatexInPost]);
 
   const coverImageSrc = post.coverImage?.url
     ? resizeImage(post.coverImage.url, {
@@ -66,10 +70,24 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
       })
     : undefined;
 
+  const handlePrint = () => {
+    window.print();
+  };
+
   return (
     <Container>
       <article className='mx-auto w-full max-w-4xl border bg-white p-4 dark:border dark:border-slate-800 dark:bg-slate-900 print:border-0 print:p-0 print:text-justify print:shadow-none'>
         <div className='mb-4 flex w-full flex-col gap-5 text-slate-950 dark:text-zinc-300'>
+          <div className='flex w-full flex-row items-center justify-end border-b pb-4 dark:border-slate-800 print:hidden'>
+            <div className='flex justify-end'>
+              <button
+                className='flex flex-row items-center gap-2 rounded-full border border-slate-400 px-4 py-2 text-sm font-medium text-slate-700 transition-all hover:bg-slate-700 hover:text-white dark:border-slate-600 dark:text-zinc-300 dark:hover:bg-slate-950'
+                onClick={handlePrint}
+              >
+                <PrinterIcon className='h-5 w-5' /> Print
+              </button>
+            </div>
+          </div>
           <h1 className='mb-2 w-full pt-4 text-center text-2xl font-bold md:text-3xl dark:text-zinc-100 print:text-3xl print:font-extrabold'>
             {post.title}
           </h1>
