@@ -59,7 +59,7 @@ export const AboutMe = () => {
           </div>
         )}
         <div className='flex w-full flex-1 flex-col items-start'>
-          <div className='flex w-full flex-col gap-3'>
+          <div className='flex w-full flex-col gap-3 p-3'>
             <h1 className='w-full text-2xl text-slate-950 sm:text-3xl dark:text-zinc-100'>
               Hi there! I am{' '}
               <span className='font-extrabold'>{`${publication.author.name}!`}</span>
