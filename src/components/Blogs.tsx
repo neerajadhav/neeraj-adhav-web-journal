@@ -25,12 +25,6 @@ export const Blogs = () => {
           text: 'All blogs',
           icon: <ArrowRightIcon className='h-4 w-4' />,
         }}
-        button={{
-          href: 'blog',
-          text: 'All blogs',
-          icon: <ArrowRightIcon className='h-5 w-5' />,
-          className: 'bg-gray-800 hover:bg-gray-900',
-        }}
       >
         {posts.length > 0 && (
           <div className='flex w-full flex-col gap-5 sm:flex-row sm:justify-center md:gap-8'>

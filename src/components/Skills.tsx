@@ -68,12 +68,6 @@ export const Skills = () => {
           text: 'Visit My GitHub',
           icon: <FaGithub className='h-4 w-4' />,
         }}
-        button={{
-          href: 'https://github.com/neerajadhav',
-          text: 'Visit My GitHub',
-          icon: <FaGithub className='h-5 w-5' />,
-          className: 'bg-gray-800 hover:bg-gray-900',
-        }}
       >
         {/* Skills Grid */}
         <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>

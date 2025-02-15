@@ -87,14 +87,14 @@ export const AboutMe = () => {
               {resumeLink && (
                 <Link
                   href={resumeLink}
-                  className='text-md flex w-1/2 items-center justify-center gap-2 rounded-full border border-slate-400 px-3 py-2 font-medium text-slate-700 transition-all hover:border-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-lg hover:shadow-blue-400 md:flex md:px-4 md:py-2 lg:w-1/6 dark:border-slate-600 dark:bg-white dark:text-black dark:hover:bg-white dark:hover:text-black'
+                  className='text-md flex w-1/2 items-center justify-center gap-2 rounded-full border border-slate-400 px-3 py-2 font-medium text-slate-700 transition-all hover:border-blue-500 hover:bg-blue-500 hover:text-white hover:shadow-lg hover:shadow-blue-400 md:flex md:px-4 md:py-2 lg:w-1/6 dark:border-slate-600 dark:bg-white dark:text-black dark:hover:bg-white dark:hover:text-black'
                 >
                   <FaFilePdf className='h-4 w-4' /> Resume
                 </Link>
               )}
               <Link
                 href='mailto:neerajadhav@duck.com'
-                className='text-md flex w-1/2 items-center justify-center gap-2 rounded-full border border-blue-400 bg-blue-400 px-3 py-2 font-medium text-white transition-all hover:border-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-lg hover:shadow-blue-400 md:flex md:px-4 md:py-2 lg:w-1/6 dark:border-slate-600 dark:bg-white dark:text-black dark:hover:bg-white dark:hover:text-black'
+                className='text-md flex w-1/2 items-center justify-center gap-2 rounded-full border border-blue-400 bg-blue-500 px-3 py-2 font-medium text-white transition-all hover:border-blue-500 hover:bg-blue-500 hover:text-white hover:shadow-lg hover:shadow-blue-400 md:flex md:px-4 md:py-2 lg:w-1/6 dark:border-slate-600 dark:bg-white dark:text-black dark:hover:bg-white dark:hover:text-black'
               >
                 <FaEnvelope className='h-4 w-4' /> Email
               </Link>
