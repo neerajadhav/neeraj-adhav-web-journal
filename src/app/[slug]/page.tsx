@@ -76,7 +76,7 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
 
   return (
     <Container>
-      <article className='mx-auto w-full max-w-4xl border bg-white p-4 dark:border dark:border-slate-800 dark:bg-slate-900 print:border-0 print:p-0 print:text-justify print:shadow-none'>
+      <article className='mx-auto w-full max-w-4xl border bg-white p-4 dark:border dark:border-slate-800 dark:bg-slate-900 print:border-0 print:p-0 text-justify print:shadow-none'>
         <div className='mb-4 flex w-full flex-col gap-3 text-slate-950 dark:text-zinc-300'>
           <div className='flex w-full items-center justify-end print:hidden'>
             <div className='flex justify-end'>
@@ -88,7 +88,7 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
               </button>
             </div>
           </div>
-          <h1 className='mb-2 w-full pt-4 text-center text-2xl font-bold md:text-3xl dark:text-zinc-100 print:text-3xl print:font-extrabold'>
+          <h1 className='mb-2 w-full pb-4 print:pt-6 text-center text-2xl font-bold md:text-3xl dark:text-zinc-100 print:text-3xl print:font-extrabold'>
             {post.title}
           </h1>
           {post.coverImage?.url && (
