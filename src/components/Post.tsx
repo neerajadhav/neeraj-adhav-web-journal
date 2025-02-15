@@ -1,10 +1,10 @@
+import { formatDate } from '@/utils/consts/format-date';
+import { getBlurDataUrl } from '@/utils/getBlurDataUrl';
+import { resizeImage } from '@/utils/image';
+import { ClockIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import Link from 'next/link';
-import { formatDate } from '@/utils/consts/format-date';
-import { ArrowTrendingUpIcon, ClockIcon } from '@heroicons/react/24/outline';
 import { ImagePlaceholder } from './ImagePlaceholder';
-import { resizeImage } from '@/utils/image';
-import { getBlurDataUrl } from '@/utils/getBlurDataUrl';
 
 interface PostProps {
   postInfo:
@@ -45,7 +45,7 @@ export const Post = (props: PostProps) => {
   return (
     <Link
       href={`/${postInfo.slug}`}
-      className={`flex  ${props.first ? 'w-full lg:w-2/3' : 'w-full'} flex-col items-center gap-4 rounded-xl border border-transparent px-2 py-2 hover:border-zinc-200 dark:hover:border-gray-700`}
+      className={`flex ${props.first ? 'w-full lg:w-2/3' : 'w-full'} flex-col items-center gap-4 rounded-xl hover:opacity-90`}
     >
       <div className='flex aspect-video w-full overflow-hidden rounded-lg'>
         {postInfo.coverImage?.url ? (
@@ -73,10 +73,10 @@ export const Post = (props: PostProps) => {
             <ClockIcon className='h-4 w-4' />
             {formatDate(postInfo.publishedAt)}
           </p>
-          <p className='flex flex-row items-center gap-2'>
+          {/* <p className='flex flex-row items-center gap-2'>
             <ArrowTrendingUpIcon className='h-4 w-4' />
             {postInfo.views}
-          </p>
+          </p> */}
         </div>
       </div>
     </Link>

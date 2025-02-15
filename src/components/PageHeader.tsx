@@ -25,11 +25,11 @@ const NAVLINKS = [
     tooltip: 'Home',
   },
   {
-    name: 'Mastodon',
+    name: 'My Feed',
     href: '/mastodon',
     icon: <FaMastodon className='h-6 w-6 lg:h-5 lg:w-5' />,
     activeIcon: <FaMastodon className='h-6 w-6 lg:h-5 lg:w-5' />,
-    tooltip: 'Mastodon',
+    tooltip: 'My Feed',
   },
   {
     name: 'Blog',

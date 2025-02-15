@@ -81,14 +81,14 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
       )}
 
       {/* Post Metadata */}
-      <div className='mt-3 flex justify-between text-sm text-gray-500 dark:text-gray-400'>
+      <div className='mt-3 flex w-full justify-between text-sm text-gray-500 dark:text-gray-400'>
         <a
           href={post.url}
           target='_blank'
           rel='noopener noreferrer'
-          className='text-blue-500 hover:underline'
+          className='w-full text-end text-blue-500 hover:underline'
         >
-          Join Thread
+          Open Thread
         </a>
       </div>
     </div>
