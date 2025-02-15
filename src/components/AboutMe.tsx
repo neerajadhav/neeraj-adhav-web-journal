@@ -35,30 +35,30 @@ export const AboutMe = () => {
               height={1000}
               className='flex-1 rounded-full'
             />
+            <div className='mb-4 flex flex-col items-center justify-between gap-2 sm:flex-row lg:gap-0'>
+              {isAvailableLink && (
+                <a
+                  href={isAvailableLink}
+                  target='_blank'
+                  className='hidden rounded-2xl bg-green-200 px-3 py-1 text-sm text-green-700 md:block'
+                >
+                  #OpenToWork
+                </a>
+              )}
+              {isAvailableLink && (
+                <a
+                  href={isAvailableLink}
+                  target='_blank'
+                  className='block rounded-2xl bg-green-200 px-3 py-1 text-sm text-green-700 md:hidden'
+                >
+                  #OpenToWork
+                </a>
+              )}
+            </div>
             <SocialLinks />
           </div>
         )}
         <div className='flex w-full flex-1 flex-col items-start'>
-          <div className='mb-4 flex flex-col items-center justify-between gap-2 sm:flex-row lg:gap-0'>
-            {isAvailableLink && (
-              <a
-                href={isAvailableLink}
-                target='_blank'
-                className='hidden rounded-2xl bg-green-200 px-3 py-1 text-sm text-green-700 md:block'
-              >
-                #OpenToWork
-              </a>
-            )}
-            {isAvailableLink && (
-              <a
-                href={isAvailableLink}
-                target='_blank'
-                className='block rounded-2xl bg-green-200 px-3 py-1 text-sm text-green-700 md:hidden'
-              >
-                #OpenToWork
-              </a>
-            )}
-          </div>
           <div className='flex w-full flex-col gap-3'>
             <h1 className='w-full text-2xl text-slate-950 sm:text-3xl dark:text-zinc-100'>
               Hi there! I am{' '}
