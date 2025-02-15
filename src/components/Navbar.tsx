@@ -32,33 +32,36 @@ export const Navbar = ({ navLinks }: NavbarProps) => {
   };
 
   return (
-    <div className='fixed bottom-0 z-20 flex w-full left-0 justify-center lg:static lg:bottom-5 lg:w-auto print:hidden'>
-      <nav className='flex w-full flex-row justify-center gap-3 border border-zinc-100 bg-slate-100 px-3 py-2 md:gap-5 lg:w-auto lg:rounded-full lg:border-0 lg:bg-transparent dark:border-slate-800 dark:bg-slate-900'>
+    <div className='fixed bottom-0 left-0 z-20 flex w-full justify-center lg:static lg:bottom-5 lg:w-auto print:hidden'>
+      <nav className='flex w-full flex-row justify-center gap-3 border-2 border-t border-zinc-100 bg-white py-2 md:gap-5 lg:w-auto lg:gap-2 lg:rounded-full lg:border-0 lg:bg-transparent dark:border-slate-800 dark:bg-slate-900'>
         {navLinks.map((navlink) => (
           <Link
             href={navlink.href}
             key={navlink.name}
             passHref
             onClick={() => handleNavigation(navlink.href)}
-            className={`relative rounded-full p-3 shadow-sm dark:text-slate-400 dark:hover:bg-slate-50/10 ${
+            className={`relative rounded-full p-3 shadow-sm lg:rounded-lg lg:px-3 lg:py-2 lg:shadow-none dark:text-slate-400 dark:hover:bg-slate-50/10 ${
               path === navlink.href
-                ? 'bg-slate-300 dark:bg-slate-50/10 dark:text-slate-50'
-                : 'bg-white dark:bg-slate-950 dark:text-slate-400'
+                ? 'bg-slate-200 hover:bg-slate-200 dark:bg-slate-50/10 dark:text-slate-50'
+                : 'bg-white dark:bg-transparent dark:text-slate-400'
             }`}
             title={navlink.tooltip}
           >
-            {loadingLink === navlink.href ? (
-              <div className='flex items-center justify-center'>
-                <div className='animate-spin rounded-full'>
-                  <ArrowPathIcon className='h-6 w-6' />
+            <div className='flex items-center gap-2 lg:text-sm'>
+              {loadingLink === navlink.href ? (
+                <div className='flex items-center justify-center'>
+                  <div className='animate-spin rounded-full'>
+                    <ArrowPathIcon className='h-6 w-6 lg:h-5 lg:w-5' />
+                  </div>
                 </div>
-              </div>
-            ) : (
-              <>
-                {path === navlink.href ? navlink.activeIcon : navlink.icon}
-                <span className='sr-only'>{navlink.tooltip}</span>
-              </>
-            )}
+              ) : (
+                <>
+                  {path === navlink.href ? navlink.activeIcon : navlink.icon}
+                  <span className='sr-only'>{navlink.tooltip}</span>
+                </>
+              )}
+              <div className='hidden lg:block'>{navlink.tooltip}</div>
+            </div>
           </Link>
         ))}
       </nav>
