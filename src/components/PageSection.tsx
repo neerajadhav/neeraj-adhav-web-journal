@@ -20,7 +20,6 @@ const PageSection: React.FC<PageSectionProps> = ({ title, children, link }) => {
         {link && (
           <Link
             href={link.href}
-            target='_blank'
             className='flex items-center gap-2 rounded-full text-sm font-medium text-slate-700 transition-all hover:text-blue-500 md:flex dark:border-slate-600 dark:text-zinc-300'
           >
             {link.text} {link.icon ?? <ArrowRightIcon className='h-4 w-4' />}
