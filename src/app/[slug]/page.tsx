@@ -77,14 +77,14 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
   return (
     <Container>
       <article className='mx-auto w-full max-w-4xl border bg-white p-4 dark:border dark:border-slate-800 dark:bg-slate-900 print:border-0 print:p-0 print:text-justify print:shadow-none'>
-        <div className='mb-4 flex w-full flex-col gap-5 text-slate-950 dark:text-zinc-300'>
-          <div className='flex w-full flex-row items-center justify-end border-b pb-4 dark:border-slate-800 print:hidden'>
+        <div className='mb-4 flex w-full flex-col gap-3 text-slate-950 dark:text-zinc-300'>
+          <div className='flex w-full items-center justify-end print:hidden'>
             <div className='flex justify-end'>
               <button
-                className='flex flex-row items-center gap-2 rounded-full border border-slate-400 px-4 py-2 text-sm font-medium text-slate-700 transition-all hover:bg-slate-700 hover:text-white dark:border-slate-600 dark:text-zinc-300 dark:hover:bg-slate-950'
+                className='flex flex-row items-center gap-2 rounded-full border-slate-400 p-2 text-sm font-medium text-slate-700 transition-all hover:bg-slate-700 hover:text-white dark:border-slate-600 dark:text-zinc-300 dark:hover:bg-slate-950'
                 onClick={handlePrint}
               >
-                <PrinterIcon className='h-5 w-5' /> Print
+                <PrinterIcon className='h-5 w-5' />
               </button>
             </div>
           </div>
