@@ -5,7 +5,7 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 export const Projects = () => {
   return (
-    <div className='flex w-full flex-col rounded-3xl bg-white p-6 shadow-lg dark:border dark:border-slate-800 dark:bg-slate-900'>
+    <div className='flex w-full flex-col rounded-3xl border bg-white p-6 shadow-lg dark:border dark:border-slate-800 dark:bg-slate-900'>
       <div className='mb-6 flex w-full flex-row items-center justify-between text-slate-950 dark:text-zinc-300'>
         <h2 className='text-2xl font-semibold dark:text-zinc-100'>Projects</h2>
         <Link

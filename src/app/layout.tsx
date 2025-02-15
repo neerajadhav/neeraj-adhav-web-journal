@@ -109,7 +109,7 @@ export default async function RootLayout({
 
   return (
     <html lang='en'>
-      <body className={`${ubuntu.className} bg-slate-300 dark:bg-slate-950`}>
+      <body className={`${ubuntu.className} bg-white dark:bg-slate-950`}>
         <ReactQueryProvider>
           <HydrationBoundary state={dehydrate(queryClient)}>
             <a
