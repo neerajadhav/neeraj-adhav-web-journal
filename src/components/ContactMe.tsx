@@ -11,7 +11,7 @@ export const ContactMe = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='mb-20 flex w-full flex-col items-center gap-5 rounded-3xl border bg-white p-6 text-slate-950 shadow-lg md:p-8 dark:border dark:border-slate-800 dark:bg-slate-900 dark:text-zinc-300 print:hidden'>
+    <footer className='mb-20 flex w-full flex-col items-center gap-5 border bg-white p-6 text-slate-950 md:p-8 dark:border dark:border-slate-800 dark:bg-slate-900 dark:text-zinc-300 print:hidden'>
       <h2 className='text-xl font-semibold lg:text-2xl'>
         Have a Project Idea?
       </h2>

@@ -17,7 +17,7 @@ export const Blogs = () => {
   const posts = data.publication.posts.edges;
 
   return (
-    <div className='flex min-h-80 w-full flex-col items-start rounded-3xl bg-white border p-6 text-slate-950 shadow-lg dark:border dark:border-slate-800 dark:bg-slate-900 dark:text-zinc-300'>
+    <div className='flex min-h-80 w-full flex-col items-start bg-white border p-6 text-slate-950 dark:border dark:border-slate-800 dark:bg-slate-900 dark:text-zinc-300'>
       <div className='mb-6 flex w-full flex-row items-center justify-between'>
         <h2 className='text-2xl font-semibold dark:text-zinc-100'>Blogs</h2>
         <Link
