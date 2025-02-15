@@ -75,8 +75,8 @@ const MastodonFeed = async () => {
 
   return (
     <Container>
-      <div className='flex flex-col gap-5 border bg-white px-4 py-4 dark:border dark:border-slate-800 dark:bg-slate-900'>
-        <div className='flex w-full flex-row items-center justify-between border-b dark:border-slate-800 pb-4'>
+      <div className='flex flex-col gap-5 border bg-white dark:border dark:border-slate-800 dark:bg-slate-900'>
+        <div className='flex w-full flex-row items-center justify-between border-b p-4 dark:border-slate-800'>
           <h2 className='text-2xl font-semibold dark:text-zinc-100'>Feed</h2>
           <a
             href={PROFILE_URL}
@@ -87,7 +87,7 @@ const MastodonFeed = async () => {
             Visit Mastodon <ArrowTopRightOnSquareIcon className='h-4 w-4' />
           </a>
         </div>
-        <div className='mx-auto flex flex-col gap-2'>
+        <div className='mx-auto px-4 lg:pb-4 flex flex-col gap-2'>
           {posts.length > 0 ? (
             <>
               {posts.map((post: MastodonPostProps['post']) => (
@@ -103,7 +103,7 @@ const MastodonFeed = async () => {
         <Link
           href={PROFILE_URL}
           target='_blank'
-          className='flex flex-row items-center gap-2 self-center rounded-full bg-blue-600 px-5 py-2 text-sm font-medium text-white shadow-md transition-all hover:bg-blue-700 sm:text-base md:hidden'
+          className='mb-4 flex flex-row items-center gap-2 self-center rounded-full bg-blue-600 px-5 py-2 text-sm font-medium text-white shadow-md transition-all hover:bg-blue-700 sm:text-base md:hidden'
         >
           Visit Mastodon <ArrowTopRightOnSquareIcon className='h-4 w-4' />
         </Link>
