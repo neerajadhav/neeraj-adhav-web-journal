@@ -1,7 +1,7 @@
 import { ContactMe } from '@/components/ContactMe';
 import { Container } from '@/components/Container';
+import PageSection from '@/components/PageSection';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
 import MastodonPost from './MastodonPost';
 
 const accessToken = process.env.NEXT_MASTODON_ACCESS_TOKEN as string;
@@ -75,19 +75,21 @@ const MastodonFeed = async () => {
 
   return (
     <Container>
-      <div className='flex flex-col gap-5 border bg-white dark:border dark:border-slate-800 dark:bg-slate-900'>
-        <div className='flex w-full flex-row items-center justify-between border-b px-4 py-1 lg:py-2 dark:border-slate-800'>
-          <h2 className='lg:text-xl font-semibold dark:text-zinc-100'>Feed</h2>
-          <a
-            href={PROFILE_URL}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='hidden flex-row items-center gap-2 rounded-full border border-slate-400 px-4 py-2 text-sm font-medium text-slate-700 transition-all hover:bg-slate-700 hover:text-white md:flex dark:border-slate-600 dark:text-zinc-300 dark:hover:bg-slate-950'
-          >
-            Visit Mastodon <ArrowTopRightOnSquareIcon className='h-4 w-4' />
-          </a>
-        </div>
-        <div className='mx-auto px-4 lg:pb-4 flex flex-col gap-2'>
+      <PageSection
+        title='Blogs'
+        link={{
+          href: PROFILE_URL,
+          text: 'Visit Mastodon',
+          icon: <ArrowTopRightOnSquareIcon className='h-4 w-4' />,
+        }}
+        button={{
+          href: PROFILE_URL,
+          text: 'Visit Mastodon',
+          icon: <ArrowTopRightOnSquareIcon className='h-5 w-5' />,
+          className: 'bg-gray-800 hover:bg-gray-900',
+        }}
+      >
+        <div className='mx-auto flex flex-col gap-2'>
           {posts.length > 0 ? (
             <>
               {posts.map((post: MastodonPostProps['post']) => (
@@ -100,14 +102,7 @@ const MastodonFeed = async () => {
             </p>
           )}
         </div>
-        <Link
-          href={PROFILE_URL}
-          target='_blank'
-          className='mb-4 flex flex-row items-center gap-2 self-center rounded-full bg-blue-600 px-5 py-2 text-sm font-medium text-white shadow-md transition-all hover:bg-blue-700 sm:text-base md:hidden'
-        >
-          Visit Mastodon <ArrowTopRightOnSquareIcon className='h-4 w-4' />
-        </Link>
-      </div>
+      </PageSection>
       <ContactMe />
     </Container>
   );

@@ -1,6 +1,7 @@
 'use client';
 import { ContactMe } from '@/components/ContactMe';
 import { Container } from '@/components/Container';
+import PageSection from '@/components/PageSection';
 import { Post } from '@/components/Post';
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import {
@@ -39,17 +40,14 @@ export default function Blog() {
 
   return (
     <Container>
-      <div className='bg-erd-min-h-80 flex flex-col border bg-white text-slate-950 dark:border dark:border-slate-800 dark:bg-slate-900 dark:text-zinc-300'>
-      <div className='flex w-full flex-row items-center justify-between border-b px-4 py-1 lg:py-2 dark:border-slate-800'>
-      <h2 className='lg:text-xl font-semibold dark:text-zinc-100'>Blog</h2>
-        </div>
-        {posts.length === 0 && (
-          <p className='flex w-full flex-1 items-center justify-center gap-3 text-lg font-semibold'>
-            <ExclamationTriangleIcon className='h-8 w-8' />
-            No posts found
-          </p>
-        )}
-        <div className='flex flex-col gap-4 p-4'>
+      {posts.length === 0 && (
+        <p className='flex w-full flex-1 items-center justify-center gap-3 text-lg font-semibold'>
+          <ExclamationTriangleIcon className='h-8 w-8' />
+          No posts found
+        </p>
+      )}
+      <PageSection title='Blog'>
+        <div className='flex flex-col gap-4'>
           {posts.length > 0 && (
             <>
               <div className='flex flex-col gap-4 lg:flex-row'>
@@ -85,7 +83,8 @@ export default function Blog() {
             </>
           )}
         </div>
-      </div>
+      </PageSection>
+
       <ContactMe />
     </Container>
   );
