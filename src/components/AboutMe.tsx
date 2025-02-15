@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaEnvelope, FaFilePdf, FaSuitcase } from 'react-icons/fa';
 import { usePublicationQuery } from '../../generated/graphq';
-import PageHeader from './PageHeader';
 import { SocialLinks } from './SocialLinks';
 
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
@@ -26,7 +25,6 @@ export const AboutMe = () => {
 
   return (
     <div className='flex w-full flex-col items-center gap-7 border bg-white p-4 dark:border dark:border-slate-800 dark:bg-slate-900'>
-      <PageHeader />
       <div className='flex w-full flex-col items-center gap-7 lg:flex-row'>
         {publication.author.profilePicture && (
           <div className='flex w-1/2 flex-col items-center gap-3 overflow-hidden rounded-xl p-3 sm:max-w-52'>

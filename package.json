@@ -28,6 +28,7 @@
     "graphql": "^16.10.0",
     "javascript-time-ago": "^2.5.11",
     "js-base64": "^3.7.7",
+    "lucide-react": "^0.475.0",
     "marked": "^12.0.2",
     "next": "14.2.3",
     "next-sitemap": "^4.2.3",

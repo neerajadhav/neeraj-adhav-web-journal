@@ -1,6 +1,5 @@
 import { ContactMe } from '@/components/ContactMe';
 import { Container } from '@/components/Container';
-import PageHeader from '@/components/PageHeader';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import MastodonPost from './MastodonPost';
@@ -77,7 +76,6 @@ const MastodonFeed = async () => {
   return (
     <Container>
       <div className='flex flex-col gap-5 border bg-white px-4 py-4 dark:border dark:border-slate-800 dark:bg-slate-900'>
-        <PageHeader />
         <div className='flex w-full flex-row items-center justify-between border-b dark:border-slate-800 pb-4'>
           <h2 className='text-2xl font-semibold dark:text-zinc-100'>Feed</h2>
           <a

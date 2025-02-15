@@ -1,13 +1,11 @@
+import { ContactMe } from '@/components/ContactMe';
 import { Container } from '@/components/Container';
 import { SingleProject } from '@/components/SingleProject';
-import { ContactMe } from '@/components/ContactMe';
 import { PROJECTS } from '@/utils/consts/index';
-import PageHeader from '@/components/PageHeader';
 export default function Project() {
   return (
     <Container>
       <div className='flex flex-col gap-5 border bg-white px-4 py-4 dark:border dark:border-slate-800 dark:bg-slate-900'>
-        <PageHeader />
         <div className='flex w-full flex-row items-center justify-between border-b pb-4 dark:border-slate-800'>
           <h2 className='text-2xl font-semibold dark:text-zinc-100'>
             Projects
