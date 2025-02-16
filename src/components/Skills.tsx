@@ -21,7 +21,7 @@ interface SkillItemProps {
 const SkillItem: React.FC<SkillItemProps> = ({ icon, category, skills }) => (
   <div className='group relative flex flex-col rounded-xl border bg-gray-200/30 p-3 transition-all duration-300 dark:border-0 dark:bg-gray-800/80'>
     <div className='mb-3 flex items-center gap-3'>
-      <div className='flex h-10 w-10 items-center justify-center rounded-lg border bg-white dark:border-gray-600 dark:bg-gray-900'>
+      <div className='flex h-9 w-9 items-center justify-center rounded-lg border bg-white dark:border-gray-600 dark:bg-gray-900'>
         {icon}
       </div>
       <h3 className='font-semibold text-gray-900 dark:text-zinc-200'>
