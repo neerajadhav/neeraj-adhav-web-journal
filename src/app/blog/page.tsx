@@ -46,41 +46,41 @@ export default function Blog() {
           No posts found
         </p>
       )}
-      <PageSection title='Blog'>
+      <PageSection title='Latest Articles'>
         <div className='flex flex-col gap-4'>
           {posts.length > 0 && (
-            <>
-              <div className='flex flex-col gap-4 lg:flex-row'>
-                {posts.length > 0 && <Post postInfo={posts[0]} first={true} />}
-                <div className='flex flex-col gap-6 lg:w-1/3'>
-                  {posts.length > 0 && <Post postInfo={posts[1]} />}
-                  {posts.length > 0 && <Post postInfo={posts[2]} />}
-                </div>
+            <div className='flex flex-col gap-4 lg:flex-row'>
+              {posts.length > 0 && <Post postInfo={posts[0]} first={true} />}
+              <div className='flex flex-col gap-6 lg:w-1/3'>
+                {posts.length > 0 && <Post postInfo={posts[1]} />}
+                {posts.length > 0 && <Post postInfo={posts[2]} />}
               </div>
-              <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
-                {posts.slice(3).map((post, index) => (
-                  <div key={index + 1} className='mb-4 w-full'>
-                    <Post postInfo={post} />
-                  </div>
-                ))}
-              </div>
-              <div className='flex justify-center px-5'>
-                {hasNextPage && (
-                  <button
-                    onClick={() => fetchNextPage()}
-                    disabled={isFetchingNextPage}
-                    className='mt-5 flex-row items-center gap-2 rounded-full border border-gray-400 px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-700 hover:text-white dark:border-gray-600 dark:text-zinc-300 dark:hover:bg-gray-950'
-                  >
-                    {isFetchingNextPage ? 'Loading...' : 'Load More'}
-                  </button>
-                )}
-                {!hasNextPage && (
-                  <p className='mt-3 text-center text-gray-500'>
-                    You have reached the end
-                  </p>
-                )}
-              </div>
-            </>
+            </div>
+          )}
+        </div>
+      </PageSection>
+      <PageSection title='Archive'>
+        <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+          {posts.slice(3).map((post, index) => (
+            <div key={index + 1} className='mb-4 w-full'>
+              <Post postInfo={post} />
+            </div>
+          ))}
+        </div>
+        <div className='flex justify-center px-5'>
+          {hasNextPage && (
+            <button
+              onClick={() => fetchNextPage()}
+              disabled={isFetchingNextPage}
+              className='mt-5 flex-row items-center gap-2 rounded-full border border-gray-400 px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-700 hover:text-white dark:border-gray-600 dark:text-zinc-300 dark:hover:bg-gray-950'
+            >
+              {isFetchingNextPage ? 'Loading...' : 'Load More'}
+            </button>
+          )}
+          {!hasNextPage && (
+            <p className='mt-3 text-center text-gray-500'>
+              You have reached the end
+            </p>
           )}
         </div>
       </PageSection>
