@@ -12,11 +12,10 @@ This is my personal portfolio and blog website built using **Next.js** and integ
 
 ## 📸 Screenshots
 ### 🏠 Homepage
-![full1](https://github.com/user-attachments/assets/06826dea-fa4d-4721-8273-dea2aef6e413)
+![1](https://github.com/user-attachments/assets/491b4bbc-a03b-41d9-afd8-d483222794a7)
 
 ### 📖 Blog Page
-![full2](https://github.com/user-attachments/assets/7a2fe03a-f5f0-4059-86fa-2bef14caf065)
-
+![2](https://github.com/user-attachments/assets/afdcfc8c-c2e1-4629-a397-86a77328ac4b)
 
 ---
 
