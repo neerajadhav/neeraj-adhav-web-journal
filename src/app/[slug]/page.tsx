@@ -86,9 +86,8 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
         extraButtons={extrabtns()}
         isBlogArticle={true}
       >
-        <article className='mx-auto w-full max-w-4xl p-4 text-justify'>
-          <div className='mb-4 flex w-full flex-col gap-3 text-gray-950 dark:text-zinc-300'>
-            <div className='flex w-full items-center justify-end print:hidden'></div>
+        <article className='p-4 text-justify'>
+          <div className='mb-4 flex flex-col gap-3 text-gray-950 dark:text-zinc-300'>
             <h1 className='mb-2 w-full pb-4 text-center text-2xl font-bold md:text-3xl dark:text-zinc-100 print:pt-6 print:text-3xl print:font-extrabold'>
               {post.title}
             </h1>
