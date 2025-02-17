@@ -60,7 +60,7 @@ const Header = () => {
           >
             <Link
               href='/'
-              className='flex items-center gap-2 text-2xl font-bold text-gray-700 dark:text-gray-300'
+              className='flex items-center gap-2 text-xl font-bold text-gray-700 dark:text-gray-300'
             >
               {/* <img src="/Fs.png" alt="Logo" className='w-8 h-8' /> */}
               Neeraj Says
