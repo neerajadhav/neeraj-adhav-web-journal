@@ -15,7 +15,7 @@ interface PageSectionProps {
 const PageSection: React.FC<PageSectionProps> = ({ title, children, link }) => {
   return (
     <section className='flex flex-col items-start bg-white text-gray-950 lg:border-x dark:border dark:border-t-0 dark:border-gray-800 dark:bg-gray-900/80 dark:text-zinc-300'>
-      <div className='sticky top-[0px] z-30 flex w-full flex-row items-center justify-between border-y bg-white px-4 py-3 lg:top-[64px] dark:border-gray-800 dark:bg-gray-900'>
+      <div className='sticky top-[-0.1px] z-30 flex w-full flex-row items-center justify-between border-y bg-white px-4 py-3 lg:top-[64px] dark:border-gray-800 dark:bg-gray-900'>
         <h2 className='font-semibold dark:text-zinc-100'>{title}</h2>
         {link && (
           <Link
