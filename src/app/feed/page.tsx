@@ -75,7 +75,7 @@ const MastodonFeed = async () => {
 
   return (
     <Container>
-      <div className='max-w-lg mx-auto'>
+      <div className='w-full mx-auto'>
         <PageSection
           title='My Feed'
           link={{
