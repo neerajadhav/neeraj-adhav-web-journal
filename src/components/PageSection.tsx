@@ -46,7 +46,7 @@ const PageSection: React.FC<PageSectionProps> = ({
         )}
         {extraButtons}
       </div>
-      <div className='mx-auto p-4'>{children}</div>
+      <div className='mx-auto p-4 w-full'>{children}</div>
     </section>
   );
 };
