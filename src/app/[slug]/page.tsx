@@ -94,7 +94,7 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              filter: 'blur(400px)',
+              filter: 'blur(300px)',
             }}
           ></div>
           <div className='relative z-20 mx-auto max-w-3xl pt-4 text-justify'>
