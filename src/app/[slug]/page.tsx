@@ -86,48 +86,60 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
         extraButtons={extrabtns()}
         isBlogArticle={true}
       >
-        <article className='pt-4 text-justify'>
-          <div className='mb-4 flex flex-col gap-3 text-gray-950 dark:text-zinc-300'>
-            <h1 className='mb-2 w-full pb-4 text-center text-2xl font-bold md:text-3xl dark:text-zinc-100 print:pt-6 print:text-3xl print:font-extrabold'>
-              {post.title}
-            </h1>
-            {post.coverImage?.url && (
-              <CoverImage
-                title={post.title}
-                priority={true}
-                src={coverImageSrc}
-              />
-            )}
-            <div className='flex w-full flex-wrap items-center justify-center text-sm italic'>
-              Article by&nbsp;{' '}
-              <span className='font-medium'>{post.author.name}</span> &nbsp;
-              &#x2022; &nbsp;Published on&nbsp;{' '}
-              <time className='font-medium'>
-                {formatDate(post.publishedAt)}
-              </time>
+        <article className='relative'>
+          <div
+            className='absolute z-10 h-[20rem] w-full'
+            style={{
+              backgroundImage: `url(${coverImageSrc})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              filter: 'blur(400px)',
+            }}
+          ></div>
+          <div className='relative z-20 mx-auto max-w-3xl pt-4 text-justify'>
+            <div className='mb-4 flex flex-col gap-3 text-gray-950 dark:text-zinc-300'>
+              <h1 className='mb-2 w-full pb-4 text-center text-2xl font-bold md:text-3xl dark:text-zinc-100 print:pt-6 print:text-3xl print:font-extrabold'>
+                {post.title}
+              </h1>
+              {post.coverImage?.url && (
+                <CoverImage
+                  title={post.title}
+                  priority={true}
+                  src={coverImageSrc}
+                />
+              )}
+              <div className='flex w-full flex-wrap items-center justify-center text-sm italic'>
+                Article by&nbsp;{' '}
+                <span className='font-medium'>{post.author.name}</span> &nbsp;
+                &#x2022; &nbsp;Published on&nbsp;{' '}
+                <time className='font-medium'>
+                  {formatDate(post.publishedAt)}
+                </time>
+              </div>
             </div>
-          </div>
 
-          <hr className='mb-6 h-px border-0 bg-zinc-200 dark:bg-gray-800' />
-          {post.content.markdown && (
-            <MarkdownToHtml contentMarkdown={post.content.markdown} />
-          )}
-          <hr className='mb-4 h-px border-0 bg-zinc-200 dark:bg-gray-800' />
-          {post.tags?.length && (
-            <div className='flex w-full flex-wrap gap-3 text-gray-950 dark:text-zinc-300 print:hidden'>
-              {post.tags.map((tag) => (
-                <li key={tag.id} className='list-none'>
-                  <a
-                    href={`//hashnode.com/n/${tag.slug}`}
-                    target='_blank'
-                    className='rounded-full border border-zinc-100 px-3 py-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-gray-800 dark:hover:border-gray-700 dark:hover:bg-gray-950'
-                  >
-                    #{tag.name}
-                  </a>
-                </li>
-              ))}
-            </div>
-          )}
+            <hr className='mb-6 h-px border-0 bg-zinc-200 dark:bg-gray-800' />
+            {post.content.markdown && (
+              <MarkdownToHtml contentMarkdown={post.content.markdown} />
+            )}
+            <hr className='mb-4 h-px border-0 bg-zinc-200 dark:bg-gray-800' />
+            {post.tags?.length && (
+              <div className='flex w-full flex-wrap gap-3 text-gray-950 dark:text-zinc-300 print:hidden'>
+                {post.tags.map((tag) => (
+                  <li key={tag.id} className='list-none'>
+                    <a
+                      href={`//hashnode.com/n/${tag.slug}`}
+                      target='_blank'
+                      className='rounded-full border border-zinc-100 px-3 py-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-gray-800 dark:hover:border-gray-700 dark:hover:bg-gray-950'
+                    >
+                      #{tag.name}
+                    </a>
+                  </li>
+                ))}
+              </div>
+            )}
+          </div>
         </article>
       </PageSection>
       <ContactMe />
