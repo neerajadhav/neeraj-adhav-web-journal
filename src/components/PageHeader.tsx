@@ -4,13 +4,13 @@ import {
   NewspaperIcon as NewspaperIconOutline,
 } from '@heroicons/react/24/outline';
 import { NewspaperIcon as NewspaperIconSolid } from '@heroicons/react/24/solid';
-import { Bona_Nova, Cookie, Lavishly_Yours, Lobster, Oleo_Script_Swash_Caps, Orbitron, Parisienne, Pattaya, Rochester, Sacramento, Saira_Stencil_One, Tangerine, Teko, Tomorrow } from 'next/font/google';
+import { Pattaya } from 'next/font/google';
 import Link from 'next/link';
 import { FaMastodon } from 'react-icons/fa';
 import { Navbar } from './Navbar';
 
 // Load the Google Font using next/font
-const logoFont = Sacramento({
+const logoFont = Pattaya({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-roboto',
@@ -58,7 +58,7 @@ const Header = () => {
           <div
             className={`${logoFont.className} text-gray-900 dark:text-white`}
           >
-            <Link href='/' className='flex items-center gap-2 text-3xl text-gray-700 font-semibold dark:text-gray-300'>
+            <Link href='/' className='flex items-center gap-2 text-2xl text-gray-700 dark:text-gray-300'>
               {/* <img src="/Fs.png" alt="Logo" className='w-8 h-8' /> */}
               Neeraj Says
             </Link>
