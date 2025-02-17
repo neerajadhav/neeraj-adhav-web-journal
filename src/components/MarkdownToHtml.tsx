@@ -12,7 +12,7 @@ const _MarkdownToHtml = ({ contentMarkdown }: Props) => {
 
   return (
     <div
-      className='hashnode-content-style mx-auto w-full md:max-w-screen-md'
+      className='hashnode-content-style mx-auto w-full md:max-w-screen-md dark:text-blue-100'
       dangerouslySetInnerHTML={{ __html: content }}
     />
   );
