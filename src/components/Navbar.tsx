@@ -32,8 +32,8 @@ export const Navbar = ({ navLinks }: NavbarProps) => {
   };
 
   return (
-    <div className='fixed bottom-0 left-0 z-20 flex w-full justify-center border-t border-zinc-100 lg:static lg:bottom-5 lg:w-auto lg:border-0 dark:border-gray-800 print:hidden'>
-      <nav className='flex w-full flex-row justify-center gap-3 bg-white py-2 md:gap-5 lg:w-auto lg:gap-2 lg:rounded-full lg:bg-transparent dark:bg-gray-900'>
+    <div className='fixed bottom-0 left-0 z-20 flex w-full justify-center border-t border-zinc-100 lg:static lg:bottom-5 lg:w-auto lg:border-0 dark:border-gray-900 print:hidden'>
+      <nav className='flex w-full flex-row justify-center gap-3 bg-white py-2 md:gap-5 lg:w-auto lg:gap-2 lg:rounded-full lg:bg-transparent dark:lg:bg-transparent dark:bg-black'>
         {navLinks.map((navlink) => (
           <Link
             href={navlink.href}

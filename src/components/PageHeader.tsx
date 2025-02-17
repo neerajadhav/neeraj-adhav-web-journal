@@ -50,7 +50,7 @@ const NAVLINKS = [
 const Header = () => {
   return (
     <header
-      className={`sticky top-0 z-50 mb-2 w-full border-b bg-white dark:border-gray-800 dark:bg-gray-900 print:border-0 print:border-b`}
+      className={`sticky top-0 z-50 mb-2 w-full border-b bg-white dark:border-gray-900 dark:bg-black print:border-0 print:border-b`}
     >
       <div className='mx-auto max-w-[1300px] px-4 lg:px-0 print:p-0'>
         <div className='flex h-16 items-center justify-between'>
