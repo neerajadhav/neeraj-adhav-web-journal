@@ -75,7 +75,7 @@ If you have a custom domain, you can point `NEXT_PUBLIC_HASHNODE_PUBLICATION_HOS
 ## 📬 Contact
 If you have any project ideas or want to collaborate, feel free to reach out!
 
-🔗 **Portfolio:** [](www.neerajadhav.in)
+🔗 **Portfolio:** [www.neerajadhav.in](www.neerajadhav.in)
 
 📜 **License**: MIT
 
