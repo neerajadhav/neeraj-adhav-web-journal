@@ -1,4 +1,4 @@
-# Portfolio & Blog - Headless Hashnode Integration
+# Personal Website - Headless Hashnode Integration
 
 This is my personal portfolio and blog website built using **Next.js** and integrated with **Hashnode's Headless CMS**. It serves as a platform to showcase my projects, share technical blogs, and highlight my skills.
 
