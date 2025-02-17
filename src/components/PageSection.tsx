@@ -24,7 +24,7 @@ const PageSection: React.FC<PageSectionProps> = ({
 }) => {
   return (
     <section className='flex flex-col items-start bg-white text-gray-950 lg:border-x dark:border dark:border-t-0 dark:border-gray-800 dark:bg-gray-900/80 dark:text-zinc-300'>
-      <div className='sticky top-[-0.1px] z-30 flex w-full flex-row items-center justify-between gap-3 border-y bg-white px-4 py-3 lg:top-[64px] dark:border-gray-800 dark:bg-gray-900 print:hidden'>
+      <div className='sticky top-[-0.1px] z-30 flex w-full flex-row items-center justify-between gap-3 border-y bg-white px-4 py-3 dark:border-gray-800 dark:bg-gray-900 print:hidden'>
         {isBlogArticle && (
           <Link href='/blog'>
             <button className='rounded-full border border-zinc-100 p-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-gray-800 dark:hover:border-gray-700 dark:hover:bg-gray-950'>
