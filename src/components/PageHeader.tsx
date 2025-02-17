@@ -4,13 +4,13 @@ import {
   NewspaperIcon as NewspaperIconOutline,
 } from '@heroicons/react/24/outline';
 import { NewspaperIcon as NewspaperIconSolid } from '@heroicons/react/24/solid';
+import { Bona_Nova, Cookie, Lavishly_Yours, Lobster, Oleo_Script_Swash_Caps, Orbitron, Parisienne, Pattaya, Rochester, Sacramento, Saira_Stencil_One, Tangerine, Teko, Tomorrow } from 'next/font/google';
 import Link from 'next/link';
 import { FaMastodon } from 'react-icons/fa';
 import { Navbar } from './Navbar';
-import { Lobster } from 'next/font/google';
 
 // Load the Google Font using next/font
-const logoFont = Lobster({
+const logoFont = Sacramento({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-roboto',
@@ -26,7 +26,7 @@ const NAVLINKS = [
   },
   {
     name: 'My Feed',
-    href: '/mastodon',
+    href: '/feed',
     icon: <FaMastodon className='h-6 w-6 lg:h-5 lg:w-5' />,
     activeIcon: <FaMastodon className='h-6 w-6 lg:h-5 lg:w-5' />,
     tooltip: 'My Feed',
@@ -52,13 +52,16 @@ const Header = () => {
     <header
       className={`sticky top-0 z-50 mb-2 w-full border-b bg-white dark:border-gray-800 dark:bg-gray-900 print:border-0 print:border-b`}
     >
-      <div className='mx-auto max-w-7xl px-4 lg:px-0 print:p-0'>
+      <div className='mx-auto max-w-[1300px] px-4 lg:px-0 print:p-0'>
         <div className='flex h-16 items-center justify-between'>
           {/* Logo */}
           <div
-            className={`${logoFont.variable} text-xl font-bold text-gray-900 dark:text-white`}
+            className={`${logoFont.className} text-gray-900 dark:text-white`}
           >
-            <Link href='/'>Neeraj Says</Link>
+            <Link href='/' className='flex items-center gap-2 text-3xl text-gray-700 font-semibold dark:text-gray-300'>
+              {/* <img src="/Fs.png" alt="Logo" className='w-8 h-8' /> */}
+              Neeraj Says
+            </Link>
           </div>
           {/* Desktop Menu */}
           <Navbar navLinks={NAVLINKS} />
