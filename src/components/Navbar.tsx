@@ -42,8 +42,8 @@ export const Navbar = ({ navLinks }: NavbarProps) => {
             onClick={() => handleNavigation(navlink.href)}
             className={`relative rounded-full border p-3 shadow-sm lg:rounded-lg lg:px-3 lg:py-2 lg:shadow-none dark:border-0 dark:text-gray-400 dark:hover:bg-gray-50/10 ${
               path === navlink.href
-                ? 'bg-gray-200 hover:bg-gray-200 dark:bg-gray-50/10 dark:text-gray-50'
-                : 'bg-white dark:bg-transparent dark:text-gray-400'
+                ? 'bg-white dark:bg-gray-50/10 dark:text-gray-50'
+                : 'bg-gray-200 hover:bg-white dark:bg-transparent dark:text-gray-400'
             }`}
             title={navlink.tooltip}
           >
