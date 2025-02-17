@@ -49,9 +49,7 @@ const NAVLINKS = [
 
 const Header = () => {
   return (
-    <header
-      className={`w-full bg-[#f6f6f6] dark:bg-gray-950 print:border-b-2`}
-    >
+    <header className={`w-full bg-[#f6f6f6] dark:bg-gray-950 print:border-b-2`}>
       <div className='mx-auto max-w-[1300px] px-4 lg:px-0 print:p-0'>
         <div className='flex h-16 items-center justify-between'>
           {/* Logo */}
@@ -60,10 +58,19 @@ const Header = () => {
           >
             <Link
               href='/'
-              className='flex items-center gap-2 text-lg lg:text-xl font-bold text-gray-700 dark:text-gray-300'
+              className='flex items-center gap-2 text-lg font-bold text-gray-700 lg:text-xl dark:text-gray-300'
             >
-              <img src="/Fs.svg" alt="Logo" className='w-8 h-8' />
-              Neeraj Says
+              <img
+                src='/Fs.svg'
+                alt='Logo'
+                className='h-8 w-8 print:h-10 print:w-10'
+              />
+              <div className='flex flex-col'>
+                Neeraj Says{' '}
+                <span className='hidden font-serif text-sm font-medium italic print:block'>
+                  www.neerajadhav.in
+                </span>
+              </div>
             </Link>
           </div>
           {/* Desktop Menu */}
