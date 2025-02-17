@@ -88,7 +88,7 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
       >
         <article className='relative'>
           <div
-            className='absolute z-10 h-[20rem] w-full'
+            className='absolute z-10 h-32 w-full'
             style={{
               backgroundImage: `url(${coverImageSrc})`,
               backgroundRepeat: 'no-repeat',
