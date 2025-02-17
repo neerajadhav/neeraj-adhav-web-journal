@@ -75,30 +75,28 @@ const MastodonFeed = async () => {
 
   return (
     <Container>
-      <div className='w-full mx-auto'>
-        <PageSection
-          title='My Feed'
-          link={{
-            href: PROFILE_URL,
-            text: 'Visit Mastodon',
-            icon: <ArrowTopRightOnSquareIcon className='h-4 w-4' />,
-          }}
-        >
-          <div className='mx-auto flex flex-col gap-2'>
-            {posts.length > 0 ? (
-              <>
-                {posts.map((post: MastodonPostProps['post']) => (
-                  <MastodonPost key={post.id} post={post} />
-                ))}
-              </>
-            ) : (
-              <p className='text-gray-500 dark:text-gray-400'>
-                No posts available
-              </p>
-            )}
-          </div>
-        </PageSection>
-      </div>
+      <PageSection
+        title='My Feed'
+        link={{
+          href: PROFILE_URL,
+          text: 'Visit Mastodon',
+          icon: <ArrowTopRightOnSquareIcon className='h-4 w-4' />,
+        }}
+      >
+        <div className='mx-auto flex max-w-lg flex-col gap-2'>
+          {posts.length > 0 ? (
+            <>
+              {posts.map((post: MastodonPostProps['post']) => (
+                <MastodonPost key={post.id} post={post} />
+              ))}
+            </>
+          ) : (
+            <p className='text-gray-500 dark:text-gray-400'>
+              No posts available
+            </p>
+          )}
+        </div>
+      </PageSection>
       <ContactMe />
     </Container>
   );
