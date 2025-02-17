@@ -62,7 +62,7 @@ const Header = () => {
               href='/'
               className='flex items-center gap-2 text-lg lg:text-xl font-bold text-gray-700 dark:text-gray-300'
             >
-              {/* <img src="/Fs.png" alt="Logo" className='w-8 h-8' /> */}
+              <img src="/Fs.svg" alt="Logo" className='w-8 h-8' />
               Neeraj Says
             </Link>
           </div>
