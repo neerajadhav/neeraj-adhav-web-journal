@@ -47,7 +47,7 @@ export const Navbar = ({ navLinks }: NavbarProps) => {
             }`}
             title={navlink.tooltip}
           >
-            <div className='flex items-center gap-2 lg:text-xs'>
+            <div className='flex items-center gap-2 lg:text-sm'>
               {loadingLink === navlink.href ? (
                 <div className='flex items-center justify-center'>
                   <div className='animate-spin rounded-full'>

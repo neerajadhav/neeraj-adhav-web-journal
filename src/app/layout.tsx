@@ -7,11 +7,11 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata, ResolvingMetadata } from 'next';
-import { Inter, Open_Sans } from 'next/font/google';
+import { Inter, Open_Sans, Ubuntu, Ubuntu_Condensed } from 'next/font/google';
 import { PublicationQuery, usePublicationQuery } from '../../generated/graphq';
 import './globals.css';
 
-const ubuntu = Open_Sans({ subsets: ['latin'], weight: '400' }); // Load font with weight
+const ubuntu = Ubuntu({ subsets: ['latin'], weight: '400' }); // Load font with weight
 
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 config.autoAddCss = false;
