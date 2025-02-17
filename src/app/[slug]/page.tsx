@@ -3,6 +3,8 @@ import { ContactMe } from '@/components/ContactMe';
 import { Container } from '@/components/Container';
 import { CoverImage } from '@/components/CoverImage';
 import { MarkdownToHtml } from '@/components/MarkdownToHtml';
+import PageSection from '@/components/PageSection';
+import PrintButton from '@/components/PrintButton';
 import { formatDate } from '@/utils/consts/format-date';
 import handleMathJax from '@/utils/handle-math-jax';
 import { resizeImage } from '@/utils/image';
@@ -13,7 +15,6 @@ import { notFound } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { usePostQuery } from '../../../generated/graphq';
 import { useEmbeds } from '../../../hooks/useEmbeds';
-import { PrinterIcon } from '@heroicons/react/24/outline';
 
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 
@@ -74,59 +75,62 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
     window.print();
   };
 
+  const extrabtns = () => {
+    return <PrintButton onClick={handlePrint} />;
+  };
+
   return (
     <Container>
-      <article className='mx-auto w-full max-w-4xl border bg-white p-4 dark:border dark:border-gray-800 dark:bg-gray-900 print:border-0 print:p-0 text-justify print:shadow-none'>
-        <div className='mb-4 flex w-full flex-col gap-3 text-gray-950 dark:text-zinc-300'>
-          <div className='flex w-full items-center justify-end print:hidden'>
-            <div className='flex justify-end'>
-              <button
-                className='flex flex-row items-center gap-2 rounded-full border-gray-400 p-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-700 hover:text-white dark:border-gray-600 dark:text-zinc-300 dark:hover:bg-gray-950'
-                onClick={handlePrint}
-              >
-                <PrinterIcon className='h-5 w-5' />
-              </button>
+      <PageSection
+        title={post.title}
+        extraButtons={extrabtns()}
+        isBlogArticle={true}
+      >
+        <article className='mx-auto w-full max-w-4xl p-4 text-justify'>
+          <div className='mb-4 flex w-full flex-col gap-3 text-gray-950 dark:text-zinc-300'>
+            <div className='flex w-full items-center justify-end print:hidden'></div>
+            <h1 className='mb-2 w-full pb-4 text-center text-2xl font-bold md:text-3xl dark:text-zinc-100 print:pt-6 print:text-3xl print:font-extrabold'>
+              {post.title}
+            </h1>
+            {post.coverImage?.url && (
+              <CoverImage
+                title={post.title}
+                priority={true}
+                src={coverImageSrc}
+              />
+            )}
+            <div className='flex w-full flex-wrap items-center justify-center text-sm italic'>
+              Article by&nbsp;{' '}
+              <span className='font-medium'>{post.author.name}</span> &nbsp;
+              &#x2022; &nbsp;Published on&nbsp;{' '}
+              <time className='font-medium'>
+                {formatDate(post.publishedAt)}
+              </time>
             </div>
           </div>
-          <h1 className='mb-2 w-full pb-4 print:pt-6 text-center text-2xl font-bold md:text-3xl dark:text-zinc-100 print:text-3xl print:font-extrabold'>
-            {post.title}
-          </h1>
-          {post.coverImage?.url && (
-            <CoverImage
-              title={post.title}
-              priority={true}
-              src={coverImageSrc}
-            />
-          )}
-          <div className='flex w-full flex-wrap items-center justify-center text-sm italic'>
-            Article by&nbsp;{' '}
-            <span className='font-medium'>{post.author.name}</span> &nbsp;
-            &#x2022; &nbsp;Published on&nbsp;{' '}
-            <time className='font-medium'>{formatDate(post.publishedAt)}</time>
-          </div>
-        </div>
 
-        <hr className='mb-6 h-px border-0 bg-zinc-200 dark:bg-gray-800' />
-        {post.content.markdown && (
-          <MarkdownToHtml contentMarkdown={post.content.markdown} />
-        )}
-        <hr className='mb-4 h-px border-0 bg-zinc-200 dark:bg-gray-800' />
-        {post.tags?.length && (
-          <div className='flex w-full flex-wrap gap-3 text-gray-950 dark:text-zinc-300 print:hidden'>
-            {post.tags.map((tag) => (
-              <li key={tag.id} className='list-none'>
-                <a
-                  href={`//hashnode.com/n/${tag.slug}`}
-                  target='_blank'
-                  className='rounded-full border border-zinc-100 px-3 py-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-gray-800 dark:hover:border-gray-700 dark:hover:bg-gray-950'
-                >
-                  #{tag.name}
-                </a>
-              </li>
-            ))}
-          </div>
-        )}
-      </article>
+          <hr className='mb-6 h-px border-0 bg-zinc-200 dark:bg-gray-800' />
+          {post.content.markdown && (
+            <MarkdownToHtml contentMarkdown={post.content.markdown} />
+          )}
+          <hr className='mb-4 h-px border-0 bg-zinc-200 dark:bg-gray-800' />
+          {post.tags?.length && (
+            <div className='flex w-full flex-wrap gap-3 text-gray-950 dark:text-zinc-300 print:hidden'>
+              {post.tags.map((tag) => (
+                <li key={tag.id} className='list-none'>
+                  <a
+                    href={`//hashnode.com/n/${tag.slug}`}
+                    target='_blank'
+                    className='rounded-full border border-zinc-100 px-3 py-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-gray-800 dark:hover:border-gray-700 dark:hover:bg-gray-950'
+                  >
+                    #{tag.name}
+                  </a>
+                </li>
+              ))}
+            </div>
+          )}
+        </article>
+      </PageSection>
       <ContactMe />
     </Container>
   );
