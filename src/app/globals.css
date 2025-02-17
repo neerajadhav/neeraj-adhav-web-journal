@@ -57,7 +57,7 @@
 @media print {
   @page {
     size: A4;
-    margin: 20mm 10mm;
+    margin: 20mm 5mm 20mm 25mm;
   }
 
   body {
