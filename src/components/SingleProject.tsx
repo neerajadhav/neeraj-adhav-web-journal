@@ -1,7 +1,5 @@
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import {
-  faArrowUpRightFromSquare
-} from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PhotoIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
@@ -12,13 +10,14 @@ interface SingleProjectProps {
     url?: string;
     demoLink?: string;
     imageUrl?: string;
+    desc?: string;
   };
 }
 export const SingleProject = (props: SingleProjectProps) => {
   const { project } = props;
   return (
     <div className='w-full items-center rounded sm:max-w-72 md:max-w-80 lg:max-w-96'>
-      <div className='flex w-full flex-col gap-3 text-gray-950 dark:text-zinc-300 p-4'>
+      <div className='flex w-full flex-col gap-3 p-4 text-gray-950 dark:text-zinc-300'>
         {project.imageUrl ? (
           <div className='flex aspect-video w-full overflow-hidden rounded-lg'>
             <Image
@@ -39,7 +38,12 @@ export const SingleProject = (props: SingleProjectProps) => {
         <p className='text-xl font-semibold dark:text-zinc-100'>
           {project.name}
         </p>
-        <div className='flex w-full flex-row items-center gap-2 text-xs'>
+        {project.desc && (
+          <p className='line-clamp-3 text-justify text-sm leading-snug text-gray-500 dark:text-zinc-300'>
+            {project.desc}
+          </p>
+        )}
+        <div className='flex w-full flex-row items-center justify-end gap-2 text-xs'>
           {project.url ? (
             <a
               href={`//${project.url}`}

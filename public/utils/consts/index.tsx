@@ -29,6 +29,7 @@ export const PROJECTS: {
   url?: string;
   demoLink?: string;
   imageUrl?: string;
+  desc?: string;
 }[] = [
   {
     name: 'React Fake Shop',
@@ -36,11 +37,14 @@ export const PROJECTS: {
     demoLink: 'fakeshop-neeraj.netlify.app/',
     imageUrl:
       'https://raw.githubusercontent.com/neerajadhav/ReactFakeShop/refs/heads/main/thumbnail.png',
+    desc: 'A React js e-commerce website. It includes two pages, the homepage to display the list of products and page 2 to display the details of the selected product.',
   },
   {
     name: 'Dotfiles Manager',
     imageUrl: 'https://i.redd.it/20xt0rtgtzpb1.png',
     url: 'github.com/neerajadhav/.dotfiles',
-    demoLink:'www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2F20xt0rtgtzpb1.png',
+    demoLink:
+      'www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2F20xt0rtgtzpb1.png',
+    desc: 'A simple DotFiles Setup - Menu based Bash Script for Linux Ricing with Configuration Files',
   },
 ];
