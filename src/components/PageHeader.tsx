@@ -8,6 +8,7 @@ import { Inknut_Antiqua, Pattaya } from 'next/font/google';
 import Link from 'next/link';
 import { FaMastodon } from 'react-icons/fa';
 import { Navbar } from './Navbar';
+import { ModeToggle } from './DarkModeBtn';
 
 // Load the Google Font using next/font
 const logoFont = Inknut_Antiqua({
@@ -74,7 +75,10 @@ const Header = () => {
             </Link>
           </div>
           {/* Desktop Menu */}
-          <Navbar navLinks={NAVLINKS} />
+          <div className='flex items-center gap-2'>
+            <Navbar navLinks={NAVLINKS} />
+            <ModeToggle />
+          </div>
         </div>
       </div>
     </header>

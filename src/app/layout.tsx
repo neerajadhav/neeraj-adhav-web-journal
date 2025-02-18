@@ -10,6 +10,7 @@ import { Metadata, ResolvingMetadata } from 'next';
 import { Inter, Open_Sans, Ubuntu, Ubuntu_Condensed } from 'next/font/google';
 import { PublicationQuery, usePublicationQuery } from '../../generated/graphq';
 import './globals.css';
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 const ubuntu = Ubuntu({ subsets: ['latin'], weight: '400' }); // Load font with weight
 
@@ -108,14 +109,21 @@ export default async function RootLayout({
   return (
     <html lang='en'>
       <body className={`${ubuntu.className} bg-[#f6f6f6] dark:bg-gray-950`}>
-        <ReactQueryProvider>
-          <HydrationBoundary state={dehydrate(queryClient)}>
-            <Header />
-            {children}
-            <SpeedInsights />
-            {/* <Navbar /> */}
-          </HydrationBoundary>
-        </ReactQueryProvider>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ReactQueryProvider>
+            <HydrationBoundary state={dehydrate(queryClient)}>
+              <Header />
+              {children}
+              <SpeedInsights />
+              {/* <Navbar /> */}
+            </HydrationBoundary>
+          </ReactQueryProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
