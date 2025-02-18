@@ -5,9 +5,8 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import MastodonPost from './MastodonPost';
 
 const accessToken = process.env.NEXT_MASTODON_ACCESS_TOKEN as string;
-
-const MASTODON_USERNAME = 'neerajadhav';
-const MASTODON_INSTANCE = 'https://sciences.social';
+const MASTODON_USERNAME = process.env.NEXT_MASTODON_USERNAME as string;
+const MASTODON_INSTANCE = process.env.NEXT_MASTODON_INSTANCE as string;
 const PROFILE_URL = `${MASTODON_INSTANCE}/@${MASTODON_USERNAME}`;
 
 type MediaAttachment = {

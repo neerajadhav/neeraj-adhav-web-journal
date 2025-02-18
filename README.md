@@ -1,83 +1,93 @@
-# Personal Website - Headless Hashnode Integration
-
-This is my personal portfolio and blog website built using **Next.js** and integrated with **Hashnode's Headless CMS**. It serves as a platform to showcase my projects, share technical blogs, and highlight my skills.
-
-## 🚀 Features
-- 📝 **Headless Blog** powered by Hashnode
-- 🌐 **Fully Responsive UI** for all devices
-- 🎨 **Modern & Dark-Themed Design**
-- 🏗 **Built with Next.js for Performance**
-- 🛠 **Easy Deployment with Vercel**
-- 🔗 **Social & GitHub Integration**
-
-## 📸 Screenshots
-### 🏠 Homepage
-![1](https://github.com/user-attachments/assets/491b4bbc-a03b-41d9-afd8-d483222794a7)
-
-### 📖 Blog Page
-![2](https://github.com/user-attachments/assets/afdcfc8c-c2e1-4629-a397-86a77328ac4b)
+Here's the revised README with the updated features:  
 
 ---
 
-## 🛠 How to Deploy
-The recommended approach is deploying to **Vercel**. If you don't have an account, you can sign up for a free plan.
+# Personal Website - Headless Hashnode & Mastodon Integration  
 
-### Steps:
-1. **Fork** this repository.
-2. **Create a new project** on Vercel and connect this repo.
-3. Choose **Next.js** as the framework preset.
-4. Set the following **environment variables**:
+This is my personal portfolio and blog website built with **Next.js**, featuring integration with **Hashnode's Headless CMS** for blogging and **Mastodon API** for social feed updates. The site serves as a platform to showcase my work, share technical articles, and provide insights into my projects.  
 
-```
+## Features  
+- **Homepage** – About the author, background, and professional journey.  
+- **Feed** – Live updates from Mastodon, powered by the Mastodon API.  
+- **Blog** – Technical articles and insights, managed via Hashnode's Headless CMS.  
+- **Projects** – A collection of open-source projects with links to GitHub repositories.  
+- **Responsive Design** – Optimized for all devices.  
+- **Next.js Performance** – Built with server-side rendering and static generation for fast loading times.  
+- **Vercel Deployment** – Easy to deploy and manage with Vercel.  
+
+## Screenshots  
+
+### Homepage  
+![Homepage Screenshot](https://github.com/user-attachments/assets/491b4bbc-a03b-41d9-afd8-d483222794a7)  
+
+### Blog Page  
+![Blog Screenshot](https://github.com/user-attachments/assets/afdcfc8c-c2e1-4629-a397-86a77328ac4b)  
+
+---
+
+## Deployment  
+
+The recommended deployment method is **Vercel**.  
+
+### Steps  
+1. **Fork** the repository.  
+2. **Create a new project** on Vercel and connect this repository.  
+3. Select **Next.js** as the framework.  
+4. Set up the following **environment variables**:  
+
+```bash
 NEXT_PUBLIC_HASHNODE_GQL_ENDPOINT=https://gql.hashnode.com/
-NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST=your-hashnode-blog-url.hashnode.dev
+NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST=your-site.hashnode.dev
+NEXT_MASTODON_ACCESS_TOKEN=your-mastodon-api-access-token
+NEXT_MASTODON_USERNAME=your-mastodon-username
+NEXT_MASTODON_INSTANCE=https://mastodon-instance.com
 ```
-_Replace `your-hashnode-blog-url` with your actual Hashnode blog handle._
+_Replace above data with actual values._  
 
-5. Deploy and visit the auto-generated Vercel domain to confirm everything works.
-
-### 🌎 Custom Domain Setup
-If you have a custom domain, you can point `NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST` to a different domain such as `blog.yourdomain.com`.
+5. Deploy and visit the assigned Vercel domain to verify the setup.  
 
 ---
 
-## 💻 Running Locally
-1. **Clone** the repository:
+## Running Locally  
+
+1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/portfolio-blog.git
-   ```
-2. **Navigate into the directory**:
+   git clone https://github.com/neerajadhav/floaty-hashnode-headless.git
+   ```  
+2. Navigate to the project directory:  
    ```bash
-   cd portfolio-blog
-   ```
-3. **Copy environment variables file**:
+   cd floaty-hashnode-headless
+   ```  
+3. Copy environment variables:  
    ```bash
-   cp .env.example .env.local
-   ```
-4. **Install dependencies**:
+   cp .env.example .env
+   ```  
+4. Install dependencies:  
    ```bash
    yarn
-   ```
-5. **Run the development server**:
+   ```  
+5. Start the development server:  
    ```bash
    yarn dev
-   ```
-6. Open [http://localhost:3000](http://localhost:3000) in your browser.
+   ```  
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.  
 
 ---
 
-## 🎯 Tech Stack
-- **Framework**: Next.js
-- **Styling**: Tailwind CSS
-- **CMS**: Hashnode (Headless CMS)
-- **Deployment**: Vercel
+## Tech Stack  
 
-## 📬 Contact
-If you have any project ideas or want to collaborate, feel free to reach out!
-
-🔗 **Portfolio:** [www.neerajadhav.in](www.neerajadhav.in)
-
-📜 **License**: MIT
+- **Framework**: Next.js  
+- **Styling**: Tailwind CSS  
+- **CMS**: Hashnode Headless CMS  
+- **API Integration**: Mastodon API  
+- **Deployment**: Vercel  
 
 ---
-© 2025 Neeraj Adhav. All rights reserved.
+
+## Contact  
+
+For collaborations, projects, or inquiries, feel free to reach out.  
+
+**Portfolio:** [www.neerajadhav.in](www.neerajadhav.in)  
+
+**License**: MIT
