@@ -36,14 +36,16 @@ const PageSection: React.FC<PageSectionProps> = ({
         <div className='w-full text-start font-semibold dark:text-zinc-100'>
           <h2 className='line-clamp-1'>{title}</h2>
         </div>
-        {link && (
-          <Link
-            href={link.href}
-            className='flex items-center gap-2 rounded-full text-sm font-medium text-gray-700 transition-all hover:text-blue-500 dark:border-gray-600 dark:text-zinc-300 md:flex'
-          >
-            {link.text} {link.icon ?? <ArrowRightIcon className='h-4 w-4' />}
-          </Link>
-        )}
+        <div className='w-full text-end'>
+          {link && (
+            <Link
+              href={link.href}
+              className='flex w-full items-center justify-end gap-2 rounded-full text-sm font-medium text-gray-700 transition-all hover:text-blue-500 dark:border-gray-600 dark:text-zinc-300 md:flex'
+            >
+              {link.text} {link.icon ?? <ArrowRightIcon className='h-4 w-4' />}
+            </Link>
+          )}
+        </div>
         {extraButtons}
       </div>
       <div className='mx-auto w-full p-4'>{children}</div>
