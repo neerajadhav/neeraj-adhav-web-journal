@@ -67,7 +67,7 @@ export default function Blog() {
             </div>
           ))}
         </div>
-        <div className='flex justify-center px-5'>
+        <div className='flex select-none justify-center px-5'>
           {hasNextPage && (
             <button
               onClick={() => fetchNextPage()}

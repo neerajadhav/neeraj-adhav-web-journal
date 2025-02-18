@@ -50,7 +50,9 @@ const NAVLINKS = [
 
 const Header = () => {
   return (
-    <header className={`w-full bg-[#f6f6f6] dark:bg-gray-950 print:border-b-2`}>
+    <header
+      className={`w-full select-none bg-[#f6f6f6] dark:bg-gray-950 print:border-b-2`}
+    >
       <div className='mx-auto max-w-[1300px] px-4 lg:px-0 print:p-0'>
         <div className='flex h-16 items-center justify-between'>
           {/* Logo */}
@@ -59,7 +61,7 @@ const Header = () => {
           >
             <Link
               href='/'
-              className='flex items-center gap-2 text-lg font-bold text-gray-700 lg:text-xl dark:text-gray-300'
+              className='flex items-center gap-2 text-lg font-bold text-gray-700 dark:text-gray-300 lg:text-xl'
             >
               <img
                 src='/Fs.svg'

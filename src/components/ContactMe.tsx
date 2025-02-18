@@ -11,7 +11,7 @@ export const ContactMe = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='mb-[4.5rem] mx-2 lg:m-0 print:hidden'>
+    <footer className='mx-2 mb-[4.5rem] select-none lg:m-0 print:hidden'>
       <div className='flex w-full flex-col items-center gap-5 border bg-white p-6 text-gray-950 dark:border dark:border-gray-800 dark:bg-gray-900 dark:text-zinc-300'>
         <h2 className='text-xl font-semibold lg:text-2xl'>
           Have a Project Idea?
