@@ -19,16 +19,16 @@ export function ModeToggle() {
       className={`relative rounded-full border bg-white p-2 shadow-sm hover:bg-white lg:rounded-lg lg:px-3 lg:py-2 lg:shadow-none dark:border-0 dark:bg-transparent dark:text-gray-400 dark:hover:bg-gray-50/10`}
     >
       <div className='flex items-center gap-2 lg:text-sm'>
-        <div className='flex items-center justify-center'>
+        <span className='flex items-center justify-center'>
           {theme === 'light' ? (
             <FaMoon className='h-4 w-4' />
           ) : (
             <FaSun className='h-4 w-4' />
           )}
-        </div>
-        <div className='hidden lg:block'>
+        </span>
+        <span className='hidden lg:block'>
           {theme === 'light' ? 'Night' : 'Day'}
-        </div>
+        </span>
       </div>
     </button>
   );
