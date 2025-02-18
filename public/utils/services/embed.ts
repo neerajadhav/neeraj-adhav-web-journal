@@ -202,7 +202,7 @@ export const loadIframeResizer = () => {
     }
     const script = document.createElement('script');
 
-    script.src = `/js/iframe-resizer.js`;
+    script.src = `https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/5.0.1/iframe-resizer.child.min.js`;
     script.async = true;
     script.defer = true;
 

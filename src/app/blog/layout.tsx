@@ -3,7 +3,7 @@ import {
   useInfinitePostsQuery,
   usePostsQuery,
 } from '../../../generated/graphq';
-import getQueryClient from '@/utils/getQueryClient';
+import getQueryClient from '../../../public/utils/getQueryClient';
 
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 const pageSize = 10;

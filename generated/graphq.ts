@@ -5,7 +5,7 @@ import {
   UseInfiniteQueryOptions,
   InfiniteData,
 } from '@tanstack/react-query';
-import { fetchData } from '../src/utils/reactQueryFetcher';
+import { fetchData } from '../public/utils/reactQueryFetcher';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = {

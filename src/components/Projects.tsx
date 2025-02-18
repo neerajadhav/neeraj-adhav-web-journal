@@ -1,4 +1,4 @@
-import { PROJECTS } from '@/utils/consts';
+import { PROJECTS } from '../../public/utils/consts';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import PageSection from './PageSection';
 import { SingleProject } from './SingleProject';
