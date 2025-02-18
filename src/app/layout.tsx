@@ -4,6 +4,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
+import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata, ResolvingMetadata } from 'next';
 import { Ubuntu } from 'next/font/google';
@@ -119,6 +120,7 @@ export default async function RootLayout({
               <Header />
               {children}
               <SpeedInsights />
+              <Analytics />
               {/* <Navbar /> */}
             </HydrationBoundary>
           </ReactQueryProvider>
