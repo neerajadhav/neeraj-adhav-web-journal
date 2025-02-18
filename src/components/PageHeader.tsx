@@ -61,7 +61,7 @@ const Header = () => {
           >
             <Link
               href='/'
-              className='flex items-center gap-2 text-lg font-bold text-gray-700 dark:text-gray-300 lg:text-xl'
+              className='flex items-center gap-2 text-lg font-bold text-gray-700 print:text-black dark:text-gray-300 lg:text-xl'
             >
               <img
                 src='/Fs.svg'
