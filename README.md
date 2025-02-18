@@ -1,5 +1,5 @@
 # Personal Website - Headless Hashnode & Mastodon Integration  
-
+---
 This is my personal portfolio and blog website built with **Next.js**, featuring integration with **Hashnode's Headless CMS** for blogging and **Mastodon API** for social feed updates. The site serves as a platform to showcase my work, share technical articles, and provide insights into my projects.  
 
 ## Features  
