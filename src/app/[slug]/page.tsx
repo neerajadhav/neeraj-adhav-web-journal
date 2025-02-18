@@ -89,19 +89,18 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
         <article className='relative'>
           {post.coverImage?.url && (
             <div
-              className='absolute z-10 h-32 w-full'
+              className='absolute z-10 h-32 w-full blur-[200px] lg:blur-[250px]'
               style={{
                 backgroundImage: `url(${coverImageSrc})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                filter: 'blur(300px)',
               }}
             ></div>
           )}
           <div className='relative z-20 mx-auto max-w-3xl pt-4 text-justify'>
             <div className='mb-4 flex flex-col gap-3 text-gray-950 dark:text-zinc-300'>
-              <h1 className='mb-2 w-full pb-4 text-center text-2xl font-bold md:text-3xl dark:text-zinc-100 print:pt-6 print:text-3xl print:font-extrabold'>
+              <h1 className='mb-2 w-full pb-4 text-center text-2xl font-bold dark:text-zinc-100 md:text-3xl print:pt-6 print:text-3xl print:font-extrabold'>
                 {post.title}
               </h1>
               {post.coverImage?.url && (
