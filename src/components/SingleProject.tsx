@@ -20,7 +20,7 @@ export const SingleProject = (props: SingleProjectProps) => {
     <div className='w-full items-center rounded sm:max-w-72 md:max-w-80 lg:max-w-96'>
       <div className='flex w-full flex-col gap-3 text-gray-950 dark:text-zinc-300 p-4'>
         {project.imageUrl ? (
-          <div className='flex aspect-video w-full overflow-hidden rounded-xl'>
+          <div className='flex aspect-video w-full overflow-hidden rounded-lg'>
             <Image
               src={project.imageUrl}
               width={2000}
