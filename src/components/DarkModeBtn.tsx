@@ -16,7 +16,7 @@ export function ModeToggle() {
       aria-label='Toggle Dark Mode'
       type='button'
       onClick={toggleTheme}
-      className={`relative rounded-full border bg-white p-2 shadow-sm hover:bg-white lg:rounded-lg lg:px-3 lg:py-2 lg:shadow-none dark:border-0 dark:bg-transparent dark:text-gray-400 dark:hover:bg-gray-50/10`}
+      className={`relative rounded-full border bg-white p-2 shadow-sm hover:bg-white dark:border-0 dark:bg-transparent dark:text-gray-400 dark:hover:bg-gray-50/10 lg:rounded-lg lg:px-3 lg:py-2 lg:shadow-none print:hidden`}
     >
       <div className='flex items-center gap-2 lg:text-sm'>
         <span className='flex items-center justify-center'>
