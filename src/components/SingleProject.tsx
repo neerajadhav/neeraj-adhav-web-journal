@@ -1,13 +1,10 @@
-import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faArrowRight,
-  faArrowRightArrowLeft,
-  faArrowRightRotate,
-  faArrowUpRightFromSquare,
-} from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import {
+  faArrowUpRightFromSquare
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PhotoIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 interface SingleProjectProps {
   project: {
