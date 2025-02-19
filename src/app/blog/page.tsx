@@ -24,7 +24,7 @@ export default function Blog() {
         queryFn: ({ pageParam }) =>
           usePostsQuery.fetcher({
             host,
-            pageSize: 12,
+            pageSize: 11,
             page: pageParam as number,
           })(),
         initialPageParam: 1,
