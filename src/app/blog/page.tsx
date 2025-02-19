@@ -3,6 +3,7 @@ import { ContactMe } from '@/components/ContactMe';
 import { Container } from '@/components/Container';
 import PageSection from '@/components/PageSection';
 import { Post } from '@/components/Post';
+import { Post2 } from '@/components/Post2';
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import {
   useInfinitePostsQuery,
@@ -60,10 +61,10 @@ export default function Blog() {
         </div>
       </PageSection>
       <PageSection title='Archive'>
-        <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+        <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2'>
           {posts.slice(3).map((post, index) => (
             <div key={index + 1} className='mb-4 w-full'>
-              <Post postInfo={post} />
+              <Post2 postInfo={post} />
             </div>
           ))}
         </div>
