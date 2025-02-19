@@ -22,6 +22,7 @@ const config: Config = {
         success: '#0070f3',
         cyan: '#79FFE1',
         primary: colors.blue,
+        bgDark:'#1b1f23',
       },
       typography: () => ({
         DEFAULT: {

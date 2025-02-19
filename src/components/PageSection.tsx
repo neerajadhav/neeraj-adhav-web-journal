@@ -23,11 +23,11 @@ const PageSection: React.FC<PageSectionProps> = ({
   isBlogArticle,
 }) => {
   return (
-    <section className='flex flex-col items-start border-b bg-white text-gray-950 dark:border dark:border-t-0 dark:border-gray-800 dark:bg-gray-900/80 dark:text-zinc-300 lg:border-x'>
-      <div className='sticky top-[-0.1px] z-30 flex w-full select-none flex-row items-center justify-between gap-3 border-y bg-white px-4 py-3 dark:border-gray-800 dark:bg-gray-900 print:hidden'>
+    <section className='flex flex-col items-start border-b bg-white text-gray-950 dark:border dark:border-t-0 dark:border-bgDark dark:bg-bgDark/80 dark:text-zinc-300 lg:border-x'>
+      <div className='sticky top-[-0.1px] z-30 flex w-full select-none flex-row items-center justify-between gap-3 border-y bg-white px-4 py-3 dark:border-bgDark dark:bg-bgDark print:hidden'>
         {isBlogArticle && (
           <Link href='/blog'>
-            <button className='rounded-full border border-zinc-100 p-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-gray-800 dark:hover:border-gray-700 dark:hover:bg-gray-950'>
+            <button className='rounded-full border border-zinc-100 p-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950'>
               <ArrowLeftIcon className='h-5 w-5' />
             </button>
           </Link>
@@ -43,7 +43,7 @@ const PageSection: React.FC<PageSectionProps> = ({
           <div className='w-full text-end'>
             <Link
               href={link.href}
-              className='flex w-full items-center justify-end gap-2 rounded-full text-sm font-medium text-gray-700 transition-all hover:text-blue-500 dark:border-gray-600 dark:text-zinc-300 md:flex'
+              className='flex w-full items-center justify-end gap-2 rounded-full text-sm font-medium text-gray-700 transition-all hover:text-blue-500 dark:border-bgDark dark:text-zinc-300 md:flex'
             >
               {link.text} {link.icon ?? <ArrowRightIcon className='h-4 w-4' />}
             </Link>
