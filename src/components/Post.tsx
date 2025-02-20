@@ -45,7 +45,7 @@ export const Post = (props: PostProps) => {
   return (
     <Link
       href={`/${postInfo.slug}`}
-      className={`flex ${props.first ? 'w-full lg:w-2/3 lg:pr-0' : 'w-full'} flex-col items-center gap-4 rounded-lg hover:opacity-90 px-4 pt-4`}
+      className={`flex ${props.first ? 'w-full lg:w-2/3 lg:pr-0' : 'w-full'} flex-col items-center gap-4 rounded-lg hover:opacity-90 px-1 pt-2`}
     >
       <div className='flex aspect-video w-full overflow-hidden rounded-lg'>
         {postInfo.coverImage?.url ? (

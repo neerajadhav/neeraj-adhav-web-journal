@@ -82,7 +82,7 @@ const MastodonFeed = async () => {
           icon: <ArrowTopRightOnSquareIcon className='h-4 w-4' />,
         }}
       >
-        <div className='mx-auto flex max-w-lg flex-col gap-2'>
+        <div className='mx-auto flex max-w-lg flex-col gap-5 p-1'>
           {posts.length > 0 ? (
             <>
               {posts.map((post: MastodonPostProps['post']) => (

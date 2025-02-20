@@ -17,7 +17,7 @@ export const SingleProject = (props: SingleProjectProps) => {
   const { project } = props;
   return (
     <div className='w-full items-center rounded sm:max-w-72 md:max-w-80 lg:max-w-96'>
-      <div className='flex w-full flex-col gap-3 p-4 text-gray-950 dark:text-zinc-300'>
+      <div className='flex w-full flex-col gap-3 p-2 text-gray-950 dark:text-zinc-300'>
         {project.imageUrl ? (
           <div className='flex aspect-video w-full overflow-hidden rounded-lg'>
             <Image
