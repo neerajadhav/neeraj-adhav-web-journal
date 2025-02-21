@@ -33,7 +33,7 @@ export const AboutMe = () => {
               alt='profile pic'
               width={1000}
               height={1000}
-              className='flex-1 rounded-xl border-1 dark:border-bgDark'
+              className='flex-1 rounded-xl border dark:border-bgDark'
             />
             <div className='mb-4 flex flex-col items-center justify-between gap-2 sm:flex-row lg:gap-0'>
               {isAvailableLink && (
