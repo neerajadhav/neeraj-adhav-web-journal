@@ -25,15 +25,15 @@ export const AboutMe = () => {
 
   return (
     <div className='flex w-full flex-col items-center gap-4 border-y bg-white p-4 dark:border dark:border-bgDark dark:bg-bgDark lg:border-x'>
-      <div className='flex w-full flex-col items-center gap-4 lg:flex-row'>
+      <div className='flex w-full flex-col items-start gap-4 lg:flex-row'>
         {publication.author.profilePicture && (
-          <div className='flex w-1/2 flex-col items-center gap-3 overflow-hidden rounded-xl p-3 sm:max-w-52'>
+          <div className='flex w-1/2 flex-col items-center mx-auto gap-3 overflow-hidden rounded-xl p-3 sm:max-w-52 b'>
             <Image
               src={publication.author.profilePicture}
               alt='profile pic'
               width={1000}
               height={1000}
-              className='flex-1 rounded-full'
+              className='flex-1 rounded-xl border-2 border-blue-400'
             />
             <div className='mb-4 flex flex-col items-center justify-between gap-2 sm:flex-row lg:gap-0'>
               {isAvailableLink && (
@@ -58,7 +58,7 @@ export const AboutMe = () => {
             <SocialLinks />
           </div>
         )}
-        <div className='flex w-full flex-1 flex-col items-start'>
+        <div className='flex w-full flex-1 flex-col items-start lg:py-2'>
           <div className='flex w-full flex-col gap-3 p-3 lg:p-0'>
             <h1 className='w-full text-2xl text-gray-950 dark:text-zinc-100 sm:text-3xl'>
               Hi there! I am{' '}
