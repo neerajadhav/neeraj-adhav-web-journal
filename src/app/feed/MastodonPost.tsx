@@ -35,7 +35,7 @@ type MastodonPostProps = {
 
 const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
   return (
-    <div className='rounded-xl border border-gray-300 bg-white p-4 dark:border-bgDark dark:bg-bgDark'>
+    <div className='lg:border-x-2 border-b-2 border-gray-300 bg-white p-4 dark:border-bgDark dark:bg-bgDark/50 last:border-b-0'>
       {/* User Info */}
       <div className='mb-3 flex items-center space-x-3'>
         <img

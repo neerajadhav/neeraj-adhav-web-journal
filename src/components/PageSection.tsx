@@ -13,6 +13,7 @@ interface PageSectionProps {
   };
   extraButtons?: ReactNode;
   isBlogArticle?: Boolean;
+  className?: string;
 }
 
 const PageSection: React.FC<PageSectionProps> = ({
@@ -21,10 +22,13 @@ const PageSection: React.FC<PageSectionProps> = ({
   link,
   extraButtons,
   isBlogArticle,
+  className = '',
 }) => {
   return (
     <section className='flex flex-col items-start border-b bg-white text-gray-950 dark:border dark:border-t-0 dark:border-bgDark dark:bg-bgDark/80 dark:text-zinc-300 lg:border-x'>
-      <div className='sticky top-[-0.1px] z-30 flex w-full select-none flex-row items-center justify-between gap-3 border-y bg-white px-4 py-3 dark:border-bgDark dark:bg-bgDark print:hidden'>
+      <div
+        className={`sticky top-[-0.1px] z-30 flex w-full select-none flex-row items-center justify-between gap-3 border-y bg-white px-4 py-3 dark:border-bgDark dark:bg-bgDark print:hidden`}
+      >
         {isBlogArticle && (
           <Link href='/blog'>
             <button className='rounded-full border border-zinc-100 p-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950'>
@@ -51,7 +55,7 @@ const PageSection: React.FC<PageSectionProps> = ({
         )}
         {extraButtons}
       </div>
-      <div className='mx-auto w-full p-4'>{children}</div>
+      <div className={`mx-auto w-full p-4  ${className}`}>{children}</div>
     </section>
   );
 };
