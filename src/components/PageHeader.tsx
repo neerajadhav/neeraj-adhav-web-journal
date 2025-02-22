@@ -1,14 +1,15 @@
-import {
-  CodeBracketIcon,
-  HomeIcon as HomeIconOutline,
-  NewspaperIcon as NewspaperIconOutline,
-} from '@heroicons/react/24/outline';
+import { NewspaperIcon as NewspaperIconOutline } from '@heroicons/react/24/outline';
 import { NewspaperIcon as NewspaperIconSolid } from '@heroicons/react/24/solid';
-import { Inknut_Antiqua, Pattaya } from 'next/font/google';
+import { Inknut_Antiqua } from 'next/font/google';
 import Link from 'next/link';
-import { FaMastodon } from 'react-icons/fa';
-import { Navbar } from './Navbar';
+import { GoHome, GoHomeFill } from 'react-icons/go';
+import {
+  HiMiniCodeBracketSquare,
+  HiOutlineCodeBracketSquare,
+} from 'react-icons/hi2';
+import { PiMastodonLogo, PiMastodonLogoFill } from 'react-icons/pi';
 import { ModeToggle } from './DarkModeBtn';
+import { Navbar } from './Navbar';
 
 // Load the Google Font using next/font
 const logoFont = Inknut_Antiqua({
@@ -21,15 +22,15 @@ const NAVLINKS = [
   {
     name: 'Home',
     href: '/',
-    icon: <HomeIconOutline className='h-6 w-6 lg:h-5 lg:w-5' />,
-    activeIcon: <HomeIconOutline className='h-6 w-6 lg:h-5 lg:w-5' />,
+    icon: <GoHome className='h-6 w-6 lg:h-5 lg:w-5' />,
+    activeIcon: <GoHomeFill className='h-6 w-6 lg:h-5 lg:w-5' />,
     tooltip: 'Home',
   },
   {
     name: 'My Feed',
     href: '/feed',
-    icon: <FaMastodon className='h-6 w-6 lg:h-5 lg:w-5' />,
-    activeIcon: <FaMastodon className='h-6 w-6 lg:h-5 lg:w-5' />,
+    icon: <PiMastodonLogo className='h-6 w-6 lg:h-5 lg:w-5' />,
+    activeIcon: <PiMastodonLogoFill className='h-6 w-6 lg:h-5 lg:w-5' />,
     tooltip: 'My Feed',
   },
   {
@@ -42,8 +43,8 @@ const NAVLINKS = [
   {
     name: 'Projects',
     href: '/projects',
-    icon: <CodeBracketIcon className='h-6 w-6 lg:h-5 lg:w-5' />,
-    activeIcon: <CodeBracketIcon className='h-6 w-6 lg:h-5 lg:w-5' />,
+    icon: <HiOutlineCodeBracketSquare className='h-6 w-6 lg:h-5 lg:w-5' />,
+    activeIcon: <HiMiniCodeBracketSquare className='h-6 w-6 lg:h-5 lg:w-5' />,
     tooltip: 'Projects',
   },
 ];

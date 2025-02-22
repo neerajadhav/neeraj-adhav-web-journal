@@ -1,8 +1,7 @@
 'use client';
 
-import * as React from 'react';
 import { useTheme } from 'next-themes';
-import { FaSun, FaMoon } from 'react-icons/fa'; // Import icons from react-icons
+import { CgDarkMode } from 'react-icons/cg';
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
@@ -25,9 +24,9 @@ export function ModeToggle() {
         <div className='flex items-center gap-2 lg:text-sm'>
           <span className='flex items-center justify-center'>
             {theme === 'light' ? (
-              <FaMoon className='h-4 w-4' />
+              <CgDarkMode className='h-5 w-5' />
             ) : (
-              <FaSun className='h-4 w-4' />
+              <CgDarkMode className='h-5 w-5' />
             )}
           </span>
           <span className='hidden lg:block'>
