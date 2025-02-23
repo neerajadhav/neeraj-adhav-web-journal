@@ -40,7 +40,7 @@ const PageSection: React.FC<PageSectionProps> = ({
         <div
           className={`w-full text-start font-semibold ${isBlogArticle && 'font-normal'} text-gray-700 dark:text-zinc-100`}
         >
-          <h2 className='line-clamp-1 w-full'>{title}</h2>
+          <p className='line-clamp-1 w-full'>{title}</p>
         </div>
 
         {link && (
