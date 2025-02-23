@@ -45,7 +45,13 @@ export async function generateMetadata(
       process.env.NEXT_PUBLIC_SITE_URL || 'https://neerajadhav.in'
     ),
     icons: {
-      icon: '/favicon.ico',
+      icon: [
+        { url: '/Fs-16x16.png', sizes: '16x16', type: 'image/png' },
+        { url: '/Fs-32x32.png', sizes: '32x32', type: 'image/png' },
+        { url: '/Fs-48x48.png', sizes: '48x48', type: 'image/png' },
+      ],
+      apple: '/apple-touch-icon.png',
+      shortcut: '/favicon.ico',
     },
     alternates: {
       canonical: new URL(
