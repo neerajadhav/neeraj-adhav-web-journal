@@ -7,16 +7,20 @@ const nextConfig = {
         hostname: 'cdn.hashnode.com',
       },
       {
-        protocol: "https",
-        hostname: "github.com",
+        protocol: 'https',
+        hostname: 'cdn.masto.host',
       },
       {
-        protocol: "https",
-        hostname: "i.redd.it",
+        protocol: 'https',
+        hostname: 'github.com',
       },
       {
-        protocol: "https",
-        hostname: "raw.githubusercontent.com", // Required if you're using GitHub raw content
+        protocol: 'https',
+        hostname: 'i.redd.it',
+      },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com', // Required if you're using GitHub raw content
       },
     ],
   },

@@ -1,6 +1,7 @@
-import React from 'react';
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
+import Image from 'next/image';
+import React from 'react';
 
 TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo('en-US');
@@ -41,6 +42,8 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
         <img
           src={post.account.avatar_static}
           alt='Avatar'
+          width={'2.5rem'}
+          height={'2.5rem'}
           className='h-10 w-10 rounded-full'
         />
         <div>
@@ -71,8 +74,10 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
       {post.media_attachments.length > 0 && (
         <div className='mt-2'>
           {post.media_attachments.map((media) => (
-            <img
+            <Image
               key={media.id}
+              width={300}
+              height={300}
               src={media.preview_url || media.url}
               alt='Post Attachment'
               className='max-h-64 w-full rounded-lg object-cover'

@@ -67,6 +67,8 @@ const Header = () => {
               <img
                 src='/Fs.svg'
                 alt='Logo'
+                width={'2.5rem'}
+                height={'2.5rem'}
                 className='h-8 w-8 print:h-10 print:w-10'
               />
               <div className='flex flex-col'>
