@@ -11,6 +11,7 @@ import { Ubuntu } from 'next/font/google';
 import { PublicationQuery, usePublicationQuery } from '../../generated/graphq';
 import getQueryClient from '../../public/utils/getQueryClient';
 import './globals.css';
+import Notice from '@/components/Notice';
 
 const ubuntu = Ubuntu({ subsets: ['latin'], weight: '400' }); // Load font with weight
 
@@ -118,6 +119,7 @@ export default async function RootLayout({
           <ReactQueryProvider>
             <HydrationBoundary state={dehydrate(queryClient)}>
               <Header />
+              <Notice />
               {children}
               <SpeedInsights />
               <Analytics />
