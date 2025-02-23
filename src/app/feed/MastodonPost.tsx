@@ -76,10 +76,11 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
           {post.media_attachments.map((media) => (
             <Image
               key={media.id}
-              width={300}
-              height={300}
+              width={500}
+              height={500}
               src={media.preview_url || media.url}
               alt='Post Attachment'
+              priority
               className='max-h-64 w-full rounded-lg object-cover'
             />
           ))}
