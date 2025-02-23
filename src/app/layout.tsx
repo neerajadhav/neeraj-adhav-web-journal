@@ -76,13 +76,17 @@ export async function generateMetadata(
     openGraph: {
       title:
         data.publication.displayTitle ||
-        data.publication.title ||
-        'Hashnode Blog Starter Kit',
+        `${data.publication.author.name}'s Blog` ||
+        'Neeraj Adhav',
+      url: new URL(
+        process.env.NEXT_PUBLIC_SITE_URL || 'https://neerajadhav.in'
+      ),
+      type: 'website',
       description:
         data.publication.descriptionSEO ||
         data.publication.title ||
         `${data.publication.author.name}'s Blog` ||
-        '',
+        'Neeraj Adhav',
       images: [
         {
           url:
