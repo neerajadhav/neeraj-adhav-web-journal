@@ -1,14 +1,5 @@
-import nextPWA from 'next-pwa';
-
-const withPWA = nextPWA({
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development',
-});
-
 /** @type {import('next').NextConfig} */
-const nextConfig = withPWA({
+const nextConfig = {
   images: {
     remotePatterns: [
       {
@@ -29,13 +20,8 @@ const nextConfig = withPWA({
       },
       {
         protocol: 'https',
-        hostname: 'raw.githubusercontent.com',
+        hostname: 'raw.githubusercontent.com', // Required if you're using GitHub raw content
       },
     ],
   },
-  experimental: {
-    optimizeCss: true,
-  },
-});
-
-export default nextConfig;
+};
