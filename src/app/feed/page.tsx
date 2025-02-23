@@ -9,14 +9,14 @@ const BASE_TITLE = 'My Feed | Neeraj Adhav';
 const BASE_DESCRIPTION =
   'Stay updated with my latest Social Media posts. Follow me for insights and updates!';
 const PREVIEW_IMAGE = '/OG-Images/feed.png';
-const BASE_URL = 'www.neerajadhav.in/feed';
+const BASE_URL = 'https://www.neerajadhav.in/feed';
 
 export const metadata: Metadata = {
   title: BASE_TITLE,
   description: BASE_DESCRIPTION,
   keywords: ['Mastodon', 'social media', 'feed', 'updates', 'posts', 'Next.js'],
   robots: 'index, follow',
-  authors: [{ name: 'Your Name', url: 'https://yourwebsite.com' }],
+  authors: [{ name: 'Neeraj Adhav', url: 'https://www.neerajadhav.in' }],
   alternates: {
     canonical: BASE_URL,
   },
