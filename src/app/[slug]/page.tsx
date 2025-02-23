@@ -15,6 +15,7 @@ import { notFound } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { usePostQuery } from '../../../generated/graphq';
 import { useEmbeds } from '../../../hooks/useEmbeds';
+import GiscusComments from '@/components/GiscusComments';
 
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 
@@ -140,6 +141,7 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
                 ))}
               </div>
             )}
+            <GiscusComments />
           </div>
         </article>
       </PageSection>
