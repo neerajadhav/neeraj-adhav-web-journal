@@ -103,6 +103,7 @@ export async function generateMetadata(
         },
       ],
     },
+    manifest: '/manifest.json',
   };
 }
 
