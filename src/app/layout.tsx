@@ -39,7 +39,7 @@ export async function generateMetadata(
     title: data.publication.author.name,
     description:
       data.publication.descriptionSEO ||
-      `${data.publication.author.name}'s Blog` ||
+      `${data.publication.author.name}'s Web Journal` ||
       '',
     metadataBase: new URL(
       process.env.NEXT_PUBLIC_SITE_URL || 'https://neerajadhav.in'
