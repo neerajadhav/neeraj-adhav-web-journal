@@ -47,7 +47,7 @@ export default function BlogPage() {
           No posts found
         </p>
       )}
-      <PageSection title='Latest Articles'>
+      <div className='p-4 lg:px-0'>
         <div className='flex flex-col gap-4'>
           {posts.length > 0 && (
             <div className='flex flex-col gap-4 lg:flex-row'>
@@ -59,9 +59,9 @@ export default function BlogPage() {
             </div>
           )}
         </div>
-      </PageSection>
+      </div>
       <PageSection title='Archive'>
-        <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 pt-1 lg:pt-4'>
+        <div className='grid w-full grid-cols-1 gap-4 pt-1 sm:grid-cols-2 lg:pt-4'>
           {posts.slice(3).map((post, index) => (
             <div key={index + 1} className='mb-4 w-full'>
               <Post2 postInfo={post} />
