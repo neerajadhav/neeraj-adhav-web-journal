@@ -16,6 +16,7 @@ import { useEffect, useState } from 'react';
 import { usePostQuery } from '../../../generated/graphq';
 import { useEmbeds } from '../../../hooks/useEmbeds';
 import GiscusComments from '@/components/GiscusComments';
+import { ModeToggle } from '@/components/DarkModeBtn';
 
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 
@@ -125,7 +126,7 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
             {post.content.markdown && (
               <MarkdownToHtml contentMarkdown={post.content.markdown} />
             )}
-            <hr className='mb-4 h-px border-0 bg-zinc-200 dark:bg-bgDark' />
+            <hr className='mb-4 h-px border-0 bg-zinc-200 dark:bg-bgDark print:hidden' />
             {post.tags?.length && (
               <div className='flex w-full flex-wrap gap-3 text-gray-950 dark:text-zinc-300 print:hidden'>
                 {post.tags.map((tag) => (
@@ -141,8 +142,13 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
                 ))}
               </div>
             )}
-            <hr className='mt-4 h-px border-0 bg-zinc-200 dark:bg-bgDark' />
-            <GiscusComments />
+            <div className='print:hidden'>
+              <hr className='mt-4 h-px border-0 bg-zinc-200 dark:bg-bgDark' />
+              <div className='flex justify-end py-2'>
+                <ModeToggle />
+              </div>
+              <GiscusComments />
+            </div>
           </div>
         </article>
       </PageSection>
