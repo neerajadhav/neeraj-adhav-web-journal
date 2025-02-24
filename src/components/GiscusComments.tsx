@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const GiscusComments = () => {
   const giscusRef = useRef<HTMLDivElement>(null);
+  const [key, setKey] = useState<number>(0); // State to force component re-render
 
   useEffect(() => {
     if (!giscusRef.current || giscusRef.current.hasChildNodes()) return;
@@ -26,9 +27,23 @@ const GiscusComments = () => {
     script.async = true;
 
     giscusRef.current.appendChild(script);
-  }, []);
+  }, [key]); // Include key in the dependency array to trigger re-render on key change
 
-  return <div ref={giscusRef} className='mt-4'></div>;
+  const handleRefresh = () => {
+    setKey((prevKey) => prevKey + 1); // Update key to trigger re-render
+  };
+
+  return (
+    <div className='mt-4'>
+      <div ref={giscusRef}></div>
+      <button
+        onClick={handleRefresh}
+        className={`relative rounded-full border bg-white p-2 text-sm shadow-sm hover:bg-white dark:border-0 dark:bg-transparent dark:text-gray-400 dark:hover:bg-gray-50/10 lg:rounded-lg lg:px-3 lg:py-2 lg:shadow-none print:hidden mt-4`}
+      >
+        Refresh Comments
+      </button>
+    </div>
+  );
 };
 
 export default GiscusComments;
