@@ -147,7 +147,6 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
       </PageSection>
       <PageSection title='Comments' extraButtons={<ModeToggle />}>
         <div className='mx-auto max-w-3xl print:hidden'>
-          <div className='flex items-center justify-end py-2 text-sm'></div>
           <GiscusComments />
         </div>
       </PageSection>

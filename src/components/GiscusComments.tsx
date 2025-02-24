@@ -28,7 +28,7 @@ const GiscusComments = () => {
     giscusRef.current.appendChild(script);
   }, []);
 
-  return <div ref={giscusRef}></div>;
+  return <div ref={giscusRef} className='mt-4'></div>;
 };
 
 export default GiscusComments;
