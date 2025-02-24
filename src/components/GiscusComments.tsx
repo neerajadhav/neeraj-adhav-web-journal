@@ -10,7 +10,7 @@ const GiscusComments = () => {
 
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
-    script.setAttribute('data-repo', 'neerajadhav/floaty-hashnode-headless');
+    script.setAttribute('data-repo', 'neerajadhav/neeraj-adhav-web-journal');
     script.setAttribute('data-repo-id', 'R_kgDON20ryA');
     script.setAttribute('data-category', 'Blog Comments');
     script.setAttribute('data-category-id', 'DIC_kwDON20ryM4CnQVF');
