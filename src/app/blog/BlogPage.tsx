@@ -61,7 +61,7 @@ export default function BlogPage() {
         </div>
       </div>
       <PageSection title='Archive'>
-        <div className='grid w-full grid-cols-1 gap-4 pt-1 sm:grid-cols-2 lg:pt-4'>
+        <div className='grid w-full grid-cols-1 gap-0 pt-1 sm:grid-cols-2 lg:gap-3 lg:pt-4'>
           {posts.slice(3).map((post, index) => (
             <div key={index + 1} className='mb-4 w-full'>
               <Post2 postInfo={post} />

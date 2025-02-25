@@ -45,7 +45,7 @@ export const Post2 = (props: PostProps) => {
   return (
     <Link
       href={`/${postInfo.slug}`}
-      className={`flex ${props.first ? 'w-full lg:w-2/3' : 'w-full'} flex gap-4 rounded-lg lg:px-4 hover:opacity-90 flex-row items-start`}
+      className={`flex ${props.first ? 'w-full lg:w-2/3' : 'w-full'} flex flex-row items-start gap-4 rounded-lg hover:opacity-90 lg:px-4`}
     >
       <div className='flex aspect-video w-full overflow-hidden rounded-lg'>
         {postInfo.coverImage?.url ? (
@@ -64,13 +64,13 @@ export const Post2 = (props: PostProps) => {
       </div>
       <div className='flex w-full flex-col text-gray-950 dark:text-zinc-300'>
         <h3
-          className={`mb-5 line-clamp-3 font-semibold dark:text-zinc-100 lg:text-lg`}
+          className={`mb-1 line-clamp-3 font-semibold dark:text-zinc-100 lg:text-lg`}
         >
           {postInfo.title}
         </h3>
         <div className='flex w-full flex-row justify-between text-xs'>
           <p className='flex flex-row items-center gap-1'>
-            <ClockIcon className='h-4 w-4' />
+            {/* <ClockIcon className='h-4 w-4' /> */}
             {formatDate(postInfo.publishedAt)}
           </p>
           {/* <p className='flex flex-row items-center gap-2'>
