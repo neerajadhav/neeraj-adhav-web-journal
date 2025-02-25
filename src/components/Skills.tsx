@@ -4,7 +4,7 @@ import {
   ComputerDesktopIcon,
   CpuChipIcon,
   PaintBrushIcon,
-  ServerIcon
+  ServerIcon,
 } from '@heroicons/react/24/outline';
 
 import { FaGithub } from 'react-icons/fa';
@@ -18,23 +18,46 @@ interface SkillItemProps {
   skills: string[];
 }
 
+// Mapping of technology names to their badge colors
+const skillStyles: { [key: string]: { bg: string; text: string } } = {
+  'JavaScript': { bg: 'bg-[#F7DF1E]', text: 'text-black' },
+  'Python': { bg: 'bg-[#14354C]', text: 'text-white' },
+  'C++': { bg: 'bg-[#00599C]', text: 'text-white' },
+  'TypeScript': { bg: 'bg-[#3178C6]', text: 'text-white' },
+  'Django': { bg: 'bg-[#092E20]', text: 'text-white' },
+  'FastAPI': { bg: 'bg-[#009688]', text: 'text-white' },
+  'Next.js': { bg: 'bg-[#000000]', text: 'text-white' },
+  'HTML': { bg: 'bg-[#E34F26]', text: 'text-white' },
+  'CSS': { bg: 'bg-gray-500', text: 'text-white' },
+  'Tailwind CSS': { bg: 'bg-[#38B2AC]', text: 'text-white' },
+  'ShadCN': { bg: 'bg-[#000000]', text: 'text-white' },
+  'Arch Linux': { bg: 'bg-[#1793D1]', text: 'text-white' },
+  'NixOS': { bg: 'bg-[#4C566A]', text: 'text-white' },
+  'Linux Mint': { bg: 'bg-[#87CF3B]', text: 'text-white' },
+  'Ubuntu': { bg: 'bg-[#E95420]', text: 'text-white' },
+  'React': { bg: 'bg-[#61DAFB]', text: 'text-black' },
+};
+
 const SkillItem: React.FC<SkillItemProps> = ({ icon, category, skills }) => (
-  <div className='group relative flex flex-col rounded-xl border bg-gray-200/30 p-3 transition-all duration-300 dark:border-0 dark:bg-bgDark'>
+  <div className='group relative flex flex-col p-3 transition-all duration-300'>
     <div className='mb-3 flex items-center gap-3'>
-        {icon}
+      {icon}
       <h3 className='font-semibold text-gray-900 dark:text-zinc-200'>
         {category}
       </h3>
     </div>
     <ul className='flex flex-wrap gap-2'>
-      {skills.map((skill, i) => (
-        <li
-          key={i}
-          className='rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-900 dark:bg-gray-700 dark:text-zinc-300'
-        >
-          {skill}
-        </li>
-      ))}
+      {skills.map((skill, i) => {
+        const style = skillStyles[skill] || { bg: 'bg-gray-200', text: 'text-black' };
+        return (
+          <li
+            key={i}
+            className={`rounded-full ${style.bg} px-3 py-1 text-sm font-medium ${style.text}`}
+          >
+            {skill}
+          </li>
+        );
+      })}
     </ul>
   </div>
 );
@@ -43,28 +66,36 @@ export const Skills: React.FC = () => {
   const skillsData: SkillItemProps[] = [
     {
       category: 'Programming Languages',
-      icon: <CodeBracketIcon className='h-5 w-5 text-blue-800 dark:text-blue-400' />, 
+      icon: (
+        <CodeBracketIcon className='h-5 w-5 text-blue-800 dark:text-blue-400' />
+      ),
       skills: ['JavaScript', 'Python', 'C++', 'TypeScript'],
     },
     {
       category: 'Frameworks',
-      icon: <ServerIcon className='h-5 w-5 text-blue-800 dark:text-blue-400' />, 
+      icon: <ServerIcon className='h-5 w-5 text-blue-800 dark:text-blue-400' />,
       skills: ['Django', 'FastAPI', 'Next.js'],
     },
     {
-      category: 'Libraries',
-      icon: <CpuChipIcon className='h-5 w-5 text-blue-800 dark:text-blue-400' />, 
-      skills: ['React'],
-    },
-    {
       category: 'Markup & Styling',
-      icon: <PaintBrushIcon className='h-5 w-5 text-blue-800 dark:text-blue-400' />, 
+      icon: (
+        <PaintBrushIcon className='h-5 w-5 text-blue-800 dark:text-blue-400' />
+      ),
       skills: ['HTML', 'CSS', 'Tailwind CSS', 'ShadCN'],
     },
     {
       category: 'Favorite Linux Distros',
-      icon: <ComputerDesktopIcon className='h-5 w-5 text-blue-800 dark:text-blue-400' />, 
+      icon: (
+        <ComputerDesktopIcon className='h-5 w-5 text-blue-800 dark:text-blue-400' />
+      ),
       skills: ['Arch Linux', 'NixOS', 'Linux Mint', 'Ubuntu'],
+    },
+    {
+      category: 'Libraries',
+      icon: (
+        <CpuChipIcon className='h-5 w-5 text-blue-800 dark:text-blue-400' />
+      ),
+      skills: ['React'],
     },
   ];
 
