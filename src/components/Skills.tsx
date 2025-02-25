@@ -77,7 +77,7 @@ export const Skills: React.FC = () => {
         icon: <FaGithub className='h-4 w-4' />,
       }}
     >
-      <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+      <div className='grid w-full grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3'>
         {skillsData.map((skillSet, index) => (
           <SkillItem key={index} {...skillSet} />
         ))}
