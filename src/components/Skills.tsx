@@ -21,9 +21,7 @@ interface SkillItemProps {
 const SkillItem: React.FC<SkillItemProps> = ({ icon, category, skills }) => (
   <div className='group relative flex flex-col rounded-xl border bg-gray-200/30 p-3 transition-all duration-300 dark:border-0 dark:bg-bgDark'>
     <div className='mb-3 flex items-center gap-3'>
-      <div className='flex h-9 w-9 items-center justify-center rounded-lg border bg-white dark:border-gray-600 dark:bg-gray-900'>
         {icon}
-      </div>
       <h3 className='font-semibold text-gray-900 dark:text-zinc-200'>
         {category}
       </h3>
@@ -45,27 +43,27 @@ export const Skills: React.FC = () => {
   const skillsData: SkillItemProps[] = [
     {
       category: 'Programming Languages',
-      icon: <CodeBracketIcon className='h-5 w-5 text-blue-800 dark:text-green-500' />, 
+      icon: <CodeBracketIcon className='h-5 w-5 text-blue-800 dark:text-blue-400' />, 
       skills: ['JavaScript', 'Python', 'C++', 'TypeScript'],
     },
     {
       category: 'Frameworks',
-      icon: <ServerIcon className='h-5 w-5 text-blue-800 dark:text-green-500' />, 
+      icon: <ServerIcon className='h-5 w-5 text-blue-800 dark:text-blue-400' />, 
       skills: ['Django', 'FastAPI', 'Next.js'],
     },
     {
       category: 'Libraries',
-      icon: <CpuChipIcon className='h-5 w-5 text-blue-800 dark:text-green-500' />, 
+      icon: <CpuChipIcon className='h-5 w-5 text-blue-800 dark:text-blue-400' />, 
       skills: ['React'],
     },
     {
       category: 'Markup & Styling',
-      icon: <PaintBrushIcon className='h-5 w-5 text-blue-800 dark:text-green-500' />, 
+      icon: <PaintBrushIcon className='h-5 w-5 text-blue-800 dark:text-blue-400' />, 
       skills: ['HTML', 'CSS', 'Tailwind CSS', 'ShadCN'],
     },
     {
       category: 'Favorite Linux Distros',
-      icon: <ComputerDesktopIcon className='h-5 w-5 text-blue-800 dark:text-green-500' />, 
+      icon: <ComputerDesktopIcon className='h-5 w-5 text-blue-800 dark:text-blue-400' />, 
       skills: ['Arch Linux', 'NixOS', 'Linux Mint', 'Ubuntu'],
     },
   ];
