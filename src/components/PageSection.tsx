@@ -25,9 +25,9 @@ const PageSection: React.FC<PageSectionProps> = ({
   className = '',
 }) => {
   return (
-    <section className='flex flex-col items-start border-b bg-white text-gray-950 dark:border dark:border-t-0 dark:border-bgDark dark:bg-bgDark/80 dark:text-zinc-300 lg:border-x'>
+    <section className='flex flex-col items-start rounded-lg border-b bg-white text-gray-950 dark:border dark:border-t-0 dark:border-bgDark dark:bg-bgDark/80 dark:text-zinc-300 lg:border-x'>
       <div
-        className={`sticky top-[-0.1px] z-30 flex w-full select-none flex-row items-center justify-between gap-3 border-y bg-white px-4 py-3 dark:border-bgDark dark:bg-bgDark print:hidden`}
+        className={`sticky top-[-0.1px] z-30 flex w-full select-none flex-row items-center justify-between gap-3 rounded-t-lg border-y bg-white px-4 py-3 dark:border-bgDark dark:bg-bgDark print:hidden`}
       >
         {isBlogArticle && (
           <Link href='/blog'>
@@ -38,7 +38,7 @@ const PageSection: React.FC<PageSectionProps> = ({
         )}
 
         <div
-          className={`w-full text-sm text-start font-semibold ${isBlogArticle && 'font-normal'} text-gray-700 dark:text-zinc-100`}
+          className={`w-full text-start text-sm font-semibold ${isBlogArticle && 'font-normal'} text-gray-700 dark:text-zinc-100`}
         >
           <p className='line-clamp-1 w-full'>{title}</p>
         </div>
@@ -55,7 +55,7 @@ const PageSection: React.FC<PageSectionProps> = ({
         )}
         {extraButtons}
       </div>
-      <div className={`mx-auto w-full p-4  ${className}`}>{children}</div>
+      <div className={`mx-auto w-full p-4 ${className}`}>{children}</div>
     </section>
   );
 };

@@ -12,7 +12,7 @@ export const ContactMe = () => {
 
   return (
     <footer className='mb-[4.5rem] select-none print:hidden'>
-      <div className='flex w-full flex-col items-center gap-5 border bg-white p-6 text-gray-950 dark:border dark:border-bgDark dark:bg-bgDark dark:text-zinc-300'>
+      <div className='flex w-full flex-col items-center gap-5 rounded-lg border bg-white p-6 text-gray-950 dark:border dark:border-bgDark dark:bg-bgDark dark:text-zinc-300'>
         <h2 className='text-xl font-semibold lg:text-2xl'>
           Have a Project Idea?
         </h2>
