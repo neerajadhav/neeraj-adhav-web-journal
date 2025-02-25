@@ -1,7 +1,9 @@
+'use client';
+
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 
 interface PageSectionProps {
   title: string;
@@ -24,10 +26,35 @@ const PageSection: React.FC<PageSectionProps> = ({
   isBlogArticle,
   className = '',
 }) => {
+  const headerRef = useRef<HTMLDivElement | null>(null);
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsSticky(!entry.isIntersecting);
+      },
+      { threshold: 1.0, rootMargin: '-1px 0px 0px 0px' }
+    );
+
+    if (headerRef.current) {
+      observer.observe(headerRef.current);
+    }
+
+    return () => {
+      if (headerRef.current) {
+        observer.unobserve(headerRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section className='mx-2 flex flex-col items-start rounded-lg border bg-white text-gray-950 dark:border-bgDark dark:bg-bgDark/80 dark:text-zinc-300'>
       <div
-        className={`sticky top-[-0.1px] z-30 flex w-full select-none flex-row items-center justify-between gap-3 rounded-t-lg border-b bg-white px-4 py-3 dark:border-bgDark dark:bg-bgDark print:hidden`}
+        ref={headerRef}
+        className={`sticky top-[-0.1px] z-30 flex w-full select-none flex-row items-center justify-between gap-3 border-b bg-white px-4 py-3 dark:border-bgDark dark:bg-bgDark print:hidden ${
+          isSticky ? 'rounded-t-0' : 'rounded-t-lg'
+        }`}
       >
         {isBlogArticle && (
           <Link href='/blog'>
@@ -38,7 +65,9 @@ const PageSection: React.FC<PageSectionProps> = ({
         )}
 
         <div
-          className={`w-full text-start text-sm font-semibold ${isBlogArticle && 'font-normal'} text-gray-700 dark:text-zinc-100`}
+          className={`w-full text-start text-sm font-semibold ${
+            isBlogArticle && 'font-normal'
+          } text-gray-700 dark:text-zinc-100`}
         >
           <p className='line-clamp-1 w-full'>{title}</p>
         </div>
