@@ -3,6 +3,7 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PhotoIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
+import React from 'react';
 
 interface SingleProjectProps {
   project: {
@@ -13,13 +14,30 @@ interface SingleProjectProps {
     desc?: string;
   };
 }
-export const SingleProject = (props: SingleProjectProps) => {
-  const { project } = props;
+
+interface ActionButtonProps {
+  url?: string;
+  children: React.ReactNode;
+}
+
+const ActionButton: React.FC<ActionButtonProps> = ({ url, children }) => {
+  const commonClasses =
+    'flex items-center gap-2 rounded-full p-1 px-3 text-sm text-white';
+  return url ? (
+    <a href={`//${url}`} target='_blank' className={commonClasses}>
+      {children}
+    </a>
+  ) : (
+    <div className={commonClasses}>{children}</div>
+  );
+};
+
+export const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
   return (
-    <div className='group w-full items-center rounded-2xl p-2 text-gray-950 md:w-1/3'>
-      <div className='flex w-full flex-col gap-3 text-gray-950 dark:text-zinc-300'>
+    <div className='w-full items-center rounded lg:w-1/3'>
+      <div className='flex w-full flex-col gap-3 px-1 py-2 text-gray-950 dark:text-zinc-300'>
         {project.imageUrl ? (
-          <div className='flex aspect-video w-full overflow-hidden rounded-lg'>
+          <div className='relative flex aspect-video w-full overflow-hidden rounded-lg'>
             <Image
               src={project.imageUrl}
               width={2000}
@@ -27,6 +45,22 @@ export const SingleProject = (props: SingleProjectProps) => {
               alt='Project Image'
               className='flex-1'
             />
+            <div className='absolute bottom-0 right-0 z-20 bg-black/70 rounded-tl-lg'>
+              <div className='flex w-full flex-row items-center justify-end gap-2 text-xs'>
+                <ActionButton url={project.url}>
+                  <FontAwesomeIcon width={10} height={10} icon={faGithub} />
+                  Source Code
+                </ActionButton>
+                <ActionButton url={project.demoLink}>
+                  Live Demo
+                  <FontAwesomeIcon
+                    width={10}
+                    height={10}
+                    icon={faArrowUpRightFromSquare}
+                  />
+                </ActionButton>
+              </div>
+            </div>
           </div>
         ) : (
           <div className='flex aspect-video w-full items-center justify-center rounded-xl bg-gray-300 dark:bg-gray-950'>
@@ -43,46 +77,6 @@ export const SingleProject = (props: SingleProjectProps) => {
             {project.desc}
           </p>
         )}
-        <div className='flex w-full flex-row items-center justify-end gap-2 text-xs'>
-          {project.url ? (
-            <a
-              href={`//${project.url}`}
-              target='_blank'
-              className='flex items-center gap-2 rounded-full border border-zinc-100 p-1 px-3 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950'
-            >
-              <FontAwesomeIcon width={10} height={10} icon={faGithub} />
-              Source Code
-            </a>
-          ) : (
-            <div className='flex items-center gap-2 rounded-full border border-zinc-100 p-1 px-3 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950'>
-              <FontAwesomeIcon width={10} height={10} icon={faGithub} />
-              Source Code
-            </div>
-          )}
-          {project.demoLink ? (
-            <a
-              href={`//${project.demoLink}`}
-              target='_blank'
-              className='flex items-center gap-2 rounded-full border border-zinc-100 p-1 px-3 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950'
-            >
-              Live Demo
-              <FontAwesomeIcon
-                width={10}
-                height={10}
-                icon={faArrowUpRightFromSquare}
-              />
-            </a>
-          ) : (
-            <div className='flex items-center gap-2 rounded-full border border-zinc-100 p-1 px-3 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950'>
-              Live Demo
-              <FontAwesomeIcon
-                width={10}
-                height={10}
-                icon={faArrowUpRightFromSquare}
-              />
-            </div>
-          )}
-        </div>
       </div>
     </div>
   );
