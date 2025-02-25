@@ -16,8 +16,8 @@ interface SingleProjectProps {
 export const SingleProject = (props: SingleProjectProps) => {
   const { project } = props;
   return (
-    <div className='w-full items-center rounded sm:max-w-72 md:max-w-80 lg:max-w-96'>
-      <div className='flex w-full flex-col gap-3 px-1 py-2 text-gray-950 dark:text-zinc-300'>
+    <div className='group w-full items-center rounded-2xl p-2 text-gray-950 md:w-1/3'>
+      <div className='flex w-full flex-col gap-3 text-gray-950 dark:text-zinc-300'>
         {project.imageUrl ? (
           <div className='flex aspect-video w-full overflow-hidden rounded-lg'>
             <Image
@@ -48,12 +48,13 @@ export const SingleProject = (props: SingleProjectProps) => {
             <a
               href={`//${project.url}`}
               target='_blank'
-              className='flex gap-2 items-center rounded-full border border-zinc-100 p-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950 px-3'>
+              className='flex items-center gap-2 rounded-full border border-zinc-100 p-1 px-3 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950'
+            >
               <FontAwesomeIcon width={10} height={10} icon={faGithub} />
               Source Code
             </a>
           ) : (
-            <div className='flex gap-2 items-center rounded-full border border-zinc-100 p-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950 px-3'>
+            <div className='flex items-center gap-2 rounded-full border border-zinc-100 p-1 px-3 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950'>
               <FontAwesomeIcon width={10} height={10} icon={faGithub} />
               Source Code
             </div>
@@ -62,14 +63,23 @@ export const SingleProject = (props: SingleProjectProps) => {
             <a
               href={`//${project.demoLink}`}
               target='_blank'
-              className='flex gap-2 items-center rounded-full border border-zinc-100 p-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950 px-3'>
+              className='flex items-center gap-2 rounded-full border border-zinc-100 p-1 px-3 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950'
+            >
               Live Demo
-              <FontAwesomeIcon width={10} height={10} icon={faArrowUpRightFromSquare} />
+              <FontAwesomeIcon
+                width={10}
+                height={10}
+                icon={faArrowUpRightFromSquare}
+              />
             </a>
           ) : (
-            <div className='flex gap-2 items-center rounded-full border border-zinc-100 p-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950 px-3'>
+            <div className='flex items-center gap-2 rounded-full border border-zinc-100 p-1 px-3 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950'>
               Live Demo
-              <FontAwesomeIcon width={10} height={10} icon={faArrowUpRightFromSquare} />
+              <FontAwesomeIcon
+                width={10}
+                height={10}
+                icon={faArrowUpRightFromSquare}
+              />
             </div>
           )}
         </div>
