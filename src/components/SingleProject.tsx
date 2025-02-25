@@ -39,7 +39,7 @@ export const SingleProject = (props: SingleProjectProps) => {
           {project.name}
         </p>
         {project.desc && (
-          <p className='line-clamp-3 text-justify text-sm leading-snug text-gray-500 dark:text-zinc-300'>
+          <p className='line-clamp-3 text-gray-500 dark:text-zinc-300'>
             {project.desc}
           </p>
         )}

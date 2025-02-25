@@ -46,7 +46,7 @@ export const SingleBlog = (props: SingleBlogProps) => {
           <h3 className='line-clamp-2 text-xl font-semibold dark:text-zinc-100'>
             {title}
           </h3>
-          <p className='line-clamp-3 text-justify text-sm leading-snug text-gray-500 dark:text-zinc-300'>
+          <p className='line-clamp-3 text-gray-500 dark:text-zinc-300'>
             {brief}
           </p>
         </div>
