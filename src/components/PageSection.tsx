@@ -25,9 +25,9 @@ const PageSection: React.FC<PageSectionProps> = ({
   className = '',
 }) => {
   return (
-    <section className='flex flex-col items-start rounded-lg border-b bg-white text-gray-950 dark:border dark:border-t-0 dark:border-bgDark dark:bg-bgDark/80 dark:text-zinc-300 lg:border-x'>
+    <section className='mx-2 flex flex-col items-start rounded-lg border bg-white text-gray-950 dark:border-bgDark dark:bg-bgDark/80 dark:text-zinc-300'>
       <div
-        className={`sticky top-[-0.1px] z-30 flex w-full select-none flex-row items-center justify-between gap-3 rounded-t-lg border-y bg-white px-4 py-3 dark:border-bgDark dark:bg-bgDark print:hidden`}
+        className={`sticky top-[-0.1px] z-30 flex w-full select-none flex-row items-center justify-between gap-3 rounded-t-lg border-b bg-white px-4 py-3 dark:border-bgDark dark:bg-bgDark print:hidden`}
       >
         {isBlogArticle && (
           <Link href='/blog'>
