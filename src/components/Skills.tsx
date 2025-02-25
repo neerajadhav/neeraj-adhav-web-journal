@@ -41,7 +41,7 @@ const SkillItem: React.FC<SkillItemProps> = ({ category, skills }) => (
         return (
           <li
             key={i}
-            className={`rounded-lg ${style.bg} px-3 py-1 text-sm font-medium ${style.text}`}
+            className={`rounded ${style.bg} px-3 py-1 text-sm font-medium ${style.text}`}
           >
             {skill}
           </li>
