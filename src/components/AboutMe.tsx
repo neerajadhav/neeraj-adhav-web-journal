@@ -1,7 +1,7 @@
 'use client';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Kirang_Haerang, Sofadi_One } from 'next/font/google';
+import { Kirang_Haerang } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaEnvelope, FaFilePdf, FaSuitcase } from 'react-icons/fa';
