@@ -9,22 +9,22 @@ interface SkillItemProps {
 }
 
 const skillStyles: { [key: string]: { bg: string; text: string } } = {
-  JavaScript: { bg: 'bg-[#F7DF1E]', text: 'text-black' },
-  Python: { bg: 'bg-[#14354C]', text: 'text-white' },
-  'C++': { bg: 'bg-[#00599C]', text: 'text-white' },
-  TypeScript: { bg: 'bg-[#3178C6]', text: 'text-white' },
-  Django: { bg: 'bg-[#092E20]', text: 'text-white' },
-  FastAPI: { bg: 'bg-[#009688]', text: 'text-white' },
-  'Next.js': { bg: 'bg-[#000000]', text: 'text-white' },
-  HTML: { bg: 'bg-[#E34F26]', text: 'text-white' },
+  JavaScript: { bg: 'bg-[#F7DF1E]/90', text: 'text-black' },
+  Python: { bg: 'bg-[#14354C]/90', text: 'text-white' },
+  'C++': { bg: 'bg-[#00599C]/90', text: 'text-white' },
+  TypeScript: { bg: 'bg-[#3178C6]/90', text: 'text-white' },
+  Django: { bg: 'bg-[#092E20]/90', text: 'text-white' },
+  FastAPI: { bg: 'bg-[#009688]/90', text: 'text-white' },
+  'Next.js': { bg: 'bg-[#000000]/90', text: 'text-white' },
+  HTML: { bg: 'bg-[#E34F26]/90', text: 'text-white' },
   CSS: { bg: 'bg-gray-500', text: 'text-white' },
-  'Tailwind CSS': { bg: 'bg-[#38B2AC]', text: 'text-white' },
-  ShadCN: { bg: 'bg-[#000000]', text: 'text-white' },
-  'Arch Linux': { bg: 'bg-[#1793D1]', text: 'text-white' },
-  NixOS: { bg: 'bg-[#4C566A]', text: 'text-white' },
-  'Linux Mint': { bg: 'bg-[#87CF3B]', text: 'text-white' },
-  Ubuntu: { bg: 'bg-[#E95420]', text: 'text-white' },
-  React: { bg: 'bg-[#61DAFB]', text: 'text-black' },
+  'Tailwind CSS': { bg: 'bg-[#38B2AC]/90', text: 'text-white' },
+  ShadCN: { bg: 'bg-[#000000]/90', text: 'text-white' },
+  'Arch Linux': { bg: 'bg-[#1793D1]/90', text: 'text-white' },
+  NixOS: { bg: 'bg-[#4C566A]/90', text: 'text-white' },
+  'Linux Mint': { bg: 'bg-[#87CF3B]/90', text: 'text-white' },
+  Ubuntu: { bg: 'bg-[#E95420]/90', text: 'text-white' },
+  React: { bg: 'bg-[#61DAFB]/90', text: 'text-black' },
 };
 
 const SkillItem: React.FC<SkillItemProps> = ({ category, skills }) => (
