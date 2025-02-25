@@ -48,14 +48,13 @@ export const SingleProject = (props: SingleProjectProps) => {
             <a
               href={`//${project.url}`}
               target='_blank'
-              className='flex items-center gap-2 rounded-full px-2 py-1 hover:bg-gray-600 hover:text-white dark:hover:bg-gray-950 dark:hover:text-zinc-300'
-            >
-              <FontAwesomeIcon icon={faGithub} />
+              className='flex gap-2 items-center rounded-full border border-zinc-100 p-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950 px-3'>
+              <FontAwesomeIcon width={10} height={10} icon={faGithub} />
               Source Code
             </a>
           ) : (
-            <div className='flex cursor-pointer items-center gap-2 rounded-full px-2 py-1 hover:bg-gray-600 hover:text-white dark:hover:bg-gray-950 dark:hover:text-zinc-300'>
-              <FontAwesomeIcon icon={faGithub} />
+            <div className='flex gap-2 items-center rounded-full border border-zinc-100 p-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950 px-3'>
+              <FontAwesomeIcon width={10} height={10} icon={faGithub} />
               Source Code
             </div>
           )}
@@ -63,15 +62,14 @@ export const SingleProject = (props: SingleProjectProps) => {
             <a
               href={`//${project.demoLink}`}
               target='_blank'
-              className='flex items-center gap-2 rounded-full px-2 py-1 hover:bg-gray-600 hover:text-white dark:hover:bg-gray-950 dark:hover:text-zinc-300'
-            >
+              className='flex gap-2 items-center rounded-full border border-zinc-100 p-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950 px-3'>
               Live Demo
-              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              <FontAwesomeIcon width={10} height={10} icon={faArrowUpRightFromSquare} />
             </a>
           ) : (
-            <div className='flex cursor-pointer items-center gap-2 rounded-full px-2 py-1 hover:bg-gray-600 hover:text-white dark:hover:bg-gray-950 dark:hover:text-zinc-300'>
+            <div className='flex gap-2 items-center rounded-full border border-zinc-100 p-1 text-sm hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950 px-3'>
               Live Demo
-              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              <FontAwesomeIcon width={10} height={10} icon={faArrowUpRightFromSquare} />
             </div>
           )}
         </div>
