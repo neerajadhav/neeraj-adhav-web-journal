@@ -49,7 +49,7 @@ const PageSection: React.FC<PageSectionProps> = ({
   }, []);
 
   return (
-    <section className='mx-2 flex flex-col items-start rounded-lg border bg-white text-gray-950 dark:border-bgDark dark:bg-bgDark/80 dark:text-zinc-300'>
+    <section className='mx-2 lg:mx-0 flex flex-col items-start rounded-lg border bg-white text-gray-950 dark:border-bgDark dark:bg-bgDark/80 dark:text-zinc-300'>
       <div
         ref={headerRef}
         className={`sticky top-[-0.1px] z-30 flex w-full select-none flex-row items-center justify-between gap-3 border-b bg-white px-4 py-3 dark:border-bgDark dark:bg-bgDark print:hidden ${
