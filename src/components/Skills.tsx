@@ -28,7 +28,7 @@ const skillStyles: { [key: string]: { bg: string; text: string } } = {
 };
 
 const SkillItem: React.FC<SkillItemProps> = ({ category, skills }) => (
-  <div className='group relative flex flex-col gap-3 p-3 transition-all duration-300'>
+  <div className='group relative flex flex-col gap-2 p-3 transition-all duration-300'>
     <h3 className='font-semibold text-gray-900 dark:text-zinc-200'>
       {category}
     </h3>
@@ -41,7 +41,7 @@ const SkillItem: React.FC<SkillItemProps> = ({ category, skills }) => (
         return (
           <li
             key={i}
-            className={`rounded-full ${style.bg} px-3 py-1 text-sm font-medium ${style.text}`}
+            className={`rounded-lg ${style.bg} px-3 py-1 text-sm font-medium ${style.text}`}
           >
             {skill}
           </li>
