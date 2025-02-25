@@ -24,7 +24,7 @@ export const AboutMe = () => {
   const availableFor = publication.author?.availableFor || null;
 
   return (
-    <div className='flex mx-2 lg:mx-0 flex-col items-center gap-4 rounded-lg border bg-white p-4 dark:border-0 dark:bg-bgDark'>
+    <div className='flex flex-col items-center gap-4 rounded-lg border bg-white p-4 dark:border-0 dark:bg-bgDark'>
       <div className='flex w-full flex-col items-start gap-4 lg:flex-row'>
         {publication.author.profilePicture && (
           <div className='b mx-auto flex w-1/2 flex-col items-center gap-3 overflow-hidden rounded-xl p-3 sm:max-w-52'>
