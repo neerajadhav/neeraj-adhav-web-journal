@@ -52,9 +52,9 @@ const PageSection: React.FC<PageSectionProps> = ({
     <section className='flex flex-col items-start rounded-xl border bg-white text-gray-950 dark:border-bgDark dark:bg-bgDark/80 dark:text-zinc-300 print:border-0'>
       <div
         ref={headerRef}
-        className={`sticky top-[-0.1px] z-30 flex w-full select-none flex-row items-center justify-between gap-3 border-b bg-white px-4 py-3 dark:border-bgDark dark:bg-bgDark print:hidden ${
+        className={`sticky top-[-0.1px] z-30 flex w-full select-none flex-row items-center justify-between gap-3 border-b bg-white p-4 dark:border-bgDark dark:bg-bgDark print:hidden ${
           isSticky ? 'rounded-t-0 rounded-b-xl' : 'rounded-t-xl'
-        }`}
+        } ${isBlogArticle ? 'py-3' : ''} `}
       >
         {isBlogArticle && (
           <Link href='/blog'>
