@@ -6,6 +6,7 @@ query Posts($host: String, $pageSize: Int!, $page: Int!) {
         slug
         title
         views
+        brief
         coverImage {
           url
         }

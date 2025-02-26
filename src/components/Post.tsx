@@ -15,6 +15,7 @@ interface PostProps {
         title: string;
         views: number;
         publishedAt: any;
+        brief: string;
         coverImage?:
           | {
               __typename?: 'PostCoverImage' | undefined;
@@ -64,6 +65,7 @@ export const Post = (props: PostProps) => {
             </p> */}
         </div>
       </div>
+      {props.first && <>{postInfo.brief}</>}
       <div className='flex aspect-video w-full overflow-hidden rounded-lg'>
         {postInfo.coverImage?.url ? (
           <Image

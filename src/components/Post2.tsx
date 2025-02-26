@@ -14,6 +14,7 @@ interface PostProps {
         slug: string;
         title: string;
         views: number;
+        brief: string;
         publishedAt: any;
         coverImage?:
           | {
@@ -45,38 +46,32 @@ export const Post2 = (props: PostProps) => {
   return (
     <Link
       href={`/${postInfo.slug}`}
-      className={`flex ${props.first ? 'w-full lg:w-2/3' : 'w-full'} flex flex-row items-start gap-4 rounded-lg hover:opacity-90 px-1 lg:px-4`}
+      className={`flex flex-col items-start gap-3 lg:gap-4 rounded-lg border-0 p-2 hover:opacity-90 dark:border-bgDark lg:p-6`}
     >
-      <div className='flex aspect-video w-full overflow-hidden rounded-lg'>
-        {postInfo.coverImage?.url ? (
-          <Image
-            src={postImageSrc}
-            alt='Post Image'
-            width={1040}
-            height={585}
-            className='flex-1'
-            placeholder='blur'
-            blurDataURL={blurDataURL}
-          />
-        ) : (
-          <ImagePlaceholder />
-        )}
-      </div>
-      <div className='flex w-full flex-col text-gray-950 dark:text-zinc-300'>
-        <h3
-          className={`mb-1 line-clamp-3 font-semibold dark:text-zinc-100 lg:text-lg`}
-        >
-          {postInfo.title}
-        </h3>
-        <div className='flex w-full flex-row justify-between text-xs'>
-          <p className='flex flex-row items-center gap-1'>
-            {/* <ClockIcon className='h-4 w-4' /> */}
-            {formatDate(postInfo.publishedAt)}
-          </p>
-          {/* <p className='flex flex-row items-center gap-2'>
-            <ArrowTrendingUpIcon className='h-4 w-4' />
-            {postInfo.views}
-          </p> */}
+      {formatDate(postInfo.publishedAt)}
+      <div className='flex flex-col items-start gap-4 lg:flex-row'>
+        <div className='flex w-full flex-col text-gray-950 dark:text-zinc-300'>
+          <h3
+            className={`mb-1 line-clamp-2 font-extrabold dark:text-zinc-100 text-xl`}
+          >
+            {postInfo.title}
+          </h3>
+          <p className='line-clamp-3 text-sm text-justify'>{postInfo.brief || 'none'}</p>
+        </div>
+        <div className='flex aspect-video overflow-hidden rounded-lg lg:w-3/5'>
+          {postInfo.coverImage?.url ? (
+            <Image
+              src={postImageSrc}
+              alt='Post Image'
+              width={1040}
+              height={585}
+              className='flex-1'
+              placeholder='blur'
+              blurDataURL={blurDataURL}
+            />
+          ) : (
+            <ImagePlaceholder />
+          )}
         </div>
       </div>
     </Link>
