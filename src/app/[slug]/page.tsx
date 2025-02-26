@@ -100,7 +100,7 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
               }}
             ></div>
           )}
-          <div className='relative z-20 mx-auto max-w-3xl p-3 pt-4 print:p-0 print:text-justify'>
+          <div className='relative z-20 mx-auto max-w-3xl p-3 pt-4 print:p-0 text-justify'>
             <div className='mb-4 flex flex-col gap-3 text-gray-950 dark:text-zinc-300'>
               <h1 className='mb-2 w-full pb-4 text-center text-2xl font-bold dark:text-zinc-100 md:text-3xl print:pt-6 print:text-3xl print:font-extrabold'>
                 {post.title}
