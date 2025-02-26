@@ -34,7 +34,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({ url, children }) => {
 
 export const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
   return (
-    <div className='w-full items-center rounded lg:w-1/3'>
+    <div className='w-full items-center border-b border-gray-300 p-2 last:border-b-0 dark:border-gray-700 lg:w-1/3 lg:border-0 lg:border-t-0'>
       <div className='flex w-full flex-col gap-3 p-2 text-gray-950 dark:text-zinc-300'>
         {project.imageUrl ? (
           <div className='relative flex aspect-video w-full overflow-hidden rounded-lg'>
@@ -45,7 +45,7 @@ export const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
               alt='Project Image'
               className='flex-1'
             />
-            <div className='absolute bottom-0 right-0 z-20 bg-black/70 rounded-tl-lg'>
+            <div className='absolute bottom-0 right-0 z-20 rounded-tl-lg bg-black/70'>
               <div className='flex w-full flex-row items-center justify-end gap-2 text-xs'>
                 <ActionButton url={project.url}>
                   <FontAwesomeIcon width={10} height={10} icon={faGithub} />

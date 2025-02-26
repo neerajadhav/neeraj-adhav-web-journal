@@ -34,7 +34,7 @@ export const SingleBlog = (props: SingleBlogProps) => {
   return (
     <Link
       href={`/${slug}`}
-      className='group w-full items-center rounded-2xl p-2 text-gray-950 md:w-1/3'
+      className='group w-full items-center p-4 text-gray-950 md:w-1/3 border-b border-gray-300 last:border-b-0 dark:border-gray-700 lg:border-0 lg:border-t-0'
     >
       <article className='relative flex w-full flex-col gap-3'>
         {coverImageSrc ? (
