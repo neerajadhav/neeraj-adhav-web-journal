@@ -3,8 +3,8 @@
 import { Container } from '@/components/Container';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import BlogPage from './BlogPage';
 import { CgDanger } from 'react-icons/cg';
+import BlogPage from './BlogPage';
 
 interface Tab {
   title: string;
@@ -20,7 +20,7 @@ const tabs: Tab[] = [
     title: 'Series',
     content: (
       <>
-        <h1 className='h-52 flex w-full items-center justify-center gap-1'>
+        <h1 className='flex h-52 w-full items-center justify-center gap-1'>
           <CgDanger /> <span>Page content under construction!</span>
         </h1>
       </>

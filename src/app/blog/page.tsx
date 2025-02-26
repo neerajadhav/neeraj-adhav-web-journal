@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import { Suspense } from 'react';
+import BlogPage from './BlogPage';
 import BlogTabs from './BlogTabs';
 
 const BASE_TITLE = 'Blogs | Neeraj Adhav';
@@ -44,7 +46,9 @@ const Page = () => {
       <div className='hidden'>
         <h1>{BASE_TITLE}</h1>
       </div>
-      <BlogTabs />
+      <Suspense fallback={<BlogPage />}>
+        <BlogTabs />
+      </Suspense>
     </>
   );
 };
