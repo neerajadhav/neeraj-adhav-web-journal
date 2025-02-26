@@ -64,6 +64,7 @@ export default function BlogPage() {
           )}
         </div>
       </div>
+      <div className='mt-2' />
       <PageSection title='Archive'>
         <div className='grid w-full grid-cols-1 gap-1 pt-2 sm:grid-cols-2 lg:gap-3 lg:pt-4'>
           {posts.slice(3).map((post, index) => (
