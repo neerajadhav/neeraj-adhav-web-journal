@@ -1,14 +1,18 @@
 'use client';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Kirang_Haerang } from 'next/font/google';
+import { Inknut_Antiqua } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaEnvelope, FaFilePdf, FaSuitcase } from 'react-icons/fa';
 import { usePublicationQuery } from '../../generated/graphq';
 import { SocialLinks } from './SocialLinks';
 
-const ubuntu = Kirang_Haerang({ subsets: ['latin'], weight: '400' });
+const ubuntu = Inknut_Antiqua({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-roboto',
+});
 
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 
@@ -64,10 +68,12 @@ export const AboutMe = () => {
         <div className='flex w-full flex-1 flex-col items-start lg:py-2'>
           <div className='flex w-full flex-col gap-3 p-3 lg:p-0'>
             <h1
-              className={`w-full text-2xl text-gray-950 dark:text-zinc-100 sm:text-3xl ${ubuntu.className}`}
+              className={`w-full text-2xl text-gray-950 dark:text-zinc-100 ${ubuntu.className}`}
             >
-              <span>Hi there! I am </span>
-              <span>{`${publication.author.name}!`}</span>
+              <span className='text-gray-700 dark:text-zinc-300'>
+                Hi there! I am{' '}
+              </span>
+              <strong>{`${publication.author.name}`}</strong>
             </h1>
             {publication.author.bio && (
               <div
