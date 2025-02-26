@@ -7,7 +7,7 @@ const Newsletter = () => {
         <h2 className='text text-center font-semibold'>
           Newsletter
         </h2>
-        <form className='flex w-full items-center gap-1'>
+        <form className='flex w-full items-center gap-3'>
           <input
             type='email'
             placeholder='Service currently disabled!'
