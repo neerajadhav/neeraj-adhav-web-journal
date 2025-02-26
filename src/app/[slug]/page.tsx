@@ -128,7 +128,7 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
             )}
             {/* <hr className='mb-4 h-px border-0 bg-zinc-200 dark:bg-bgDark print:hidden' /> */}
             {post.tags?.length && (
-              <div className='mb-2 flex w-full flex-wrap gap-3 text-gray-950 dark:text-zinc-300 print:hidden'>
+              <div className='mt-5 flex w-full flex-wrap gap-3 text-gray-950 dark:text-zinc-300 print:hidden'>
                 {post.tags.map((tag) => (
                   <li key={tag.id} className='list-none'>
                     <a
