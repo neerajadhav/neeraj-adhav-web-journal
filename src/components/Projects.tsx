@@ -1,5 +1,5 @@
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
-import { PROJECTS } from '../../public/utils/consts';
+import { PROJECTS } from '../utils/consts';
 import PageSection from './PageSection';
 import { SingleProject } from './SingleProject';
 

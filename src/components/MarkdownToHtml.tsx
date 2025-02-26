@@ -1,5 +1,5 @@
 import { useEmbeds } from '../../hooks/useEmbeds';
-import { markdownToHtml } from '../../public/utils/markdownToHtml';
+import { markdownToHtml } from '../utils/markdownToHtml';
 import { memo } from 'react';
 
 type Props = {

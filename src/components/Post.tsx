@@ -1,6 +1,6 @@
-import { formatDate } from '../../public/utils/consts/format-date';
-import { getBlurDataUrl } from '../../public/utils/getBlurDataUrl';
-import { resizeImage } from '../../public/utils/image';
+import { formatDate } from '../utils/consts/format-date';
+import { getBlurDataUrl } from '../utils/getBlurDataUrl';
+import { resizeImage } from '../utils/image';
 import { ClockIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import Link from 'next/link';

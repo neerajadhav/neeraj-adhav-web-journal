@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { resizeImage } from '../../public/utils/image';
+import { resizeImage } from '../utils/image';
 import { CoverImage } from './CoverImage';
 import { ImagePlaceholder } from './ImagePlaceholder';
 

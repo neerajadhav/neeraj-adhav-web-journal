@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { triggerEmbed } from '../public/utils/services/embed';
+import { triggerEmbed } from '../src/utils/services/embed';
 
 export const useEmbeds = ({ enabled }: { enabled: boolean }) => {
   useEffect(() => {
