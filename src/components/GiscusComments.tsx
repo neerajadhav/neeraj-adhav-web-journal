@@ -27,10 +27,10 @@ const GiscusComments = () => {
     script.async = true;
 
     giscusRef.current.appendChild(script);
-  }, [key]); // Include key in the dependency array to trigger re-render on key change
+  }, [key]);
 
   const handleRefresh = () => {
-    setKey((prevKey) => prevKey + 1); // Update key to trigger re-render
+    setKey((prevKey) => prevKey + 1);
   };
 
   return (
