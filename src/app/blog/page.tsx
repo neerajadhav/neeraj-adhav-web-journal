@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import BlogPage from './BlogPage';
+import BlogTabs from './BlogTabs';
 
 const BASE_TITLE = 'Blogs | Neeraj Adhav';
 const BASE_DESCRIPTION =
@@ -44,7 +44,7 @@ const Page = () => {
       <div className='hidden'>
         <h1>{BASE_TITLE}</h1>
       </div>
-      <BlogPage />;
+      <BlogTabs />
     </>
   );
 };
