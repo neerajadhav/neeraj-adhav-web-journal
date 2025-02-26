@@ -27,7 +27,7 @@ export const Blogs = () => {
         }}
       >
         {posts.length > 0 && (
-          <div className='flex w-full flex-col sm:flex-row'>
+          <div className='flex w-full flex-col gap-1 sm:flex-row lg:gap-0'>
             {posts.map((edge) => (
               <SingleBlog blogInfo={edge.node} key={edge.node.id} />
             ))}
