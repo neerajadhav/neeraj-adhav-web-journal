@@ -50,7 +50,7 @@ const BlogTabs: React.FC = () => {
 
   return (
     <Container>
-      <div className='w-full overflow-x-auto border-y border-gray-700'>
+      <div className='w-full select-none overflow-x-auto border-y border-gray-700'>
         <div className='flex w-full'>
           {tabs.map((tab, index) => (
             <button

@@ -2,17 +2,15 @@ import React from 'react';
 
 const Newsletter = () => {
   return (
-    <section className='mt-5 border-t border-gray-700 p-3 pt-5'>
+    <section className='mt-5 select-none border-t border-gray-700 p-3 pt-5'>
       <div className='mx-auto flex max-w-2xl flex-col items-center justify-center gap-3 lg:flex-row'>
-        <h2 className='text text-center font-semibold'>
-          Newsletter
-        </h2>
+        <h2 className='text text-center font-semibold'>Newsletter</h2>
         <form className='flex w-full items-center gap-3'>
           <input
             type='email'
             placeholder='Service currently disabled!'
             disabled
-            className='w-19/20 h-10 flex-1 rounded-lg border border-gray-700 px-2 focus:outline-none focus:ring-1 bg-white dark:bg-bgDark focus:ring-blue-500'
+            className='w-19/20 h-10 flex-1 rounded-lg border border-gray-700 bg-white px-2 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:bg-bgDark'
           />
           <button
             type='submit'
