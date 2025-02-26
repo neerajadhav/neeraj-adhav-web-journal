@@ -9,7 +9,7 @@ export default function ProjectPage() {
       <PageSection
         title='Projects'
       >
-        <div className='mx-auto flex w-full flex-col flex-wrap gap-5 sm:flex-row sm:justify-center md:gap-8'>
+        <div className='mx-auto flex w-full flex-col flex-wrap gap-1 sm:flex-row sm:justify-center lg:gap-0'>
           {PROJECTS.map((project) => (
             <SingleProject project={project} key={project.name} />
           ))}
