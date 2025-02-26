@@ -5,7 +5,7 @@ const Newsletter = () => {
     <section className='my-5 border-y border-gray-700 p-3'>
       <div className='mx-auto flex max-w-2xl flex-col items-center justify-center gap-3 lg:flex-row'>
         <h2 className='text text-center font-semibold'>
-          Newsletter&nbsp;Signup
+          Newsletter
         </h2>
         <form className='flex w-full items-center gap-1'>
           <input
