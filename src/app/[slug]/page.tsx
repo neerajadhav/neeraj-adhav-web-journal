@@ -128,7 +128,7 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
             )}
             {/* <hr className='mb-4 h-px border-0 bg-zinc-200 dark:bg-bgDark print:hidden' /> */}
             {post.tags?.length && (
-              <div className='flex w-full flex-wrap gap-3 mb-2 text-gray-950 dark:text-zinc-300 print:hidden'>
+              <div className='mb-2 flex w-full flex-wrap gap-3 text-gray-950 dark:text-zinc-300 print:hidden'>
                 {post.tags.map((tag) => (
                   <li key={tag.id} className='list-none'>
                     <a
@@ -145,7 +145,11 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
           </div>
         </article>
       </PageSection>
-      <PageSection title='Comments' extraButtons={<ModeToggle />}>
+      <PageSection
+        title='Comments'
+        isBlogArticle={true}
+        extraButtons={<ModeToggle />}
+      >
         <div className='mx-auto max-w-3xl print:hidden'>
           <GiscusComments />
         </div>
