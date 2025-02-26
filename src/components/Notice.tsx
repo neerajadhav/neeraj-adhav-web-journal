@@ -6,11 +6,13 @@ import { Container } from './Container';
 import PageSection from './PageSection';
 
 const bgColors: Record<'info' | 'warning' | 'error' | 'success', string> = {
-  info: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
+  info: 'bg-blue-100 border border-blue-200 text-blue-800 dark:bg-blue-900 dark:border-blue-800 dark:text-blue-200',
   warning:
-    'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
-  error: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
-  success: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
+    'bg-yellow-100 border border-yellow-200 text-yellow-800 dark:bg-yellow-900 dark:border-yellow-800 dark:text-yellow-200',
+  error:
+    'bg-red-100 text-red-800 border border-red-700 dark:bg-red-900 dark:border-red-800 dark:text-red-200',
+  success:
+    'bg-green-100 border border-green-200 text-green-800 dark:bg-green-900 dark:border-green-800 dark:text-green-200',
 };
 
 const Notice = () => {
@@ -117,20 +119,27 @@ const Notice = () => {
 
   return (
     <Container>
-      <PageSection
+      {/* <PageSection
         title='Notice'
-        className={bgColorClass}
+        
         extraButtons={
+          
+        }
+      > */}
+      <div className='mb-4 px-3 lg:px-0'>
+        <div
+          className={`${bgColorClass} flex items-center justify-between rounded-xl p-3`}
+        >
+          <div>{message}</div>
           <button
             onClick={disableNotice}
             className='rounded-full p-1 text-sm text-red-400 hover:bg-zinc-100 dark:hover:bg-gray-950'
           >
             <FaTimes className='h-5 w-5' />
           </button>
-        }
-      >
-        <div>{message}</div>
-      </PageSection>
+        </div>
+        {/* </PageSection> */}
+      </div>
     </Container>
   );
 };
