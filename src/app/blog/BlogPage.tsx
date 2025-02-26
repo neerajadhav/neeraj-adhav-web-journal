@@ -52,7 +52,7 @@ export default function BlogPage() {
         <div className='flex flex-col gap-4'>
           {posts.length > 0 && (
             <div className='flex flex-col gap-4 lg:flex-row'>
-              <div className='flex flex-col justify-around lg:w-2/3'>
+              <div className='flex flex-col justify-around border-b border-gray-700 pb-5 lg:w-2/3 lg:border-0'>
                 {posts.length > 0 && <Post postInfo={posts[0]} first={true} />}
               </div>
               <div className='flex flex-col gap-6 lg:w-1/3'>
