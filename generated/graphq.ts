@@ -7382,7 +7382,7 @@ export type PublicationQueryVariables = Exact<{
 }>;
 
 
-export type PublicationQuery = { __typename?: 'Query', publication?: { __typename?: 'Publication', id: string, descriptionSEO?: string | null, displayTitle?: string | null, title: string, isTeam: boolean, favicon?: string | null, followersCount?: number | null, preferences: { __typename?: 'Preferences', logo?: string | null }, ogMetaData: { __typename?: 'OpenGraphMetaData', image?: string | null }, links?: { __typename?: 'PublicationLinks', twitter?: string | null, instagram?: string | null, github?: string | null, website?: string | null, hashnode?: string | null, youtube?: string | null, linkedin?: string | null, mastodon?: string | null } | null, posts: { __typename?: 'PublicationPostConnection', edges: Array<{ __typename?: 'PostEdge', node: { __typename?: 'Post', id: string, slug: string, title: string, brief: string, coverImage?: { __typename?: 'PostCoverImage', url: string } | null } }> }, author: { __typename?: 'User', name: string, profilePicture?: string | null, location?: string | null, bio?: { __typename?: 'Content', html: string, text: string } | null } } | null };
+export type PublicationQuery = { __typename?: 'Query', publication?: { __typename?: 'Publication', id: string, descriptionSEO?: string | null, displayTitle?: string | null, title: string, isTeam: boolean, favicon?: string | null, followersCount?: number | null, preferences: { __typename?: 'Preferences', logo?: string | null }, ogMetaData: { __typename?: 'OpenGraphMetaData', image?: string | null }, links?: { __typename?: 'PublicationLinks', twitter?: string | null, instagram?: string | null, github?: string | null, website?: string | null, hashnode?: string | null, youtube?: string | null, linkedin?: string | null, mastodon?: string | null } | null, posts: { __typename?: 'PublicationPostConnection', edges: Array<{ __typename?: 'PostEdge', node: { __typename?: 'Post', id: string, slug: string, title: string, brief: string, coverImage?: { __typename?: 'PostCoverImage', url: string } | null } }> }, author: { __typename?: 'User', name: string, profilePicture?: string | null, location?: string | null, availableFor?: string | null, bio?: { __typename?: 'Content', html: string, text: string } | null } } | null };
 
 export type StaticPageQueryVariables = Exact<{
   host?: InputMaybe<Scalars['String']['input']>;
@@ -7599,6 +7599,7 @@ export const PublicationDocument = `
       }
       profilePicture
       location
+      availableFor
     }
   }
 }
