@@ -2,7 +2,7 @@ import React from 'react';
 
 const Newsletter = () => {
   return (
-    <section className='my-5 border-y border-gray-700 p-3'>
+    <section className='mt-5 border-t border-gray-700 p-3 pt-5'>
       <div className='mx-auto flex max-w-2xl flex-col items-center justify-center gap-3 lg:flex-row'>
         <h2 className='text text-center font-semibold'>
           Newsletter
