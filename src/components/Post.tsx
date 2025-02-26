@@ -45,7 +45,7 @@ export const Post = (props: PostProps) => {
   return (
     <Link
       href={`/${postInfo.slug}`}
-      className={`flex ${props.first ? 'w-full lg:w-2/3 lg:pr-0' : 'w-full'} flex-col-reverse items-center gap-4 rounded-lg px-1 pt-2 hover:opacity-90 lg:flex-col`}
+      className={`flex ${props.first ? 'w-full lg:mt-3 lg:pr-0' : 'w-full'} flex-col-reverse items-center gap-4 rounded-lg px-1 pt-2 hover:opacity-90 lg:flex-col`}
     >
       <div className='flex w-full flex-col text-gray-950 dark:text-zinc-300'>
         <h3
