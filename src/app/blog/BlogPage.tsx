@@ -52,7 +52,7 @@ export default function BlogPage() {
         <div className='flex flex-col gap-4'>
           {posts.length > 0 && (
             <div className='flex flex-col gap-4 lg:flex-row'>
-              <div className='flex flex-col'>
+              <div className='flex flex-col justify-around lg:w-2/3'>
                 {posts.length > 0 && <Post postInfo={posts[0]} first={true} />}
                 <Newsletter />
               </div>
