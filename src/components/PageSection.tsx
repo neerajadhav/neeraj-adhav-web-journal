@@ -53,7 +53,7 @@ const PageSection: React.FC<PageSectionProps> = ({
       <div
         ref={headerRef}
         className={`sticky top-[-0.1px] z-30 flex w-full select-none flex-row items-center justify-between gap-3 border-b bg-white px-4 py-3 dark:border-bgDark dark:bg-bgDark print:hidden ${
-          isSticky ? 'rounded-t-0' : 'rounded-t-xl'
+          isSticky ? 'rounded-t-0 rounded-b-xl' : 'rounded-t-xl'
         }`}
       >
         {isBlogArticle && (
