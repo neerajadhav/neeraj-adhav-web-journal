@@ -74,7 +74,7 @@ export default function BlogPage() {
           <button
             onClick={() => fetchNextPage()}
             disabled={isFetchingNextPage}
-            className='mb-2 flex-row items-center gap-2 rounded-full border border-gray-400 px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-700 hover:text-white dark:border-gray-600 dark:text-zinc-300 dark:hover:bg-gray-950'
+            className='lg:mb-2 flex-row items-center gap-2 rounded-full border border-gray-400 px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-700 hover:text-white dark:border-gray-600 dark:text-zinc-300 dark:hover:bg-gray-950'
           >
             {isFetchingNextPage ? 'Loading...' : 'Load More'}
           </button>
