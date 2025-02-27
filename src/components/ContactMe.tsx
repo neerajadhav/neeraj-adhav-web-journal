@@ -1,5 +1,6 @@
 'use client';
 import { usePublicationQuery } from '../../generated/graphq';
+import { ModeToggle } from './DarkModeBtn';
 import { SocialLinks } from './SocialLinks';
 const host = process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST as string;
 
@@ -13,6 +14,7 @@ export const ContactMe = () => {
   return (
     <footer className='mb-[4.5rem] select-none lg:mx-0 print:hidden'>
       <div className='flex w-full flex-col items-center gap-5 rounded-xl border bg-white p-6 text-gray-950 dark:border dark:border-bgDark dark:bg-bgDark dark:text-zinc-300'>
+        <ModeToggle />
         <h2 className='text-xl font-semibold lg:text-2xl'>
           Have a Project Idea?
         </h2>

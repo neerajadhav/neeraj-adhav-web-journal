@@ -29,9 +29,7 @@ export function ModeToggle() {
               <CgDarkMode className='h-5 w-5' />
             )}
           </span>
-          <span className='hidden lg:block'>
-            {theme === 'light' ? 'Night' : 'Day'}
-          </span>
+          <span>{theme === 'light' ? 'Night' : 'Day'}</span>
         </div>
       </button>
     </>

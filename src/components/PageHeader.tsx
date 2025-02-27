@@ -82,7 +82,6 @@ const Header = () => {
           {/* Desktop Menu */}
           <div className='flex items-center gap-2'>
             <Navbar navLinks={NAVLINKS} />
-            <ModeToggle />
           </div>
         </div>
       </div>
