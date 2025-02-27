@@ -42,7 +42,7 @@ export const AboutMe = () => {
               height={1000}
               className='w-[150px] flex-1 rounded-full border dark:border-bgDark'
             />
-            <div className='mb-4 flex flex-col font-bold items-center justify-between gap-2 sm:flex-row lg:gap-0'>
+            <div className='mb-4 flex flex-col items-center justify-between gap-2 font-bold sm:flex-row lg:gap-0'>
               {isAvailableLink && (
                 <a
                   href={isAvailableLink}
