@@ -55,7 +55,7 @@ const BlogTabs: React.FC = () => {
             <button
               key={index}
               onClick={() => handleTabClick(index)}
-              className={`relative flex-shrink-0 rounded-lg border px-3 py-2 shadow-sm dark:border-bgDark dark:text-gray-400 dark:hover:bg-gray-50/10 lg:px-3 lg:py-2 lg:shadow-none ${
+              className={`relative flex-shrink-0 rounded-lg border px-2 py-1 shadow-sm dark:border-bgDark dark:text-gray-400 dark:hover:bg-gray-50/10 lg:px-3 lg:py-2 lg:shadow-none ${
                 activeTab === index
                   ? 'bg-gray-200 dark:bg-gray-50/10 dark:text-gray-50'
                   : 'bg-white hover:bg-white dark:bg-transparent dark:text-gray-400'
