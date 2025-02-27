@@ -41,7 +41,7 @@ export default function BlogPage() {
     data.pages.flatMap((page) => page.publication?.postsViaPage.nodes) || [];
 
   return (
-    <Container>
+    <>
       {posts.length === 0 && (
         <p className='flex w-full flex-1 items-center justify-center gap-3 text-lg font-semibold'>
           <ExclamationTriangleIcon className='h-8 w-8' />
@@ -91,6 +91,6 @@ export default function BlogPage() {
       </PageSection>
 
       <ContactMe />
-    </Container>
+    </>
   );
 }

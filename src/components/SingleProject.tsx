@@ -34,7 +34,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({ url, children }) => {
 
 export const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
   return (
-    <div className='w-full items-center border-b border-gray-300 p-4 py-6 last:border-b-0 dark:border-gray-700 lg:w-1/3 lg:border-0 lg:border-t-0 lg:py-4'>
+    <div className='w-full items-center border-b border-gray-300 p-4 py-6 last:border-b-0 dark:border-gray-700 lg:w-1/3 md:border-0 lg:border-t-0 lg:py-4'>
       <div className='flex w-full flex-col gap-3 text-gray-950 dark:text-zinc-300'>
         {project.imageUrl ? (
           <div className='relative flex aspect-video w-full overflow-hidden rounded-lg'>
