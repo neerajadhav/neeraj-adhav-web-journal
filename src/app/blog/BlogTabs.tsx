@@ -49,7 +49,7 @@ const BlogTabs: React.FC = () => {
 
   return (
     <>
-      <div className='w-full select-none overflow-x-auto border-gray-700 px-2'>
+      <div className='w-full select-none overflow-x-auto border-gray-700 px-2 mt-1'>
         <div className='flex w-full gap-4'>
           {tabs.map((tab, index) => (
             <button
