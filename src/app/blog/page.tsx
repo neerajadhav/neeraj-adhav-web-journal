@@ -1,3 +1,6 @@
+import { ContactMe } from '@/components/ContactMe';
+import { Container } from '@/components/Container';
+import PageSection from '@/components/PageSection';
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 import BlogPage from './BlogPage';
@@ -46,9 +49,14 @@ const Page = () => {
       <div className='hidden'>
         <h1>{BASE_TITLE}</h1>
       </div>
-      <Suspense fallback={<BlogPage />}>
-        <BlogTabs />
-      </Suspense>
+      <Container>
+        <PageSection title='Blog'>
+          <Suspense fallback={<BlogPage />}>
+            <BlogTabs />
+          </Suspense>
+        </PageSection>
+        <ContactMe />
+      </Container>
     </>
   );
 };

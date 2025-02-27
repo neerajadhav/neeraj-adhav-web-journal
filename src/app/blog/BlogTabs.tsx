@@ -1,6 +1,5 @@
 'use client';
 
-import { Container } from '@/components/Container';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { CgDanger } from 'react-icons/cg';
@@ -49,14 +48,14 @@ const BlogTabs: React.FC = () => {
   };
 
   return (
-    <Container>
-      <div className='w-full select-none overflow-x-auto border-y border-gray-700'>
+    <>
+      <div className='w-full select-none overflow-x-auto border-gray-700'>
         <div className='flex w-full'>
           {tabs.map((tab, index) => (
             <button
               key={index}
               onClick={() => handleTabClick(index)}
-              className={`flex-shrink-0 px-4 py-3 transition-colors focus:outline-none ${
+              className={`flex-shrink-0 px-4 pb-2 transition-colors focus:outline-none ${
                 activeTab === index
                   ? 'border-b-2 border-blue-500 font-bold text-blue-500 dark:text-blue-400'
                   : 'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-gray-100'
@@ -69,7 +68,7 @@ const BlogTabs: React.FC = () => {
       </div>
 
       <div>{tabs[activeTab].content}</div>
-    </Container>
+    </>
   );
 };
 
