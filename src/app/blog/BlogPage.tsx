@@ -45,22 +45,22 @@ export default function BlogPage() {
           No posts found
         </p>
       )}
-      <div className='px-3 lg:px-0'>
-        <div className='flex flex-col gap-4'>
-          {posts.length > 0 && (
-            <div className='flex flex-col gap-4 md:flex-row'>
-              <div className='flex flex-col justify-around border-b border-gray-700 pb-5 pt-3 md:w-1/2 md:justify-start md:border-0 md:pt-5 lg:w-2/3'>
-                {posts.length > 0 && <Post postInfo={posts[0]} first={true} />}
-              </div>
-              <div className='flex flex-col gap-6 md:w-1/2 lg:w-1/3'>
-                {posts.length > 0 && <Post postInfo={posts[1]} />}
-                {posts.length > 0 && <Post postInfo={posts[2]} />}
-              </div>
+      <div className='flex flex-col gap-4'>
+        {posts.length > 0 && (
+          <div className='flex flex-col gap-4 md:flex-row'>
+            <div className='flex flex-col justify-around border-b border-gray-700 pb-5 pt-3 md:w-1/2 md:justify-start md:border-0 md:pt-5 lg:w-2/3'>
+              {posts.length > 0 && <Post postInfo={posts[0]} first={true} />}
             </div>
-          )}
-        </div>
+            <div className='flex flex-col gap-6 md:w-1/2 lg:w-1/3'>
+              {posts.length > 0 && <Post postInfo={posts[1]} />}
+              {posts.length > 0 && <Post postInfo={posts[2]} />}
+            </div>
+          </div>
+        )}
       </div>
-      <Newsletter />
+      <div className='px-2'>
+        <Newsletter />
+      </div>
       {/* <PageSection title='Archive'> */}
       <div className='grid w-full grid-cols-1 gap-1 sm:grid-cols-2 lg:gap-3'>
         {posts.slice(3).map((post, index) => (
