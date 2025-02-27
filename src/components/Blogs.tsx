@@ -19,10 +19,10 @@ export const Blogs = () => {
   return (
     <>
       <PageSection
-        title='Blogs'
+        title='Articles'
         link={{
           href: '/blog',
-          text: 'All blogs',
+          text: 'Visit blog',
           icon: <ArrowRightIcon className='h-4 w-4' />,
         }}
       >
