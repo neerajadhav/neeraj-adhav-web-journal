@@ -84,12 +84,12 @@ export const AboutMe = () => {
               />
             )}
             {availableFor && (
-              <p className='flex w-full items-center gap-2 text-sm text-gray-500 dark:text-zinc-300'>
+              <p className='flex w-full items-center gap-2 text-gray-500 dark:text-zinc-300'>
                 <FaSuitcase /> I am available for {availableFor}
               </p>
             )}
             {publication.author.location && (
-              <p className='flex items-center gap-2 text-sm text-gray-500 dark:text-zinc-300'>
+              <p className='flex items-center gap-2 text-gray-500 dark:text-zinc-300'>
                 <FontAwesomeIcon icon={faLocationDot} />
                 {publication.author.location}
               </p>
