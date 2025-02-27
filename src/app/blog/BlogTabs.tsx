@@ -50,7 +50,7 @@ const BlogTabs: React.FC = () => {
   return (
     <>
       <div className='mt-1 w-full select-none overflow-x-auto border-gray-700 px-2'>
-        <div className='flex w-full gap-4'>
+        <div className='flex w-full gap-4 mt-2'>
           {tabs.map((tab, index) => (
             <button
               key={index}
@@ -71,7 +71,6 @@ const BlogTabs: React.FC = () => {
           ))}
         </div>
       </div>
-
       <div>{tabs[activeTab].content}</div>
     </>
   );
