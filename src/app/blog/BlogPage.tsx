@@ -48,7 +48,7 @@ export default function BlogPage() {
           No posts found
         </p>
       )}
-      <div className='px-3 lg:px-2'>
+      <div className='px-3 lg:px-0'>
         <div className='flex flex-col gap-4'>
           {posts.length > 0 && (
             <div className='flex flex-col gap-4 lg:flex-row'>
