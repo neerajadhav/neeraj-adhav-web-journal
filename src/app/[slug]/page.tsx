@@ -84,7 +84,7 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
   return (
     <Container>
       <PageSection
-        title={post.title}
+        title={'Back'}
         extraButtons={extrabtns()}
         isBlogArticle={true}
       >
