@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <Container>
       <AboutMe />
-      <Skills />
+      {/* <Skills /> */}
       <Blogs />
       <Projects />
       <ContactMe />
