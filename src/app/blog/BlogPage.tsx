@@ -51,11 +51,11 @@ export default function BlogPage() {
       <div className='px-3 lg:px-0'>
         <div className='flex flex-col gap-4'>
           {posts.length > 0 && (
-            <div className='flex flex-col gap-4 lg:flex-row'>
-              <div className='flex flex-col justify-around border-b border-gray-700 pb-5 lg:w-2/3 lg:border-0'>
+            <div className='flex flex-col gap-4 md:flex-row'>
+              <div className='flex flex-col justify-around border-b border-gray-700 pb-5 md:w-1/2 md:justify-start md:border-0 lg:w-2/3'>
                 {posts.length > 0 && <Post postInfo={posts[0]} first={true} />}
               </div>
-              <div className='flex flex-col gap-6 lg:w-1/3'>
+              <div className='flex flex-col gap-6 md:w-1/2 lg:w-1/3'>
                 {posts.length > 0 && <Post postInfo={posts[1]} />}
                 {posts.length > 0 && <Post postInfo={posts[2]} />}
               </div>
@@ -89,7 +89,7 @@ export default function BlogPage() {
           )}
         </div>
       </PageSection>
-
+      <div className='mb-2' />
       <ContactMe />
     </>
   );
