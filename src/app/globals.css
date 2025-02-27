@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .hashnode-content-style {
-  @apply prose break-words text-slate-950 lg:prose-lg dark:prose-invert first:prose-h1:mt-0 first:prose-h2:mt-0 first:prose-h3:mt-0 first:prose-h4:mt-0 first:prose-h5:mt-0 prose-p:leading-7 first:prose-p:mt-0 prose-a:leading-7 prose-a:underline hover:prose-a:bg-primary-50 prose-blockquote:leading-7 prose-figure:leading-7 prose-figcaption:leading-7 prose-pre:leading-7 prose-ol:leading-7 prose-ul:leading-7 prose-li:leading-7 prose-th:leading-7 prose-td:leading-7 prose-img:max-w-full dark:text-neutral-50 dark:hover:prose-a:bg-neutral-800 dark:hover:prose-a:text-primary-500 dark:prose-pre:bg-black;
+  @apply prose break-words text-slate-950 lg:prose-lg dark:prose-invert first:prose-h1:mt-0 first:prose-h2:mt-0 first:prose-h3:mt-0 first:prose-h4:mt-0 first:prose-h5:mt-0 prose-p:leading-7 first:prose-p:mt-0 prose-a:leading-7 prose-a:underline hover:prose-a:bg-primary-50 prose-blockquote:leading-7 prose-figure:leading-7 prose-figcaption:leading-7 prose-pre:leading-7 prose-ol:leading-7 prose-ul:leading-7 prose-li:leading-7 prose-th:leading-7 prose-td:leading-7 prose-img:max-w-full dark:text-neutral-50 dark:hover:prose-a:bg-neutral-800 dark:hover:prose-a:text-primary-500 dark:prose-pre:bg-black text-lg;
 }
 
 /* Override to remove the backtick */
