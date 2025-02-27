@@ -46,13 +46,13 @@ export const Post2 = (props: PostProps) => {
   return (
     <Link
       href={`/${postInfo.slug}`}
-      className={`flex flex-col items-start gap-3 lg:gap-4 rounded-lg border-0 p-2 hover:opacity-90 dark:border-bgDark lg:p-6`}
+      className={`flex flex-col items-start gap-1 rounded-lg border-0 p-2 hover:opacity-90 dark:border-bgDark lg:p-6`}
     >
-      {formatDate(postInfo.publishedAt)}
+      <div className='text-sm'>{formatDate(postInfo.publishedAt)}</div>
       <div className='flex flex-col items-start gap-4 lg:flex-row'>
         <div className='flex w-full flex-col text-gray-950 dark:text-zinc-300'>
           <h3
-            className={`mb-1 line-clamp-2 font-extrabold dark:text-zinc-100 text-xl`}
+            className={`mb-1 line-clamp-2 text-xl font-extrabold dark:text-zinc-100`}
           >
             {postInfo.title}
           </h3>
