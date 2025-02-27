@@ -60,7 +60,7 @@ export const Navbar = ({ navLinks }: NavbarProps) => {
                   <span className='sr-only'>{navlink.tooltip}</span>
                 </>
               )}
-              <div>{navlink.tooltip}</div>
+              <div className='hidden md:block'>{navlink.tooltip}</div>
             </div>
           </Link>
         ))}
