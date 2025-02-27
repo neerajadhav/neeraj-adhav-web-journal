@@ -29,7 +29,7 @@ export function ModeToggle() {
               <CgDarkMode className='h-5 w-5' />
             )}
           </span>
-          <span>{theme === 'light' ? 'Dark' : 'Light'} Mode</span>
+          <span>{theme === 'light' ? 'Dark' : 'Light'}&nbsp;Mode</span>
         </div>
       </button>
     </>
