@@ -56,16 +56,18 @@ export const Post2 = (props: PostProps) => {
           >
             {postInfo.title}
           </h3>
-          <p className='line-clamp-3 text-gray-700 dark:text-gray-400'>{postInfo.brief || 'none'}</p>
+          <p className='line-clamp-3 text-gray-700 dark:text-gray-400'>
+            {postInfo.brief || 'none'}
+          </p>
         </div>
-        <div className='flex aspect-video overflow-hidden rounded-lg lg:w-3/5'>
+        <div className='flex aspect-video overflow-hidden lg:w-3/5'>
           {postInfo.coverImage?.url ? (
             <Image
               src={postImageSrc}
               alt='Post Image'
               width={1040}
               height={585}
-              className='flex-1'
+              className='flex-1 rounded-lg'
               placeholder='blur'
               blurDataURL={blurDataURL}
             />

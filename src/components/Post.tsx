@@ -70,14 +70,14 @@ export const Post = (props: PostProps) => {
           </div>
         )}
       </div>
-      <div className='flex aspect-video w-full overflow-hidden rounded-lg'>
+      <div className='flex aspect-video w-full overflow-hidden'>
         {postInfo.coverImage?.url ? (
           <Image
             src={postImageSrc}
             alt='Post Image'
             width={1040}
             height={585}
-            className='flex-1'
+            className='flex-1 rounded-lg'
             placeholder='blur'
             blurDataURL={blurDataURL}
           />
