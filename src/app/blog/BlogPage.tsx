@@ -1,4 +1,5 @@
 'use client';
+
 import Newsletter from '@/components/Newsletter';
 import { Post } from '@/components/Post';
 import { Post2 } from '@/components/Post2';
@@ -40,53 +41,54 @@ export default function BlogPage() {
   return (
     <>
       {posts.length === 0 && (
-        <p className='flex w-full flex-1 items-center justify-center gap-3 text-lg font-semibold'>
-          <ExclamationTriangleIcon className='h-8 w-8' />
+        <p className="flex w-full flex-1 items-center justify-center gap-3 text-lg font-semibold text-gray-700 dark:text-gray-300">
+          <ExclamationTriangleIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
           No posts found
         </p>
       )}
-      <div className='flex flex-col gap-4'>
+
+      <div className="flex flex-col gap-6">
         {posts.length > 0 && (
-          <div className='mt-5 flex flex-col gap-4 p-2 md:flex-row'>
-            <div className='flex flex-col justify-around md:w-1/2 md:justify-start md:border-0 lg:w-2/3 lg:pb-5'>
+          <div className="mt-6 flex flex-col gap-6 p-4 md:flex-row">
+            <div className="flex flex-col justify-around md:w-1/2 md:border-0 lg:w-2/3 lg:pb-6">
               {posts.length > 0 && <Post postInfo={posts[0]} first={true} />}
               <Newsletter />
             </div>
-            <div className='flex flex-col gap-6 md:w-1/2 lg:w-1/3'>
-              {posts.length > 0 && <Post postInfo={posts[1]} />}
-              {posts.length > 0 && <Post postInfo={posts[2]} />}
+            <div className="flex flex-col gap-6 md:w-1/2 lg:w-1/3">
+              {posts.length > 1 && <Post postInfo={posts[1]} />}
+              {posts.length > 2 && <Post postInfo={posts[2]} />}
             </div>
           </div>
         )}
       </div>
-      {/* <div className='px-2'>
-      </div> */}
-      {/* <PageSection title='Archive'> */}
-      <div className='my-10 grid w-full grid-cols-1 gap-10 px-2 sm:grid-cols-2 lg:py-5'>
+
+      {/* Archive Section */}
+      <div className="mb-12 grid w-full grid-cols-1 gap-8 px-4 sm:grid-cols-2 lg:py-6">
         {posts.slice(3).map((post, index) => (
-          <div key={index + 1} className='mb-4 w-full'>
+          <div key={index + 1} className="w-full">
             <Post2 postInfo={post} />
           </div>
         ))}
       </div>
-      <div className='flex select-none justify-center px-5'>
-        {hasNextPage && (
+
+      {/* Load More Button */}
+      <div className="flex select-none justify-center px-6">
+        {hasNextPage ? (
           <button
             onClick={() => fetchNextPage()}
             disabled={isFetchingNextPage}
-            className='flex-row items-center gap-2 rounded-full border border-gray-400 px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-700 hover:text-white dark:border-gray-600 dark:text-zinc-300 dark:hover:bg-gray-950 lg:mb-2'
+            className="flex items-center gap-2 rounded-full border border-gray-400 px-5 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-700 hover:text-white dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-950 lg:mb-3"
           >
             {isFetchingNextPage ? 'Loading...' : 'Load More'}
           </button>
-        )}
-        {!hasNextPage && (
-          <p className='mt-3 text-center text-gray-500'>
+        ) : (
+          <p className="mt-4 text-center text-gray-500 dark:text-gray-400">
             You have reached the end
           </p>
         )}
       </div>
-      {/* </PageSection> */}
-      <div className='mb-2' />
+
+      <div className="mb-3" />
     </>
   );
 }
