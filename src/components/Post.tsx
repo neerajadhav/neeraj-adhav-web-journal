@@ -9,76 +9,73 @@ import { ImagePlaceholder } from './ImagePlaceholder';
 interface PostProps {
   postInfo:
     | {
-        __typename?: 'Post' | undefined;
+        __typename?: 'Post';
         id: string;
         slug: string;
         title: string;
         views: number;
         publishedAt: any;
         brief: string;
-        coverImage?:
-          | {
-              __typename?: 'PostCoverImage' | undefined;
-              url: string;
-            }
-          | null
-          | undefined;
+        coverImage?: {
+          __typename?: 'PostCoverImage';
+          url: string;
+        } | null;
       }
     | undefined;
   first?: boolean;
 }
 
-export const Post = (props: PostProps) => {
-  const { postInfo } = props;
-
+export const Post = ({ postInfo, first }: PostProps) => {
   if (!postInfo) return null;
 
   const postImageSrc = postInfo.coverImage?.url
-    ? resizeImage(postInfo.coverImage.url, {
-        w: 1040,
-        h: 585,
-        c: 'cover',
-      })
+    ? resizeImage(postInfo.coverImage.url, { w: 1040, h: 585, c: 'cover' })
     : undefined;
-
   const blurDataURL = postImageSrc && getBlurDataUrl(postImageSrc);
 
   return (
     <Link
       href={`/${postInfo.slug}`}
-      className={`flex ${props.first ? 'w-full border-b-0 lg:pr-0' : 'w-full'} flex-col items-center gap-4 border-b pb-6 hover:opacity-90 dark:border-black md:flex-col md:border-b-0`}
+      className={`group flex flex-col items-center gap-6 w-full pb-6 transition-all duration-300 hover:opacity-85 dark:border-black md:flex-col ${
+        first ? 'lg:pr-0' : ''
+      }`}
     >
-      <div className='flex w-full flex-col gap-5 text-gray-950 dark:text-zinc-300'>
+      {/* Content Section */}
+      <div className="flex w-full flex-col gap-4 text-gray-900 dark:text-zinc-300">
         <h3
-          className={`line-clamp-3 font-bold dark:text-zinc-100 ${props.first ? 'text-2xl lg:text-4xl' : 'text-xl'}`}
+          className={`line-clamp-3 font-bold leading-tight transition-colors dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 ${
+            first ? 'text-2xl lg:text-4xl' : 'text-xl'
+          }`}
         >
           {postInfo.title}
         </h3>
-        <div className='flex w-full flex-row justify-between text-xs'>
-          <p className='flex flex-row items-center gap-1'>
-            <ClockIcon className='h-4 w-4' />
+
+        {/* Metadata */}
+        <div className="flex w-full flex-row justify-between text-sm text-gray-600 dark:text-gray-400">
+          <p className="flex items-center gap-1">
+            <ClockIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
             {formatDate(postInfo.publishedAt)}
           </p>
-          {/* <p className='flex flex-row items-center gap-2'>
-            <ArrowTrendingUpIcon className='h-4 w-4' />
-            {postInfo.views}
-            </p> */}
         </div>
-        {props.first && (
-          <div className='text-lg text-gray-700 dark:text-gray-400'>
+
+        {/* Show brief if it's the first post */}
+        {first && (
+          <p className="text-md text-gray-700 dark:text-gray-400 leading-relaxed">
             {postInfo.brief}
-          </div>
+          </p>
         )}
       </div>
-      <div className='flex aspect-video w-full overflow-hidden'>
+
+      {/* Image Section */}
+      <div className="relative w-full aspect-video overflow-hidden rounded-lg">
         {postInfo.coverImage?.url ? (
           <Image
             src={postImageSrc}
-            alt='Post Image'
+            alt={postInfo.title}
             width={1040}
             height={585}
-            className='flex-1 rounded-lg'
-            placeholder='blur'
+            className="w-full h-auto object-cover rounded-lg"
+            placeholder="blur"
             blurDataURL={blurDataURL}
           />
         ) : (
