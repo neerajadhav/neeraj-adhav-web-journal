@@ -73,7 +73,7 @@ export const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
           {project.name}
         </p>
         {project.desc && (
-          <p className='line-clamp-3 text-gray-500 dark:text-zinc-300'>
+          <p className='line-clamp-3 text-gray-700 dark:text-gray-400'>
             {project.desc}
           </p>
         )}

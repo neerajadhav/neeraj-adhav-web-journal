@@ -77,19 +77,19 @@ export const AboutMe = () => {
             </h1>
             {publication.author.bio && (
               <div
-                className='text-gray-500 dark:text-zinc-300 lg:w-2/3 lg:text-left'
+                className='text-gray-700 dark:text-gray-400 lg:w-2/3 lg:text-left'
                 dangerouslySetInnerHTML={{
                   __html: publication.author.bio.html || '',
                 }}
               />
             )}
             {availableFor && (
-              <p className='flex w-full items-center gap-2 text-gray-500 dark:text-zinc-300'>
+              <p className='flex w-full items-center gap-2 text-gray-700 dark:text-gray-400'>
                 <FaSuitcase /> I am available for {availableFor}
               </p>
             )}
             {publication.author.location && (
-              <p className='flex items-center gap-2 text-gray-500 dark:text-zinc-300'>
+              <p className='flex items-center gap-2 text-gray-700 dark:text-gray-400'>
                 <FontAwesomeIcon icon={faLocationDot} />
                 {publication.author.location}
               </p>
