@@ -62,7 +62,7 @@ const PageSection: React.FC<PageSectionProps> = ({
           <div className="w-full text-end">
             <Link
               href={link.href}
-              className="flex items-center justify-end gap-2 rounded-full text-sm font-medium text-gray-700 transition-all hover:text-blue-500 dark:border-bgDark dark:text-zinc-300"
+              className="flex items-center justify-end gap-2 rounded-full text-sm font-medium text-gray-700 transition-all hover:text-blue-500 dark:hover:text-blue-500 dark:border-bgDark dark:text-zinc-300"
             >
               {link.text} {link.icon ?? <ArrowRightIcon className="h-4 w-4" />}
             </Link>
