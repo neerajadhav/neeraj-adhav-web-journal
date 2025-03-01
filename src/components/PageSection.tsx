@@ -65,7 +65,7 @@ const PageSection: React.FC<PageSectionProps> = ({
         )}
 
         <div
-          className={`w-full text-start text-sm font-semibold ${
+          className={`w-full text-start font-bold ${
             isBlogArticle && 'font-normal'
           } text-gray-700 dark:text-zinc-100`}
         >
