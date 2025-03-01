@@ -13,7 +13,7 @@ export const ContactMe = () => {
 
   return (
     <footer className="mb-[4.5rem] select-none lg:mx-0 print:hidden">
-      <div className="flex w-full flex-col items-center gap-6 rounded-2xl border border-zinc-200 bg-white p-8 text-gray-950 shadow-lg dark:border-bgDark dark:bg-bgDark dark:text-zinc-300">
+      <div className="flex w-full flex-col items-center gap-6 rounded-2xl border border-zinc-200 bg-white p-8 text-gray-950 dark:border-bgDark dark:bg-bgDark dark:text-zinc-300">
         <ModeToggle />
 
         <h2 className="text-2xl font-bold lg:text-3xl transition-all duration-300 hover:scale-105">
