@@ -46,11 +46,11 @@ export const Post = (props: PostProps) => {
   return (
     <Link
       href={`/${postInfo.slug}`}
-      className={`flex ${props.first ? 'w-full lg:pr-0' : 'w-full'} flex-col items-center gap-4 rounded-lg px-2 pt-2 hover:opacity-90 md:flex-col`}
+      className={`flex ${props.first ? 'w-full pb-6 lg:pr-0' : 'w-full border-b-0'} flex-col items-center gap-4 border-b hover:opacity-90 dark:border-bgDark md:flex-col md:border-b-0`}
     >
-      <div className='flex w-full flex-col text-gray-950 dark:text-zinc-300'>
+      <div className='flex w-full flex-col gap-5 text-gray-950 dark:text-zinc-300'>
         <h3
-          className={`mb-5 line-clamp-3 font-semibold dark:text-zinc-100 ${props.first ? 'text-2xl lg:text-4xl' : 'text-xl'}`}
+          className={`line-clamp-3 font-bold dark:text-zinc-100 ${props.first ? 'text-2xl lg:text-4xl' : 'text-xl'}`}
         >
           {postInfo.title}
         </h3>
@@ -64,6 +64,11 @@ export const Post = (props: PostProps) => {
             {postInfo.views}
             </p> */}
         </div>
+        {props.first && (
+          <div className='text-lg text-gray-700 dark:text-gray-400'>
+            {postInfo.brief}
+          </div>
+        )}
       </div>
       <div className='flex aspect-video w-full overflow-hidden rounded-lg'>
         {postInfo.coverImage?.url ? (
@@ -80,7 +85,6 @@ export const Post = (props: PostProps) => {
           <ImagePlaceholder />
         )}
       </div>
-      {props.first && <div className='text-lg'>{postInfo.brief}</div>}
     </Link>
   );
 };

@@ -47,8 +47,8 @@ export default function BlogPage() {
       )}
       <div className='flex flex-col gap-4'>
         {posts.length > 0 && (
-          <div className='flex flex-col gap-4 md:flex-row mt-5'>
-            <div className='flex flex-col justify-around border-b border-gray-700 pb-5 md:w-1/2 md:justify-start md:border-0 lg:w-2/3'>
+          <div className='mt-5 flex flex-col gap-4 md:flex-row p-2'>
+            <div className='flex flex-col justify-around md:w-1/2 md:justify-start md:border-0 lg:w-2/3 lg:pb-5'>
               {posts.length > 0 && <Post postInfo={posts[0]} first={true} />}
             </div>
             <div className='flex flex-col gap-6 md:w-1/2 lg:w-1/3'>
@@ -62,7 +62,7 @@ export default function BlogPage() {
         <Newsletter />
       </div>
       {/* <PageSection title='Archive'> */}
-      <div className='grid w-full grid-cols-1 gap-1 sm:grid-cols-2 lg:gap-3'>
+      <div className='grid w-full grid-cols-1 gap-10 px-2 sm:grid-cols-2 lg:py-5 mb-10'>
         {posts.slice(3).map((post, index) => (
           <div key={index + 1} className='mb-4 w-full'>
             <Post2 postInfo={post} />
@@ -74,7 +74,7 @@ export default function BlogPage() {
           <button
             onClick={() => fetchNextPage()}
             disabled={isFetchingNextPage}
-            className='lg:mb-2 flex-row items-center gap-2 rounded-full border border-gray-400 px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-700 hover:text-white dark:border-gray-600 dark:text-zinc-300 dark:hover:bg-gray-950'
+            className='flex-row items-center gap-2 rounded-full border border-gray-400 px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-700 hover:text-white dark:border-gray-600 dark:text-zinc-300 dark:hover:bg-gray-950 lg:mb-2'
           >
             {isFetchingNextPage ? 'Loading...' : 'Load More'}
           </button>

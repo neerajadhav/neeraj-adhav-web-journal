@@ -46,17 +46,17 @@ export const Post2 = (props: PostProps) => {
   return (
     <Link
       href={`/${postInfo.slug}`}
-      className={`flex flex-col items-start gap-1 rounded-lg border-0 p-2 hover:opacity-90 dark:border-bgDark lg:p-6`}
+      className={`flex flex-col items-start gap-1 rounded-lg border-0 hover:opacity-90 dark:border-bgDark`}
     >
       <div className='text-sm'>{formatDate(postInfo.publishedAt)}</div>
       <div className='flex flex-col items-start gap-4 lg:flex-row'>
         <div className='flex w-full flex-col text-gray-950 dark:text-zinc-300'>
           <h3
-            className={`mb-1 line-clamp-2 text-xl font-extrabold dark:text-zinc-100`}
+            className={`mb-1 line-clamp-2 text-xl font-bold dark:text-zinc-100`}
           >
             {postInfo.title}
           </h3>
-          <p className='line-clamp-3'>{postInfo.brief || 'none'}</p>
+          <p className='line-clamp-3 text-gray-700 dark:text-gray-400'>{postInfo.brief || 'none'}</p>
         </div>
         <div className='flex aspect-video overflow-hidden rounded-lg lg:w-3/5'>
           {postInfo.coverImage?.url ? (
