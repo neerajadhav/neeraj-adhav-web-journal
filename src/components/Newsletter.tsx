@@ -1,8 +1,8 @@
 
 const Newsletter = () => {
   return (
-    <section className='my-10 w-full select-none rounded-lg border bg-[#f6f6f6] p-3 dark:border-bgDark dark:bg-bgDark lg:mb-2'>
-      <div className='mx-auto flex max-w-2xl flex-col items-center justify-center gap-3 lg:flex-row'>
+    <section className='mb-3 w-full select-none rounded-lg border bg-[#f6f6f6] p-3 dark:border-bgDark dark:bg-bgDark lg:mb-2'>
+      <div className='mx-auto flex flex-col items-center justify-center gap-3 lg:flex-row'>
         <h2 className='text text-center font-semibold'>Newsletter</h2>
         <form className='flex w-full items-center gap-3'>
           <input

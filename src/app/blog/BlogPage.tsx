@@ -47,9 +47,10 @@ export default function BlogPage() {
       )}
       <div className='flex flex-col gap-4'>
         {posts.length > 0 && (
-          <div className='mt-5 flex flex-col gap-4 md:flex-row p-2'>
+          <div className='mt-5 flex flex-col gap-4 p-2 md:flex-row'>
             <div className='flex flex-col justify-around md:w-1/2 md:justify-start md:border-0 lg:w-2/3 lg:pb-5'>
               {posts.length > 0 && <Post postInfo={posts[0]} first={true} />}
+              <Newsletter />
             </div>
             <div className='flex flex-col gap-6 md:w-1/2 lg:w-1/3'>
               {posts.length > 0 && <Post postInfo={posts[1]} />}
@@ -58,11 +59,10 @@ export default function BlogPage() {
           </div>
         )}
       </div>
-      <div className='px-2'>
-        <Newsletter />
-      </div>
+      {/* <div className='px-2'>
+      </div> */}
       {/* <PageSection title='Archive'> */}
-      <div className='grid w-full grid-cols-1 gap-10 px-2 sm:grid-cols-2 lg:py-5 mb-10'>
+      <div className='my-10 grid w-full grid-cols-1 gap-10 px-2 sm:grid-cols-2 lg:py-5'>
         {posts.slice(3).map((post, index) => (
           <div key={index + 1} className='mb-4 w-full'>
             <Post2 postInfo={post} />
