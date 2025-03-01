@@ -49,7 +49,7 @@ export const Post2 = ({ postInfo }: PostProps) => {
           <h3 className="text-xl font-semibold leading-snug dark:text-zinc-100 transition-colors group-hover:text-blue-600 dark:group-hover:text-blue-400">
             {postInfo.title}
           </h3>
-          <p className="text-sm text-gray-700 dark:text-gray-400 line-clamp-3">
+          <p className="text-gray-700 dark:text-gray-400 line-clamp-3">
             {postInfo.brief || 'none'}
           </p>
         </div>

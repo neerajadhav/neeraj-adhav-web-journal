@@ -32,18 +32,15 @@ export const SingleBlog = (props: SingleBlogProps) => {
     : undefined;
 
   return (
-    <Link
-      href={`/${slug}`}
-      className='group w-full items-center p-4 py-6 text-gray-950 md:w-1/3 lg:py-4'
-    >
-      <article className='relative flex w-full flex-col gap-3'>
+    <Link href={`/${slug}`} className='group block w-full md:w-1/3'>
+      <article className='relative flex w-full flex-col gap-3 overflow-hidden rounded-lg p-4'>
         {coverImageSrc ? (
           <CoverImage title={title} src={coverImageSrc} priority={true} />
         ) : (
           <ImagePlaceholder />
         )}
         <div className='flex flex-col gap-3'>
-          <h3 className='line-clamp-2 text-xl font-semibold dark:text-zinc-100'>
+          <h3 className='line-clamp-2 text-lg font-semibold text-gray-900 transition-colors group-hover:text-blue-600 dark:text-gray-100 dark:group-hover:text-blue-400'>
             {title}
           </h3>
           <p className='line-clamp-3 text-gray-700 dark:text-gray-400'>
