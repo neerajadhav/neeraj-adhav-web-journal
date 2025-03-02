@@ -5,6 +5,7 @@ import { Metadata } from 'next';
 import { Suspense } from 'react';
 import BlogPage from './BlogPage';
 import BlogTabs from './BlogTabs';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 
 const BASE_TITLE = 'Blogs | Neeraj Adhav';
 const BASE_DESCRIPTION =
@@ -50,7 +51,14 @@ const Page = () => {
         <h1>{BASE_TITLE}</h1>
       </div>
       <Container>
-        <PageSection title='Blog'>
+        <PageSection
+          title='Blog'
+          link={{
+            href: 'https://github.com/neerajadhav/neeraj-adhav-web-journal/discussions',
+            text: 'Visit Forum',
+            icon: <ArrowTopRightOnSquareIcon className='h-4 w-4' />,
+          }}
+        >
           <Suspense fallback={<BlogPage />}>
             <BlogTabs />
           </Suspense>
