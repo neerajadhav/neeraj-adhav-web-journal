@@ -33,14 +33,14 @@ export const Navbar = ({ navLinks }: NavbarProps) => {
 
   return (
     <div className='fixed bottom-0 left-0 z-40 flex w-full justify-center md:static lg:bottom-5 lg:w-auto print:hidden'>
-      <nav className='flex w-full flex-row md:justify-center justify-around gap-3 bg-white py-2 md:gap-5 lg:w-auto lg:gap-2 lg:rounded-full md:bg-transparent dark:bg-black dark:md:bg-transparent'>
+      <nav className='flex w-full flex-row justify-around gap-3 bg-white py-2 dark:bg-black md:justify-center md:gap-5 md:bg-transparent dark:md:bg-transparent lg:w-auto lg:gap-2 lg:rounded-full'>
         {navLinks.map((navlink) => (
           <Link
             href={navlink.href}
             key={navlink.name}
             passHref
             onClick={() => handleNavigation(navlink.href)}
-            className={`relative border p-3 shadow-sm rounded-lg lg:px-3 lg:py-2 lg:shadow-none dark:border-0 dark:text-gray-400 dark:hover:bg-gray-50/10 ${
+            className={`relative rounded-lg border p-2 px-3 shadow-sm dark:border-0 dark:text-gray-400 dark:hover:bg-gray-50/10 lg:shadow-none ${
               path === navlink.href
                 ? 'bg-gray-200 dark:bg-gray-50/10 dark:text-gray-50'
                 : 'bg-white hover:bg-white dark:bg-transparent dark:text-gray-400'
