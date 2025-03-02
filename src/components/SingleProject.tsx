@@ -22,7 +22,7 @@ interface ActionButtonProps {
 
 const ActionButton: React.FC<ActionButtonProps> = ({ url, children }) => {
   const commonClasses =
-    'flex items-center gap-2 rounded-full p-1 px-3 text-sm text-white';
+    'flex items-center gap-2 rounded-full p-1 px-3 text-sm text-white hover:text-blue-400';
   return url ? (
     <a href={`//${url}`} target='_blank' className={commonClasses}>
       {children}
