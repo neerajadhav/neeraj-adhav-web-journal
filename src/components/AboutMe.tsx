@@ -1,5 +1,9 @@
 'use client';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBook,
+  faLocationDot,
+  faUniversity,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Inknut_Antiqua } from 'next/font/google';
 import Image from 'next/image';
@@ -31,10 +35,10 @@ export const AboutMe = () => {
   const availableFor = publication.author?.availableFor || null;
 
   return (
-    <div className='flex flex-col items-center gap-4 rounded-xl border bg-white p-4 py-10 dark:border-0 dark:bg-bgDark shadow'>
+    <div className='flex flex-col items-center gap-4 rounded-xl border bg-white p-4 py-10 shadow dark:border-0 dark:bg-bgDark'>
       <div className='flex w-full flex-col items-start gap-4 lg:flex-row'>
         {publication.author.profilePicture && (
-          <div className='b mx-auto flex w-1/2 flex-col items-center gap-3 overflow-hidden rounded-xl p-3 sm:max-w-52'>
+          <div className='b mx-auto flex w-2/3 flex-col items-center gap-3 overflow-hidden rounded-xl p-3 sm:max-w-52'>
             <Image
               src={publication.author.profilePicture}
               alt='profile pic'
@@ -84,12 +88,12 @@ export const AboutMe = () => {
               />
             )}
             {availableFor && (
-              <p className='flex w-full items-center gap-2 text-gray-700 dark:text-gray-400'>
+              <p className='flex w-full items-center gap-3 text-gray-700 dark:text-gray-400'>
                 <FaSuitcase /> I am available for {availableFor}
               </p>
             )}
             {publication.author.location && (
-              <p className='flex items-center gap-2 text-gray-700 dark:text-gray-400'>
+              <p className='flex items-center gap-3 text-gray-700 dark:text-gray-400'>
                 <FontAwesomeIcon icon={faLocationDot} />
                 {publication.author.location}
               </p>
