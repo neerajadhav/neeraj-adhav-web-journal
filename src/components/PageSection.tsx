@@ -40,31 +40,30 @@ const PageSection: React.FC<PageSectionProps> = ({
   }, []);
 
   return (
-    <section className="flex flex-col items-start rounded-xl border bg-white text-gray-950 dark:border-bgDark dark:bg-bgDark/80 dark:text-zinc-300 print:border-0">
+    <section className='flex flex-col items-start rounded-xl border bg-white text-gray-950 dark:border-bgDark dark:bg-bgDark/80 dark:text-zinc-300 print:border-0'>
       <div
         ref={headerRef}
-        className={`sticky top-[-0.1px] z-30 flex w-full select-none items-center justify-between gap-2 border-b bg-white p-4 dark:border-bgDark dark:bg-bgDark print:hidden transition-all duration-200
-          ${isSticky ? 'shadow-md rounded-t-0 rounded-b-xl' : 'rounded-t-xl'}`}
+        className={`sticky top-[-0.1px] z-30 flex w-full select-none items-center justify-between gap-2 border-b bg-white transition-all duration-200 dark:border-bgDark dark:bg-bgDark print:hidden ${isSticky ? 'rounded-t-0 rounded-b-xl shadow-md' : 'rounded-t-xl'} ${isBlogArticle ? 'p-3' : 'p-4'}`}
       >
         {isBlogArticle && (
-          <Link href="/blog">
-            <button className="rounded-full border border-zinc-100 p-1 text-sm transition-all hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950">
-              <ArrowLeftIcon className="h-5 w-5" />
+          <Link href='/blog'>
+            <button className='rounded-full border border-zinc-100 p-1 text-sm transition-all hover:border-zinc-200 hover:bg-zinc-100 dark:border-bgDark dark:hover:border-gray-700 dark:hover:bg-gray-950'>
+              <ArrowLeftIcon className='h-5 w-5' />
             </button>
           </Link>
         )}
 
-        <div className="w-full text-start font-bold text-gray-700 dark:text-zinc-100 truncate">
+        <div className='w-full truncate text-start font-bold text-gray-700 dark:text-zinc-100'>
           {title}
         </div>
 
         {link && (
-          <div className="w-full text-end">
+          <div className='w-full text-end'>
             <Link
               href={link.href}
-              className="flex items-center justify-end gap-2 rounded-full text-sm font-medium text-gray-700 transition-all hover:text-blue-500 dark:hover:text-blue-500 dark:border-bgDark dark:text-zinc-300"
+              className='flex items-center justify-end gap-2 rounded-full text-sm font-medium text-gray-700 transition-all hover:text-blue-500 dark:border-bgDark dark:text-zinc-300 dark:hover:text-blue-500'
             >
-              {link.text} {link.icon ?? <ArrowRightIcon className="h-4 w-4" />}
+              {link.text} {link.icon ?? <ArrowRightIcon className='h-4 w-4' />}
             </Link>
           </div>
         )}
