@@ -63,7 +63,7 @@ export default function BlogPage() {
       </div>
 
       {/* Archive Section */}
-      <div className='mb-12 grid w-full grid-cols-1 gap-10 px-4 sm:grid-cols-2 lg:px-0 lg:py-6'>
+      <div className='mb-12 grid w-full grid-cols-1 gap-14 md:gap-4 lg:gap-20 px-4 sm:grid-cols-2 lg:px-0 lg:py-6'>
         {posts.slice(3).map((post, index) => (
           <div key={index + 1} className='w-full'>
             <Post2 postInfo={post} />
