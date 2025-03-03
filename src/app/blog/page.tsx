@@ -51,18 +51,18 @@ const Page = () => {
         <h1>{BASE_TITLE}</h1>
       </div>
       <Container>
-        <PageSection
+        {/* <PageSection
           title='Blog'
           link={{
             href: 'https://github.com/neerajadhav/neeraj-adhav-web-journal/discussions',
             text: 'Visit Forum',
             icon: <ArrowTopRightOnSquareIcon className='h-4 w-4' />,
           }}
-        >
+        > */}
           <Suspense fallback={<BlogPage />}>
             <BlogTabs />
           </Suspense>
-        </PageSection>
+        {/* </PageSection> */}
         <ContactMe />
       </Container>
     </>
