@@ -49,8 +49,8 @@ const BlogTabs: React.FC = () => {
 
   return (
     <>
-      <div className='w-full select-none overflow-x-auto border-gray-700'>
-        <div className='flex w-full gap-4 border-y border-gray-300 px-2 py-3 dark:border-gray-700'>
+      <div className='w-full select-none overflow-x-auto border-y border-gray-300 px-2 py-3 dark:border-gray-700'>
+        <div className='flex w-full gap-4'>
           {tabs.map((tab, index) => (
             <button
               key={index}
@@ -64,6 +64,7 @@ const BlogTabs: React.FC = () => {
               {tab.title}
             </button>
           ))}
+          <div className='text-transparent'>.</div>
         </div>
       </div>
       <div>{tabs[activeTab].content}</div>
