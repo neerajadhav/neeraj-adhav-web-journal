@@ -45,7 +45,7 @@ export const Post2 = ({ postInfo }: PostProps) => {
       {/* Content Container */}
       <div className="flex flex-col-reverse lg:flex-row gap-3">
         {/* Text Section */}
-        <div className="flex flex-col gap-2 text-gray-900 dark:text-zinc-300 w-full lg:w-2/3">
+        <div className="flex flex-col gap-2 text-gray-900 dark:text-zinc-300 w-full lg:w-3/5">
           <h3 className="text-xl font-semibold leading-snug dark:text-zinc-100 transition-colors group-hover:text-blue-600 dark:group-hover:text-blue-400">
             {postInfo.title}
           </h3>
@@ -55,7 +55,7 @@ export const Post2 = ({ postInfo }: PostProps) => {
         </div>
 
         {/* Image Section */}
-        <div className="relative w-full lg:w-1/3 overflow-hidden rounded-lg">
+        <div className="relative w-full lg:w-2/5 overflow-hidden rounded-lg">
           {postImageSrc ? (
             <Image
               src={postImageSrc}
