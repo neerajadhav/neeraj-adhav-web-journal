@@ -1,8 +1,6 @@
 'use client';
 import {
-  faBook,
-  faLocationDot,
-  faUniversity,
+  faLocationDot
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Inknut_Antiqua } from 'next/font/google';
