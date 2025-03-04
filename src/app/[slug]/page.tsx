@@ -102,7 +102,7 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
           )}
           <div className='relative z-20 mx-auto max-w-3xl p-3 pt-4 print:p-0'>
             <div className='mb-4 flex flex-col gap-3 text-gray-950 dark:text-zinc-300'>
-              <h1 className='w-full pb-5 text-center text-2xl font-extrabold dark:text-zinc-100 md:text-3xl print:pt-6 print:text-3xl print:font-extrabold'>
+              <h1 className='w-full pb-5 text-center text-3xl font-extrabold dark:text-zinc-100 md:text-4xl print:pt-6 print:text-3xl print:font-extrabold'>
                 {post.title}
               </h1>
               {post.coverImage?.url && (
