@@ -1,4 +1,5 @@
 'use client';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
 import Image from 'next/legacy/image';
@@ -68,41 +69,28 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
   return (
     <div className='p-2'>
       {/* User Info */}
-      <div className='flex justify-between'>
-        <div className='mb-3 flex w-full items-center space-x-3'>
-          <Image
-            src={post.account.avatar_static}
-            alt='Avatar'
-            width={40}
-            height={40}
-            className='h-10 w-10 rounded-full'
-          />
-          <div>
-            <p className='font-semibold text-gray-900 dark:text-gray-100'>
-              {timeAgo.format(new Date(post.created_at))}
-            </p>
-            <p className='text-sm text-gray-500 dark:text-gray-400'>
-              <a
-                href={`https://sciences.social/@${post.account.acct}`}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='text-blue-500 hover:underline'
-              >
-                @{post.account.acct}
-              </a>
-            </p>
-          </div>
-        </div>
-        {/* Post Metadata */}
-        <div className='mt-3 flex w-full justify-between text-sm text-gray-500 dark:text-gray-400'>
-          <a
-            href={post.url}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='w-full text-end text-blue-500 hover:underline'
-          >
-            Open Thread
-          </a>
+      <div className='mb-3 flex w-full items-center space-x-3'>
+        <Image
+          src={post.account.avatar_static}
+          alt='Avatar'
+          width={40}
+          height={40}
+          className='h-10 w-10 rounded-full'
+        />
+        <div className='flex items-center gap-3'>
+          <p className='font-semibold text-gray-900 dark:text-gray-100'>
+            {timeAgo.format(new Date(post.created_at))}
+          </p>
+          <p className='text-sm text-gray-500 dark:text-gray-400'>
+            <a
+              href={post.url}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='flex w-full text-end text-blue-500 hover:underline'
+            >
+              Open
+            </a>
+          </p>
         </div>
       </div>
 

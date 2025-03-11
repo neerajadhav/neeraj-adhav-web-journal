@@ -83,7 +83,7 @@ const FeedPage = async () => {
         }}
         className='p-0 lg:p-0'
       >
-        <div className='mx-auto flex max-w-lg flex-col gap-3 lg:gap-0 lg:pt-0'>
+        <div className='mx-auto flex max-w-lg flex-col gap-6'>
           {posts.length > 0 ? (
             <>
               {posts.map((post: MastodonPostProps['post']) => (
