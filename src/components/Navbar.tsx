@@ -40,14 +40,14 @@ export const Navbar = ({ navLinks }: NavbarProps) => {
             key={navlink.name}
             passHref
             onClick={() => handleNavigation(navlink.href)}
-            className={`relative rounded-lg border p-2 px-3 shadow-sm dark:border-0 dark:text-gray-400 dark:hover:bg-gray-50/10 lg:shadow-none ${
+            className={`relative rounded-lg p-2 px-3 dark:text-gray-400 dark:hover:bg-gray-50/10 ${
               path === navlink.href
-                ? 'bg-gray-200 dark:bg-gray-50/10 dark:text-gray-50'
+                ? 'dark:bg-transparent dark:text-gray-50'
                 : 'bg-white hover:bg-white dark:bg-transparent dark:text-gray-400'
             }`}
             title={navlink.tooltip}
           >
-            <div className='flex items-center gap-2 lg:text-sm'>
+            <div className='flex flex-col md:flex-row items-center gap-1 md:gap-2 lg:text-sm'>
               {loadingLink === navlink.href ? (
                 <div className='flex items-center justify-center'>
                   <div className='animate-spin rounded-full'>
@@ -60,7 +60,7 @@ export const Navbar = ({ navLinks }: NavbarProps) => {
                   <span className='sr-only'>{navlink.tooltip}</span>
                 </>
               )}
-              <div className='hidden md:block'>{navlink.tooltip}</div>
+              <div className='text-xs md:text-base'>{navlink.tooltip}</div>
             </div>
           </Link>
         ))}
