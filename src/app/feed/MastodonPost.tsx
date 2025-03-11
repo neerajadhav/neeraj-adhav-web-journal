@@ -12,7 +12,7 @@ const timeAgo = new TimeAgo('en-US');
 const MediaAttachment = ({ media, index, onClick, isFirst }: any) => (
   <div
     className={`relative cursor-pointer overflow-hidden rounded-lg ${
-      isFirst ? 'w-full h-80' : 'w-24 h-24'
+      isFirst ? 'w-full h-80' : 'w-full h-28'
     }`}
     onClick={() => onClick(index)}
   >
