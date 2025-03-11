@@ -3,14 +3,29 @@ import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
 import Image from 'next/legacy/image';
 import React, { useState } from 'react';
-import 'yet-another-react-lightbox/styles.css';
 import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 
 TimeAgo.addLocale(en);
 const timeAgo = new TimeAgo('en-US');
 
+const MediaAttachment = ({ media, index, onClick }: any) => (
+  <div
+    className='relative h-60 w-full flex-1 cursor-pointer overflow-hidden rounded-lg'
+    onClick={() => onClick(index)}
+  >
+    <Image
+      src={media.preview_url || media.url}
+      alt='Post Attachment'
+      layout='fill'
+      objectFit='cover'
+      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+      className='rounded-lg'
+    />
+  </div>
+);
 
-type MediaAttachment = {
+type MediaAttachmentType = {
   id: string;
   type: string;
   url: string;
@@ -33,7 +48,7 @@ type MastodonPostProps = {
     reblogs_count: number;
     favourites_count: number;
     account: Account;
-    media_attachments: MediaAttachment[];
+    media_attachments: MediaAttachmentType[];
     url: string;
   };
 };
@@ -41,9 +56,6 @@ type MastodonPostProps = {
 const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
-  const imageUrls = post.media_attachments.map((media) => media.url);
-  const attachmentCount = post.media_attachments.length;
-
   const openLightbox = (index: number) => {
     setPhotoIndex(index);
     setLightboxOpen(true);
@@ -84,135 +96,28 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
         dangerouslySetInnerHTML={{ __html: post.content }}
       ></div>
 
-      {/* Media Attachments with Finetuned Layout */}
-      {attachmentCount > 0 && (
-        <div className='mt-2'>
-          {attachmentCount === 1 && (
-            <div
-              className='relative h-80 w-full cursor-pointer overflow-hidden rounded-lg'
-              onClick={() => openLightbox(0)}
-            >
-              <Image
-                src={
-                  post.media_attachments[0].preview_url ||
-                  post.media_attachments[0].url
-                }
-                alt='Post Attachment'
-                layout='fill'
-                objectFit='cover'
-                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                className='rounded-lg'
-              />
-            </div>
-          )}
-
-          {attachmentCount === 2 && (
-            <div className='grid grid-cols-2 gap-2'>
-              {post.media_attachments.map((media, index) => (
-                <div
-                  key={media.id}
-                  className='relative h-60 w-full cursor-pointer overflow-hidden rounded-lg'
-                  onClick={() => openLightbox(index)}
-                >
-                  <Image
-                    src={media.preview_url || media.url}
-                    alt='Post Attachment'
-                    layout='fill'
-                    objectFit='cover'
-                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                    className='rounded-lg'
-                  />
-                </div>
-              ))}
-            </div>
-          )}
-
-          {attachmentCount === 3 && (
-            <div className='grid grid-cols-3 gap-2'>
-              {/* Large image on the left */}
-              <div
-                className='relative col-span-2 row-span-2 h-80 w-full cursor-pointer overflow-hidden rounded-lg'
-                onClick={() => openLightbox(0)}
-              >
-                <Image
-                  src={
-                    post.media_attachments[0].preview_url ||
-                    post.media_attachments[0].url
-                  }
-                  alt='Post Attachment'
-                  layout='fill'
-                  objectFit='cover'
-                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 50vw'
-                  className='rounded-lg'
-                />
-              </div>
-              {/* Two smaller images on the right */}
-              <div
-                className='relative h-40 w-full cursor-pointer overflow-hidden rounded-lg'
-                onClick={() => openLightbox(1)}
-              >
-                <Image
-                  src={
-                    post.media_attachments[1].preview_url ||
-                    post.media_attachments[1].url
-                  }
-                  alt='Post Attachment'
-                  layout='fill'
-                  objectFit='cover'
-                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw'
-                  className='rounded-lg'
-                />
-              </div>
-              <div
-                className='relative h-40 w-full cursor-pointer overflow-hidden rounded-lg'
-                onClick={() => openLightbox(2)}
-              >
-                <Image
-                  src={
-                    post.media_attachments[2].preview_url ||
-                    post.media_attachments[2].url
-                  }
-                  alt='Post Attachment'
-                  layout='fill'
-                  objectFit='cover'
-                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw'
-                  className='rounded-lg'
-                />
-              </div>
-            </div>
-          )}
-
-          {attachmentCount >= 4 && (
-            <div className='grid grid-cols-2 gap-2'>
-              {post.media_attachments.slice(0, 4).map((media, index) => (
-                <div
-                  key={media.id}
-                  className='relative h-60 w-full cursor-pointer overflow-hidden rounded-lg'
-                  onClick={() => openLightbox(index)}
-                >
-                  <Image
-                    src={media.preview_url || media.url}
-                    alt='Post Attachment'
-                    layout='fill'
-                    objectFit='cover'
-                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                    className='rounded-lg'
-                  />
-                  {index === 3 && attachmentCount > 4 && (
-                    <div className='absolute inset-0 flex items-center justify-center bg-black bg-opacity-50'>
-                      <span className='text-2xl font-bold text-white'>
-                        +{attachmentCount - 4}
-                      </span>
-                    </div>
-                  )}
-                </div>
-              ))}
+      {/* Media Attachments */}
+      {post.media_attachments.length > 0 && (
+        <div className='mt-2 flex flex-wrap gap-2'>
+          {post.media_attachments.slice(0, 4).map((media, index) => (
+            <MediaAttachment
+              key={media.id}
+              media={media}
+              index={index}
+              onClick={openLightbox}
+            />
+          ))}
+          {post.media_attachments.length > 4 && (
+            <div className='absolute inset-0 flex items-center justify-center bg-black bg-opacity-50'>
+              <span className='text-2xl font-bold text-white'>
+                +{post.media_attachments.length - 4}
+              </span>
             </div>
           )}
         </div>
       )}
 
-      {/* Lightbox for Full Resolution Images using yet-another-react-lightbox */}
+      {/* Lightbox */}
       {lightboxOpen && (
         <Lightbox
           open={lightboxOpen}
