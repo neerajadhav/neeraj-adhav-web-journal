@@ -12,7 +12,7 @@ const timeAgo = new TimeAgo('en-US');
 const MediaAttachment = ({ media, index, onClick, isFirst }: any) => (
   <div
     className={`relative cursor-pointer overflow-hidden rounded-lg ${
-      isFirst ? 'w-full h-80' : 'w-full h-28'
+      isFirst ? 'h-80 w-full' : 'h-28 w-full'
     }`}
     onClick={() => onClick(index)}
   >
@@ -68,28 +68,41 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
   return (
     <div className='p-4'>
       {/* User Info */}
-      <div className='mb-3 flex items-center space-x-3'>
-        <Image
-          src={post.account.avatar_static}
-          alt='Avatar'
-          width={40}
-          height={40}
-          className='h-10 w-10 rounded-full'
-        />
-        <div>
-          <p className='font-semibold text-gray-900 dark:text-gray-100'>
-            {timeAgo.format(new Date(post.created_at))}
-          </p>
-          <p className='text-sm text-gray-500 dark:text-gray-400'>
-            <a
-              href={`https://sciences.social/@${post.account.acct}`}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-blue-500 hover:underline'
-            >
-              @{post.account.acct}
-            </a>
-          </p>
+      <div className='flex justify-between'>
+        <div className='mb-3 flex w-full items-center space-x-3'>
+          <Image
+            src={post.account.avatar_static}
+            alt='Avatar'
+            width={40}
+            height={40}
+            className='h-10 w-10 rounded-full'
+          />
+          <div>
+            <p className='font-semibold text-gray-900 dark:text-gray-100'>
+              {timeAgo.format(new Date(post.created_at))}
+            </p>
+            <p className='text-sm text-gray-500 dark:text-gray-400'>
+              <a
+                href={`https://sciences.social/@${post.account.acct}`}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-blue-500 hover:underline'
+              >
+                @{post.account.acct}
+              </a>
+            </p>
+          </div>
+        </div>
+        {/* Post Metadata */}
+        <div className='mt-3 flex w-full justify-between text-sm text-gray-500 dark:text-gray-400'>
+          <a
+            href={post.url}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='w-full text-end text-blue-500 hover:underline'
+          >
+            Open Thread
+          </a>
         </div>
       </div>
 
@@ -111,7 +124,7 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
             onClick={openLightbox}
             isFirst={true}
           />
-          
+
           {/* Remaining images in a horizontal stack */}
           {post.media_attachments.length > 1 && (
             <div className='mt-2 flex gap-2 overflow-x-auto'>
@@ -134,11 +147,14 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
         <Lightbox
           mainSrc={post.media_attachments[photoIndex].url}
           nextSrc={
-            post.media_attachments[(photoIndex + 1) % post.media_attachments.length].url
+            post.media_attachments[
+              (photoIndex + 1) % post.media_attachments.length
+            ].url
           }
           prevSrc={
             post.media_attachments[
-              (photoIndex + post.media_attachments.length - 1) % post.media_attachments.length
+              (photoIndex + post.media_attachments.length - 1) %
+                post.media_attachments.length
             ].url
           }
           onCloseRequest={() => setLightboxOpen(false)}
@@ -153,18 +169,6 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
           }
         />
       )}
-
-      {/* Post Metadata */}
-      <div className='mt-3 flex w-full justify-between text-sm text-gray-500 dark:text-gray-400'>
-        <a
-          href={post.url}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='w-full text-end text-blue-500 hover:underline'
-        >
-          Open Thread
-        </a>
-      </div>
     </div>
   );
 };
