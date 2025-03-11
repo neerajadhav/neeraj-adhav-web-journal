@@ -9,9 +9,11 @@ import 'react-image-lightbox/style.css';
 TimeAgo.addLocale(en);
 const timeAgo = new TimeAgo('en-US');
 
-const MediaAttachment = ({ media, index, onClick, fullWidth = false }: any) => (
+const MediaAttachment = ({ media, index, onClick, isFirst }: any) => (
   <div
-    className={`relative cursor-pointer overflow-hidden rounded-lg ${fullWidth ? 'h-80 w-full' : 'h-40 w-1/3'}`}
+    className={`relative cursor-pointer overflow-hidden rounded-lg ${
+      isFirst ? 'w-full h-80' : 'w-24 h-24'
+    }`}
     onClick={() => onClick(index)}
   >
     <Image
@@ -21,6 +23,7 @@ const MediaAttachment = ({ media, index, onClick, fullWidth = false }: any) => (
       objectFit='cover'
       sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
       className='rounded-lg'
+      priority={isFirst} // Prioritize first image
     />
   </div>
 );
@@ -63,43 +66,30 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
   };
 
   return (
-    <div className='p-2'>
+    <div className='p-4'>
       {/* User Info */}
-      <div className='flex justify-between'>
-        <div className='mb-3 flex w-full items-center space-x-3'>
-          <Image
-            src={post.account.avatar_static}
-            alt='Avatar'
-            width={40}
-            height={40}
-            className='h-10 w-10 rounded-full'
-          />
-          <div>
-            <p className='font-semibold text-gray-900 dark:text-gray-100'>
-              {timeAgo.format(new Date(post.created_at))}
-            </p>
-            <p className='text-sm text-gray-500 dark:text-gray-400'>
-              <a
-                href={`https://sciences.social/@${post.account.acct}`}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='text-blue-500 hover:underline'
-              >
-                @{post.account.acct}
-              </a>
-            </p>
-          </div>
-        </div>
-        {/* Post Metadata */}
-        <div className='mt-3 flex w-full justify-between text-sm text-gray-500 dark:text-gray-400'>
-          <a
-            href={post.url}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='w-full text-end text-blue-500 hover:underline'
-          >
-            Open Thread
-          </a>
+      <div className='mb-3 flex items-center space-x-3'>
+        <Image
+          src={post.account.avatar_static}
+          alt='Avatar'
+          width={40}
+          height={40}
+          className='h-10 w-10 rounded-full'
+        />
+        <div>
+          <p className='font-semibold text-gray-900 dark:text-gray-100'>
+            {timeAgo.format(new Date(post.created_at))}
+          </p>
+          <p className='text-sm text-gray-500 dark:text-gray-400'>
+            <a
+              href={`https://sciences.social/@${post.account.acct}`}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-blue-500 hover:underline'
+            >
+              @{post.account.acct}
+            </a>
+          </p>
         </div>
       </div>
 
@@ -113,33 +103,27 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
       {/* Media Attachments */}
       {post.media_attachments.length > 0 && (
         <div className='mt-2'>
-          {/* First image full width */}
+          {/* First image (Full Width) */}
           <MediaAttachment
             key={post.media_attachments[0].id}
             media={post.media_attachments[0]}
             index={0}
             onClick={openLightbox}
-            fullWidth={true}
+            isFirst={true}
           />
-
-          {/* Remaining images in horizontal stack */}
+          
+          {/* Remaining images in a horizontal stack */}
           {post.media_attachments.length > 1 && (
-            <div className='mt-2 flex gap-2'>
+            <div className='mt-2 flex gap-2 overflow-x-auto'>
               {post.media_attachments.slice(1, 4).map((media, index) => (
                 <MediaAttachment
                   key={media.id}
                   media={media}
                   index={index + 1}
                   onClick={openLightbox}
+                  isFirst={false}
                 />
               ))}
-              {post.media_attachments.length > 4 && (
-                <div className='relative flex h-40 w-1/3 items-center justify-center rounded-lg bg-black bg-opacity-50'>
-                  <span className='text-2xl font-bold text-white'>
-                    +{post.media_attachments.length - 4}
-                  </span>
-                </div>
-              )}
             </div>
           )}
         </div>
@@ -150,14 +134,11 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
         <Lightbox
           mainSrc={post.media_attachments[photoIndex].url}
           nextSrc={
-            post.media_attachments[
-              (photoIndex + 1) % post.media_attachments.length
-            ].url
+            post.media_attachments[(photoIndex + 1) % post.media_attachments.length].url
           }
           prevSrc={
             post.media_attachments[
-              (photoIndex + post.media_attachments.length - 1) %
-                post.media_attachments.length
+              (photoIndex + post.media_attachments.length - 1) % post.media_attachments.length
             ].url
           }
           onCloseRequest={() => setLightboxOpen(false)}
@@ -172,6 +153,18 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
           }
         />
       )}
+
+      {/* Post Metadata */}
+      <div className='mt-3 flex w-full justify-between text-sm text-gray-500 dark:text-gray-400'>
+        <a
+          href={post.url}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='w-full text-end text-blue-500 hover:underline'
+        >
+          Open Thread
+        </a>
+      </div>
     </div>
   );
 };
