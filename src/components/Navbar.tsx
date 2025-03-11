@@ -60,7 +60,7 @@ export const Navbar = ({ navLinks }: NavbarProps) => {
                   <span className='sr-only'>{navlink.tooltip}</span>
                 </>
               )}
-              <div className='text-xs md:text-base'>{navlink.tooltip}</div>
+              <div className='text-xs md:text-sm'>{navlink.tooltip}</div>
             </div>
           </Link>
         ))}

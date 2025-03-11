@@ -7,7 +7,7 @@ import {
   HiMiniCodeBracketSquare,
   HiOutlineCodeBracketSquare,
 } from 'react-icons/hi2';
-import { ModeToggle } from './DarkModeBtn';
+import { PiMastodonLogoFill, PiMastodonLogoLight } from 'react-icons/pi';
 import { Navbar } from './Navbar';
 import StarOnGithub from './StarOnGithub';
 
@@ -24,6 +24,13 @@ const NAVLINKS = [
     icon: <GoHome className='h-6 w-6 lg:h-5 lg:w-5' />,
     activeIcon: <GoHomeFill className='h-6 w-6 lg:h-5 lg:w-5' />,
     tooltip: 'Home',
+  },
+  {
+    name: 'Feed',
+    href: '/feed',
+    icon: <PiMastodonLogoLight className='h-6 w-6 lg:h-5 lg:w-5' />,
+    activeIcon: <PiMastodonLogoFill className='h-6 w-6 lg:h-5 lg:w-5' />,
+    tooltip: 'Feed',
   },
   {
     name: 'Blog',
@@ -48,7 +55,7 @@ const Header = () => {
         <div className='flex h-16 items-center justify-between'>
           {/* Logo */}
           <div
-            className={`${logoFont.className} flex w-full gap-3 justify-between md:justify-normal text-gray-900 dark:text-white`}
+            className={`${logoFont.className} flex w-full justify-between gap-3 text-gray-900 dark:text-white md:justify-normal`}
           >
             <Link
               href='/'
