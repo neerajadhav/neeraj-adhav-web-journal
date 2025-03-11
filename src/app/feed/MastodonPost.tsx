@@ -9,9 +9,9 @@ import 'react-image-lightbox/style.css';
 TimeAgo.addLocale(en);
 const timeAgo = new TimeAgo('en-US');
 
-const MediaAttachment = ({ media, index, onClick }: any) => (
+const MediaAttachment = ({ media, index, onClick, fullWidth = false }: any) => (
   <div
-    className='relative h-60 w-full flex-1 cursor-pointer overflow-hidden rounded-lg'
+    className={`relative cursor-pointer overflow-hidden rounded-lg ${fullWidth ? 'w-full h-80' : 'w-1/3 h-40'}`}
     onClick={() => onClick(index)}
   >
     <Image
@@ -63,7 +63,7 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
   };
 
   return (
-    <div className='p-4'>
+    <div className='p-2'>
       {/* User Info */}
       <div className='mb-3 flex items-center space-x-3'>
         <Image
@@ -99,20 +99,34 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
 
       {/* Media Attachments */}
       {post.media_attachments.length > 0 && (
-        <div className='mt-2 flex flex-wrap gap-2'>
-          {post.media_attachments.slice(0, 4).map((media, index) => (
-            <MediaAttachment
-              key={media.id}
-              media={media}
-              index={index}
-              onClick={openLightbox}
-            />
-          ))}
-          {post.media_attachments.length > 4 && (
-            <div className='absolute inset-0 flex items-center justify-center bg-black bg-opacity-50'>
-              <span className='text-2xl font-bold text-white'>
-                +{post.media_attachments.length - 4}
-              </span>
+        <div className='mt-2'>
+          {/* First image full width */}
+          <MediaAttachment
+            key={post.media_attachments[0].id}
+            media={post.media_attachments[0]}
+            index={0}
+            onClick={openLightbox}
+            fullWidth={true}
+          />
+
+          {/* Remaining images in horizontal stack */}
+          {post.media_attachments.length > 1 && (
+            <div className='mt-2 flex gap-2'>
+              {post.media_attachments.slice(1, 4).map((media, index) => (
+                <MediaAttachment
+                  key={media.id}
+                  media={media}
+                  index={index + 1}
+                  onClick={openLightbox}
+                />
+              ))}
+              {post.media_attachments.length > 4 && (
+                <div className='relative flex items-center justify-center w-1/3 h-40 bg-black bg-opacity-50 rounded-lg'>
+                  <span className='text-2xl font-bold text-white'>
+                    +{post.media_attachments.length - 4}
+                  </span>
+                </div>
+              )}
             </div>
           )}
         </div>
