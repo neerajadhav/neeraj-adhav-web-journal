@@ -34,6 +34,7 @@ type MastodonPostProps = {
     account: Account;
     media_attachments: MediaAttachment[];
     url: string;
+    in_reply_to_id?: string | null;
   };
 };
 
@@ -62,7 +63,10 @@ const fetchPosts = async () => {
 
     if (!postsResponse.ok) throw new Error('Failed to fetch posts');
 
-    return await postsResponse.json();
+    const posts = await postsResponse.json();
+    
+    // Filter out replies
+    return posts.filter((post: MastodonPostProps['post']) => !post.in_reply_to_id);
   } catch (error) {
     console.error('Error fetching Mastodon posts:', error);
     return [];
@@ -85,11 +89,9 @@ const FeedPage = async () => {
       >
         <div className='mx-auto flex max-w-xl flex-col gap-6'>
           {posts.length > 0 ? (
-            <>
-              {posts.map((post: MastodonPostProps['post']) => (
-                <MastodonPost key={post.id} post={post} />
-              ))}
-            </>
+            posts.map((post: MastodonPostProps['post']) => (
+              <MastodonPost key={post.id} post={post} />
+            ))
           ) : (
             <p className='text-center text-gray-500 dark:text-gray-400'>
               No posts available
