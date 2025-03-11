@@ -3,8 +3,8 @@ import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
 import Image from 'next/legacy/image';
 import React, { useState } from 'react';
-import Lightbox from 'yet-another-react-lightbox';
-import 'yet-another-react-lightbox/styles.css';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 TimeAgo.addLocale(en);
 const timeAgo = new TimeAgo('en-US');
@@ -56,6 +56,7 @@ type MastodonPostProps = {
 const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
+
   const openLightbox = (index: number) => {
     setPhotoIndex(index);
     setLightboxOpen(true);
@@ -120,13 +121,25 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
       {/* Lightbox */}
       {lightboxOpen && (
         <Lightbox
-          open={lightboxOpen}
-          close={() => setLightboxOpen(false)}
-          slides={post.media_attachments.map((media) => ({
-            src: media.url,
-            alt: 'Post Attachment',
-          }))}
-          index={photoIndex}
+          mainSrc={post.media_attachments[photoIndex].url}
+          nextSrc={
+            post.media_attachments[(photoIndex + 1) % post.media_attachments.length].url
+          }
+          prevSrc={
+            post.media_attachments[
+              (photoIndex + post.media_attachments.length - 1) % post.media_attachments.length
+            ].url
+          }
+          onCloseRequest={() => setLightboxOpen(false)}
+          onMovePrevRequest={() =>
+            setPhotoIndex(
+              (photoIndex + post.media_attachments.length - 1) %
+                post.media_attachments.length
+            )
+          }
+          onMoveNextRequest={() =>
+            setPhotoIndex((photoIndex + 1) % post.media_attachments.length)
+          }
         />
       )}
 
