@@ -1,5 +1,6 @@
 'use client';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import { FaComment, FaRetweet, FaStar } from 'react-icons/fa';
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
 import Image from 'next/legacy/image';
@@ -88,7 +89,7 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
               rel='noopener noreferrer'
               className='flex w-full text-end text-blue-500 hover:underline'
             >
-              Open
+              Reply
             </a>
           </p>
         </div>
@@ -103,7 +104,7 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
 
       {/* Media Attachments */}
       {post.media_attachments.length > 0 && (
-        <div className='mt-2'>
+        <div className='mb-3'>
           {/* First image (Full Width) */}
           <MediaAttachment
             key={post.media_attachments[0].id}
@@ -129,6 +130,17 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
           )}
         </div>
       )}
+      {/* <div className='flex gap-3 text-gray-600 dark:text-gray-400'>
+        <span className='flex items-center gap-1 rounded-lg'>
+          <FaComment /> {post.replies_count}
+        </span>
+        <span className='flex items-center gap-1 rounded-lg'>
+          <FaRetweet /> {post.reblogs_count}
+        </span>
+        <span className='flex items-center gap-1 rounded-lg'>
+          <FaStar /> {post.favourites_count}
+        </span>
+      </div> */}
 
       {/* Lightbox */}
       {lightboxOpen && (
