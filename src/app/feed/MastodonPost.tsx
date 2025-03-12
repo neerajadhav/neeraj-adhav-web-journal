@@ -130,7 +130,7 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
           )}
         </div>
       )}
-      {/* <div className='flex gap-3 text-gray-600 dark:text-gray-400'>
+      <div className='flex gap-6 text-gray-600 dark:text-gray-400'>
         <span className='flex items-center gap-1 rounded-lg'>
           <FaComment /> {post.replies_count}
         </span>
@@ -140,7 +140,7 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
         <span className='flex items-center gap-1 rounded-lg'>
           <FaStar /> {post.favourites_count}
         </span>
-      </div> */}
+      </div>
 
       {/* Lightbox */}
       {lightboxOpen && (
