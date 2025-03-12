@@ -68,92 +68,96 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
   };
 
   return (
-    <div className='p-2'>
+    <div className='flex gap-3'>
       {/* User Info */}
-      <div className='mb-3 flex w-full items-center space-x-3'>
+      <div className='mt-1'>
         <Image
           src={post.account.avatar_static}
           alt='Avatar'
-          width={40}
-          height={40}
+          width={50}
+          height={50}
           className='h-10 w-10 rounded-lg'
         />
-        <div className='flex w-full items-center justify-between gap-3'>
-          <div className='w-full'>
-            <p className='font-semibold text-gray-900 dark:text-gray-100'>
-              {timeAgo.format(new Date(post.created_at))}
-            </p>
-            <p className='text-gray-500 dark:text-gray-400'>
-              <a
-                href={`https://sciences.social/@${post.account.acct}`}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='hover:underline'
-              >
-                @{post.account.acct}
-              </a>
-            </p>
-          </div>
-          <div>
-            <p className='text-sm font-bold text-gray-500 dark:text-gray-400'>
-              <a
-                href={post.url}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex w-full text-end text-blue-500 hover:underline'
-              >
-                Reply
-              </a>
-            </p>
-          </div>
-        </div>
       </div>
-
-      {/* Post Content */}
-      <div
-        className='masto-content-style text-gray-800 dark:text-gray-200'
-        style={{ fontSize: '16px' }}
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      ></div>
-
-      {/* Media Attachments */}
-      {post.media_attachments.length > 0 && (
-        <div className='mb-3'>
-          {/* First image (Full Width) */}
-          <MediaAttachment
-            key={post.media_attachments[0].id}
-            media={post.media_attachments[0]}
-            index={0}
-            onClick={openLightbox}
-            isFirst={true}
-          />
-
-          {/* Remaining images in a horizontal stack */}
-          {post.media_attachments.length > 1 && (
-            <div className='mt-2 flex gap-2 overflow-x-auto'>
-              {post.media_attachments.slice(1, 4).map((media, index) => (
-                <MediaAttachment
-                  key={media.id}
-                  media={media}
-                  index={index + 1}
-                  onClick={openLightbox}
-                  isFirst={false}
-                />
-              ))}
+      <div className='w-full'>
+        <div className='mb-3 flex w-full items-center space-x-3'>
+          <div className='flex w-full items-center justify-between gap-3'>
+            <div className='w-full'>
+              <p className='font-semibold text-gray-900 dark:text-gray-100'>
+                {timeAgo.format(new Date(post.created_at))}
+              </p>
+              <p className='text-gray-500 dark:text-gray-400'>
+                <a
+                  href={`https://sciences.social/@${post.account.acct}`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='hover:underline'
+                >
+                  @{post.account.acct}
+                </a>
+              </p>
             </div>
-          )}
+            <div>
+              <p className='text-sm font-bold text-gray-500 dark:text-gray-400'>
+                <a
+                  href={post.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex w-full text-end text-blue-500 hover:underline'
+                >
+                  Reply
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
-      )}
-      <div className='flex gap-6 text-gray-600 dark:text-gray-400'>
-        <span className='flex items-center gap-1 rounded-lg'>
-          <FaComment /> {post.replies_count}
-        </span>
-        <span className='flex items-center gap-1 rounded-lg'>
-          <FaRetweet /> {post.reblogs_count}
-        </span>
-        <span className='flex items-center gap-1 rounded-lg'>
-          <FaStar /> {post.favourites_count}
-        </span>
+
+        {/* Post Content */}
+        <div
+          className='masto-content-style text-gray-800 dark:text-gray-200'
+          style={{ fontSize: '16px' }}
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        ></div>
+
+        {/* Media Attachments */}
+        {post.media_attachments.length > 0 && (
+          <div className='mb-3'>
+            {/* First image (Full Width) */}
+            <MediaAttachment
+              key={post.media_attachments[0].id}
+              media={post.media_attachments[0]}
+              index={0}
+              onClick={openLightbox}
+              isFirst={true}
+            />
+
+            {/* Remaining images in a horizontal stack */}
+            {post.media_attachments.length > 1 && (
+              <div className='mt-2 flex gap-2 overflow-x-auto'>
+                {post.media_attachments.slice(1, 4).map((media, index) => (
+                  <MediaAttachment
+                    key={media.id}
+                    media={media}
+                    index={index + 1}
+                    onClick={openLightbox}
+                    isFirst={false}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+        <div className='flex gap-6 text-gray-600 dark:text-gray-400'>
+          <span className='flex items-center gap-1 rounded-lg'>
+            <FaComment /> {post.replies_count}
+          </span>
+          <span className='flex items-center gap-1 rounded-lg'>
+            <FaRetweet /> {post.reblogs_count}
+          </span>
+          <span className='flex items-center gap-1 rounded-lg'>
+            <FaStar /> {post.favourites_count}
+          </span>
+        </div>
       </div>
 
       {/* Lightbox */}
