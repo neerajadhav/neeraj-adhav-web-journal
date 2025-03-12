@@ -42,9 +42,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: BASE_URL,
   },
-  other: {
-    'fediverse:creator': '@neerajadhav@sciences.social',
-  },
 };
 
 const Page = () => {

@@ -80,6 +80,9 @@ export async function generateMetadata(
         },
       ],
     },
+    other: {
+      'fediverse:creator': '@neerajadhav@sciences.social',
+    },
   };
 }
 
