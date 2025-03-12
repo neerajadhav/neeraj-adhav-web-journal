@@ -42,6 +42,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: BASE_URL,
   },
+  other: {
+    'fediverse:creator': '@neerajadhav@sciences.social',
+  },
 };
 
 const Page = () => {
@@ -59,9 +62,9 @@ const Page = () => {
             icon: <ArrowTopRightOnSquareIcon className='h-4 w-4' />,
           }}
         > */}
-          <Suspense fallback={<BlogPage />}>
-            <BlogTabs />
-          </Suspense>
+        <Suspense fallback={<BlogPage />}>
+          <BlogTabs />
+        </Suspense>
         {/* </PageSection> */}
         <ContactMe />
       </Container>
