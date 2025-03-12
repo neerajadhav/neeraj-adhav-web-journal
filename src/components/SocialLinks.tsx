@@ -35,6 +35,7 @@ export const SocialLinks = () => {
       ))}
       <a
         href={mastodonlink}
+        rel='me'
         target='_blank'
         className='flex rounded-full p-2 text-gray-950 hover:bg-gray-600 hover:text-white hover:shadow-sm dark:text-zinc-300 dark:hover:bg-gray-950 dark:hover:text-zinc-300'
         key={mastodonlink}
