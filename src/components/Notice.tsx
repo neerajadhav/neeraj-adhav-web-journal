@@ -58,10 +58,10 @@ const Notice = () => {
                 routerPush('/feed');
                 setHideNotice(true);
               }}
-              className='w-14 rounded-full bg-black/40 p-1 text-sm text-white hover:bg-black/70 dark:bg-white/40 dark:hover:bg-gray-950'
+              className='rounded-lg bg-black px-3 py-1 text-sm text-white hover:bg-opacity-70 dark:bg-white dark:text-black dark:hover:bg-gray-950 dark:hover:text-white'
             >
               Go
-            </button>{' '}
+            </button>
           </div>
         </div>
       ),
@@ -75,11 +75,14 @@ const Notice = () => {
           </div>
           <div>
             <button
-              onClick={toggleFullscreenBtn}
-              className='w-14 rounded-full bg-black/40 p-1 text-sm text-white hover:bg-black/70 dark:bg-white/40 dark:hover:bg-gray-950'
+              onClick={() => {
+                routerPush('/feed');
+                setHideNotice(true);
+              }}
+              className='rounded-lg bg-black px-3 py-1 text-sm text-white hover:bg-opacity-70 dark:bg-white dark:text-black dark:hover:bg-gray-950 dark:hover:text-white'
             >
               Go
-            </button>{' '}
+            </button>
           </div>
         </div>
       ),
