@@ -76,7 +76,7 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
           alt='Avatar'
           width={40}
           height={40}
-          className='h-10 w-10 rounded-full'
+          className='h-10 w-10 rounded-lg'
         />
         <div className='flex items-center gap-3'>
           <p className='font-semibold text-gray-900 dark:text-gray-100'>
