@@ -97,18 +97,6 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
                 </a>
               </p>
             </div>
-            <div>
-              <p className='text-sm font-bold text-gray-500 dark:text-gray-400'>
-                <a
-                  href={post.url}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='flex w-full text-end text-blue-500 hover:underline'
-                >
-                  Reply
-                </a>
-              </p>
-            </div>
           </div>
         </div>
 
@@ -147,16 +135,30 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
             )}
           </div>
         )}
-        <div className='flex gap-6 text-gray-600 dark:text-gray-400'>
-          <span className='flex items-center gap-1 rounded-lg'>
-            <FaComment /> {post.replies_count}
-          </span>
-          <span className='flex items-center gap-1 rounded-lg'>
-            <FaRetweet /> {post.reblogs_count}
-          </span>
-          <span className='flex items-center gap-1 rounded-lg'>
-            <FaStar /> {post.favourites_count}
-          </span>
+        <div className='flex items-center justify-between'>
+          <div className='flex gap-6 text-gray-600 dark:text-gray-400'>
+            <span className='flex items-center gap-1 rounded-lg'>
+              <FaComment /> {post.replies_count}
+            </span>
+            <span className='flex items-center gap-1 rounded-lg'>
+              <FaRetweet /> {post.reblogs_count}
+            </span>
+            <span className='flex items-center gap-1 rounded-lg'>
+              <FaStar /> {post.favourites_count}
+            </span>
+          </div>
+          <div>
+            <p className='text-sm font-bold text-gray-500 dark:text-gray-400'>
+              <a
+                href={post.url}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex w-full text-end text-blue-500 hover:underline'
+              >
+                Reply
+              </a>
+            </p>
+          </div>
         </div>
       </div>
 
