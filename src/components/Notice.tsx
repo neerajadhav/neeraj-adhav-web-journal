@@ -39,7 +39,7 @@ const Notice = () => {
     setIsFullscreen(!isFullscreen);
   };
 
-  const NOTICE_VERSION = '0';
+  const NOTICE_VERSION = '';
 
   const noticeData: {
     message: ReactNode;
