@@ -3,7 +3,6 @@ import { useRouter } from 'next/navigation';
 import { ReactNode, useEffect, useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import { Container } from './Container';
-import PageSection from './PageSection';
 
 const bgColors: Record<'info' | 'warning' | 'error' | 'success', string> = {
   info: 'bg-blue-100 border border-blue-200 text-blue-800 dark:bg-blue-900 dark:border-blue-800 dark:text-blue-200',
