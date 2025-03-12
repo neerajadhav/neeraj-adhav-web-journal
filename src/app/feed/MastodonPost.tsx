@@ -78,20 +78,34 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
           height={40}
           className='h-10 w-10 rounded-lg'
         />
-        <div className='flex items-center gap-3'>
-          <p className='font-semibold text-gray-900 dark:text-gray-100'>
-            {timeAgo.format(new Date(post.created_at))}
-          </p>
-          <p className='text-sm text-gray-500 dark:text-gray-400'>
-            <a
-              href={post.url}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='flex w-full text-end text-blue-500 hover:underline'
-            >
-              Reply
-            </a>
-          </p>
+        <div className='flex w-full items-center justify-between gap-3'>
+          <div className='w-full'>
+            <p className='font-semibold text-gray-900 dark:text-gray-100'>
+              {timeAgo.format(new Date(post.created_at))}
+            </p>
+            <p className='text-gray-500 dark:text-gray-400'>
+              <a
+                href={`https://sciences.social/@${post.account.acct}`}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='hover:underline'
+              >
+                @{post.account.acct}
+              </a>
+            </p>
+          </div>
+          <div>
+            <p className='text-sm font-bold text-gray-500 dark:text-gray-400'>
+              <a
+                href={post.url}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex w-full text-end text-blue-500 hover:underline'
+              >
+                Reply
+              </a>
+            </p>
+          </div>
         </div>
       </div>
 
