@@ -40,7 +40,7 @@ const Notice = () => {
     setIsFullscreen(!isFullscreen);
   };
 
-  const NOTICE_VERSION = '';
+  const NOTICE_VERSION = '0';
 
   const noticeData: {
     message: ReactNode;
@@ -50,12 +50,14 @@ const Notice = () => {
       message: (
         <div className='flex w-full items-center justify-between gap-3 text-sm'>
           <div>
-            <strong>Update :</strong> Checkout the new <b>Featured Books</b>{' '}
-            section.
+            <strong>Update :</strong> Checkout the new <b>Feed</b> section.
           </div>
           <div>
             <button
-              onClick={() => routerPush('/blog')}
+              onClick={() => {
+                routerPush('/feed');
+                setHideNotice(true);
+              }}
               className='w-14 rounded-full bg-black/40 p-1 text-sm text-white hover:bg-black/70 dark:bg-white/40 dark:hover:bg-gray-950'
             >
               Go
