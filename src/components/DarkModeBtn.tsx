@@ -12,9 +12,6 @@ export function ModeToggle() {
 
   return (
     <>
-      <div className='fixed left-0 top-0 z-[60] hidden h-full w-full items-center justify-center bg-white text-2xl font-bold text-black dark:print:flex'>
-        Print the document in light mode
-      </div>
       <button
         aria-label='Toggle Dark Mode'
         type='button'

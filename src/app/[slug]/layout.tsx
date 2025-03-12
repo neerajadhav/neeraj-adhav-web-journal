@@ -106,9 +106,7 @@ export default async function SlugLayout({
   return (
     <>
       <div className='fixed top-0 z-50 hidden h-full w-full flex-col items-center justify-center bg-white text-black dark:print:flex'>
-        <h1 className='text-3xl font-bold'>
-          Print your document in Light mode
-        </h1>
+        <p className='text-3xl font-bold'>Print your document in Light mode</p>
         <p>You can find the toggle in the footer of the website</p>
       </div>
       <HydrationBoundary state={dehydrate(queryClient)}>
