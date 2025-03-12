@@ -80,7 +80,7 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
         />
       </div>
       <div className='w-full'>
-        <div className='mb-3 flex w-full items-center space-x-3'>
+        <div className='flex w-full items-center space-x-3'>
           <div className='flex w-full items-center justify-between gap-3'>
             <div className='w-full'>
               <p className='font-semibold text-gray-900 dark:text-gray-100'>
@@ -109,7 +109,7 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
 
         {/* Media Attachments */}
         {post.media_attachments.length > 0 && (
-          <div className='mb-3'>
+          <div className='my-2'>
             {/* First image (Full Width) */}
             <MediaAttachment
               key={post.media_attachments[0].id}
@@ -135,8 +135,8 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
             )}
           </div>
         )}
-        <div className='flex items-center justify-between'>
-          <div className='flex gap-6 text-gray-600 dark:text-gray-400'>
+        <div className='flex items-center justify-end'>
+          {/* <div className='flex gap-6 text-gray-600 dark:text-gray-400'>
             <span className='flex items-center gap-1 rounded-lg'>
               <FaComment /> {post.replies_count}
             </span>
@@ -146,7 +146,7 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
             <span className='flex items-center gap-1 rounded-lg'>
               <FaStar /> {post.favourites_count}
             </span>
-          </div>
+          </div> */}
           <div>
             <p className='text-sm font-bold text-gray-500 dark:text-gray-400'>
               <a
