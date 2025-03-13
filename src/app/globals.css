@@ -26,7 +26,7 @@
 
   /* Hashtag Button */
   .hashtag {
-    @apply inline-block rounded-md bg-black/10 dark:bg-black/40 px-2 py-1 text-sm text-black no-underline transition hover:bg-blue-600 dark:text-white;
+    @apply inline-block rounded-md hover:bg-black/20 bg-black/10 dark:bg-black/40 dark:hover:bg-black/80 px-2 py-1 text-sm text-black no-underline transition dark:text-white;
   }
 
   /* Figure and Figcaption Styles */
