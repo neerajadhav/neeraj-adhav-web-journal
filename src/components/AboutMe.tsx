@@ -41,7 +41,7 @@ export const AboutMe = async () => {
   const profilePicture = account.avatar_static;
 
   const availableFor =
-    account.fields?.find((f: any) => f.name.toLowerCase().includes('available'))
+    account.fields?.find((f: any) => f.name.toLowerCase().includes('open for'))
       ?.value || null;
   const location =
     account.fields?.find((f: any) => f.name.toLowerCase().includes('location'))
