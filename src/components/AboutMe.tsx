@@ -118,14 +118,14 @@ export const AboutMe = async () => {
                 <Link
                   href={resumeLink}
                   target='_blank'
-                  className='rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-md transition-all hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600'
+                  className='flex items-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-md transition-all hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600'
                 >
                   <FaFilePdf className='mr-2 inline-block' /> Resume
                 </Link>
               )}
               <Link
                 href={emailLink}
-                className='rounded-md bg-gray-700 px-4 py-2 text-sm font-medium text-white shadow-md transition-all hover:bg-gray-800 dark:bg-gray-600 dark:hover:bg-gray-700'
+                className='flex items-center rounded-md bg-gray-700 px-4 py-2 text-sm font-medium text-white shadow-md transition-all hover:bg-gray-800 dark:bg-gray-600 dark:hover:bg-gray-700'
               >
                 <FaEnvelope className='mr-2 inline-block' /> Email Me
               </Link>
