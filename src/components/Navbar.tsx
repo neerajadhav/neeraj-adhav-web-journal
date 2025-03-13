@@ -42,8 +42,8 @@ export const Navbar = ({ navLinks }: NavbarProps) => {
             onClick={() => handleNavigation(navlink.href)}
             className={`relative rounded-lg p-2 px-3 dark:text-gray-400 md:dark:hover:bg-gray-50/10 ${
               path === navlink.href
-                ? 'dark:bg-transparent dark:text-gray-50'
-                : 'bg-white md:hover:bg-white dark:bg-transparent dark:text-gray-400'
+                ? 'bg-white dark:bg-transparent dark:text-gray-50'
+                : 'bg-white dark:bg-transparent dark:text-gray-400'
             }`}
             title={navlink.tooltip}
           >

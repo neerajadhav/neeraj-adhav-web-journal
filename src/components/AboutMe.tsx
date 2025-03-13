@@ -52,7 +52,7 @@ export const AboutMe = async () => {
   const isAvailableLink = 'https://www.linkedin.com/in/neerajadhav/';
 
   return (
-    <div className='flex flex-col items-center gap-4 rounded-xl border bg-white p-4 py-10 shadow dark:border-0 dark:bg-bgDark'>
+    <div className='flex flex-col items-center gap-4 rounded-xl border bg-white p-4 py-10 dark:border-0 dark:bg-bgDark'>
       <div className='flex w-full flex-col items-start gap-4 lg:flex-row'>
         {profilePicture && (
           <div className='mx-auto flex w-2/3 flex-col items-center gap-3 overflow-hidden rounded-xl p-3 sm:max-w-52'>
