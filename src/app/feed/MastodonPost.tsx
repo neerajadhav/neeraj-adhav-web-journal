@@ -68,9 +68,9 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
   };
 
   return (
-    <div className='flex gap-3'>
+    <div className='flex gap-3 p-2'>
       {/* User Info */}
-      <div className='mt-1 flex w-[15%] justify-center'>
+      {/* <div className='mt-1 flex w-[15%] justify-center'>
         <span>
           <Image
             src={post.account.avatar_static}
@@ -80,10 +80,10 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
             className='h-10 w-10 rounded-lg'
           />
         </span>
-      </div>
+      </div> */}
 
       {/* Post Content */}
-      <div className='w-[85%] flex flex-col space-y-2'>
+      <div className='flex w-full flex-col space-y-2'>
         <div className='flex items-center justify-between'>
           <div>
             <p className='font-semibold text-gray-900 dark:text-gray-100'>
@@ -104,7 +104,7 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
 
         {/* Post Text */}
         <div
-          className='masto-content-style text-gray-800 dark:text-gray-200 break-words overflow-hidden'
+          className='masto-content-style overflow-hidden break-words text-gray-800 dark:text-gray-200'
           style={{ fontSize: '16px', wordWrap: 'break-word' }}
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
