@@ -69,22 +69,17 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
 
   return (
     <div className='flex gap-3 p-2'>
-      {/* User Info */}
-      {/* <div className='mt-1 flex w-[15%] justify-center'>
-        <span>
+      {/* Post Content */}
+      <div className='flex w-full flex-col space-y-2'>
+        <div className='flex items-center gap-3'>
+          {/* User Info */}
           <Image
             src={post.account.avatar_static}
             alt='Avatar'
-            width={50}
-            height={50}
+            width={45}
+            height={45}
             className='h-10 w-10 rounded-lg'
           />
-        </span>
-      </div> */}
-
-      {/* Post Content */}
-      <div className='flex w-full flex-col space-y-2'>
-        <div className='flex items-center justify-between'>
           <div>
             <p className='font-semibold text-gray-900 dark:text-gray-100'>
               {timeAgo.format(new Date(post.created_at))}
