@@ -68,7 +68,7 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
   };
 
   return (
-    <div className='flex gap-3 p-2'>
+    <div className='flex gap-3 p-1'>
       {/* Post Content */}
       <div className='flex w-full flex-col space-y-2'>
         <div className='flex items-center gap-3'>
