@@ -20,7 +20,7 @@ const processContent = (content: string) => {
 const MediaAttachment = ({ media, index, onClick, isFirst }: any) => (
   <div
     className={`relative cursor-pointer overflow-hidden rounded-lg ${
-      isFirst ? 'h-80 w-full' : 'h-28 w-full'
+      isFirst ? 'h-80 w-full' : 'h-32 w-full'
     }`}
     onClick={() => onClick(index)}
   >
