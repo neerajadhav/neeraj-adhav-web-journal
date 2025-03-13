@@ -15,7 +15,6 @@ const ubuntu = Inknut_Antiqua({
 const accessToken = process.env.NEXT_MASTODON_ACCESS_TOKEN as string;
 const MASTODON_USERNAME = process.env.NEXT_MASTODON_USERNAME as string;
 const MASTODON_INSTANCE = process.env.NEXT_MASTODON_INSTANCE as string;
-const PROFILE_URL = `${MASTODON_INSTANCE}/@${MASTODON_USERNAME}`;
 
 export const AboutMe = async () => {
   let account: any;
