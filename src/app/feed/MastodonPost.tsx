@@ -11,6 +11,12 @@ import 'react-image-lightbox/style.css';
 TimeAgo.addLocale(en);
 const timeAgo = new TimeAgo('en-US');
 
+const processContent = (content: string) => {
+  return content.replace(/#(\w+)/g, (match) => {
+    return `<button class="hashtag">${match}</button>`;
+  });
+};
+
 const MediaAttachment = ({ media, index, onClick, isFirst }: any) => (
   <div
     className={`relative cursor-pointer overflow-hidden rounded-lg ${
@@ -25,7 +31,7 @@ const MediaAttachment = ({ media, index, onClick, isFirst }: any) => (
       objectFit='cover'
       sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
       className='rounded-lg'
-      priority={isFirst} // Prioritize first image
+      priority={isFirst}
     />
   </div>
 );
@@ -101,7 +107,7 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
         <div
           className='masto-content-style overflow-hidden break-words text-gray-800 dark:text-gray-200'
           style={{ fontSize: '16px', wordWrap: 'break-word' }}
-          dangerouslySetInnerHTML={{ __html: post.content }}
+          dangerouslySetInnerHTML={{ __html: processContent(post.content) }}
         />
 
         {/* Media Attachments */}
