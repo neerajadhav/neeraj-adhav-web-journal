@@ -70,47 +70,48 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
   return (
     <div className='flex gap-3'>
       {/* User Info */}
-      <div className='mt-1'>
-        <Image
-          src={post.account.avatar_static}
-          alt='Avatar'
-          width={50}
-          height={50}
-          className='h-10 w-10 rounded-lg'
-        />
+      <div className='mt-1 flex w-[15%] justify-center'>
+        <span>
+          <Image
+            src={post.account.avatar_static}
+            alt='Avatar'
+            width={50}
+            height={50}
+            className='h-10 w-10 rounded-lg'
+          />
+        </span>
       </div>
-      <div className='w-full'>
-        <div className='flex w-full items-center space-x-3'>
-          <div className='flex w-full items-center justify-between gap-3'>
-            <div className='w-full'>
-              <p className='font-semibold text-gray-900 dark:text-gray-100'>
-                {timeAgo.format(new Date(post.created_at))}
-              </p>
-              <p className='text-gray-500 dark:text-gray-400'>
-                <a
-                  href={`https://sciences.social/@${post.account.acct}`}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='hover:underline'
-                >
-                  @{post.account.acct}
-                </a>
-              </p>
-            </div>
+
+      {/* Post Content */}
+      <div className='w-[85%] flex flex-col space-y-2'>
+        <div className='flex items-center justify-between'>
+          <div>
+            <p className='font-semibold text-gray-900 dark:text-gray-100'>
+              {timeAgo.format(new Date(post.created_at))}
+            </p>
+            <p className='text-gray-500 dark:text-gray-400'>
+              <a
+                href={`https://sciences.social/@${post.account.acct}`}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='hover:underline'
+              >
+                @{post.account.acct}
+              </a>
+            </p>
           </div>
         </div>
 
-        {/* Post Content */}
+        {/* Post Text */}
         <div
-          className='masto-content-style text-gray-800 dark:text-gray-200'
-          style={{ fontSize: '16px' }}
+          className='masto-content-style text-gray-800 dark:text-gray-200 break-words overflow-hidden'
+          style={{ fontSize: '16px', wordWrap: 'break-word' }}
           dangerouslySetInnerHTML={{ __html: post.content }}
-        ></div>
+        />
 
         {/* Media Attachments */}
         {post.media_attachments.length > 0 && (
           <div className='my-2'>
-            {/* First image (Full Width) */}
             <MediaAttachment
               key={post.media_attachments[0].id}
               media={post.media_attachments[0]}
@@ -119,7 +120,6 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
               isFirst={true}
             />
 
-            {/* Remaining images in a horizontal stack */}
             {post.media_attachments.length > 1 && (
               <div className='mt-2 flex gap-2 overflow-x-auto'>
                 {post.media_attachments.slice(1, 4).map((media, index) => (
@@ -135,30 +135,19 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
             )}
           </div>
         )}
+
+        {/* Reply Link */}
         <div className='flex items-center justify-end'>
-          {/* <div className='flex gap-6 text-gray-600 dark:text-gray-400'>
-            <span className='flex items-center gap-1 rounded-lg'>
-              <FaComment /> {post.replies_count}
-            </span>
-            <span className='flex items-center gap-1 rounded-lg'>
-              <FaRetweet /> {post.reblogs_count}
-            </span>
-            <span className='flex items-center gap-1 rounded-lg'>
-              <FaStar /> {post.favourites_count}
-            </span>
-          </div> */}
-          <div>
-            <p className='text-sm font-bold text-gray-500 dark:text-gray-400'>
-              <a
-                href={post.url}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex w-full text-end text-blue-500 hover:underline'
-              >
-                Reply
-              </a>
-            </p>
-          </div>
+          <p className='text-sm font-bold text-gray-500 dark:text-gray-400'>
+            <a
+              href={post.url}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='flex w-full text-end text-blue-500 hover:underline'
+            >
+              Reply
+            </a>
+          </p>
         </div>
       </div>
 
