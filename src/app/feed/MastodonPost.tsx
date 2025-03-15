@@ -1,10 +1,9 @@
 'use client';
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
-import { FaComment, FaRetweet, FaStar } from 'react-icons/fa';
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
 import Image from 'next/legacy/image';
 import React, { useState } from 'react';
+import { FiCornerDownRight, FiGitBranch } from 'react-icons/fi';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
@@ -137,16 +136,24 @@ const MastodonPost: React.FC<MastodonPostProps> = ({ post }) => {
           </div>
         )}
 
-        {/* Reply Link */}
-        <div className='flex items-center justify-end'>
+        {/* Reply/Thread Link */}
+        <div className='justify-en flex items-center justify-end'>
           <p className='text-sm font-bold text-gray-500 dark:text-gray-400'>
             <a
               href={post.url}
               target='_blank'
               rel='noopener noreferrer'
-              className='flex w-full text-end text-blue-500 hover:underline'
+              className='w-full text-blue-500 hover:underline'
             >
-              Reply
+              {post.replies_count > 0 ? (
+                <span className='flex items-center gap-1'>
+                  Thread <FiGitBranch className='ml-1' />
+                </span>
+              ) : (
+                <span className='flex items-center gap-1'>
+                  Reply <FiCornerDownRight className='ml-1' />{' '}
+                </span>
+              )}
             </a>
           </p>
         </div>
