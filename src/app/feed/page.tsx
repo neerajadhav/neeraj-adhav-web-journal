@@ -1,9 +1,12 @@
 import React from 'react';
 import FeedPage from './Feedpage';
 import { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 
 // const MASTODON_USERNAME = process.env.NEXT_MASTODON_USERNAME as string;
 // const MASTODON_INSTANCE = process.env.NEXT_MASTODON_INSTANCE as string;
+
+const font = Inter({ subsets: ['latin'], weight: '400' });
 
 const BASE_TITLE = 'My Feed | Neeraj Adhav';
 const BASE_DESCRIPTION =
@@ -37,12 +40,12 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <>
+    <div className={`${font.className}`}>
       <div className='hidden'>
         <h1>{BASE_TITLE}</h1>
       </div>
       <FeedPage />
-    </>
+    </div>
   );
 };
 
