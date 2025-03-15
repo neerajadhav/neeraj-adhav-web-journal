@@ -63,7 +63,7 @@ export default function BlogPage() {
       </div>
 
       {/* Archive Section */}
-      <div className='mb-12 grid w-full grid-cols-1 gap-14 md:gap-4 lg:gap-20 px-4 sm:grid-cols-2 lg:px-0 lg:py-6'>
+      <div className='mb-12 grid w-full grid-cols-1 gap-14 px-4 sm:grid-cols-2 md:gap-4 lg:gap-20 lg:px-0 lg:py-6'>
         {posts.slice(3).map((post, index) => (
           <div key={index + 1} className='w-full'>
             <Post2 postInfo={post} />
@@ -77,7 +77,7 @@ export default function BlogPage() {
           <button
             onClick={() => fetchNextPage()}
             disabled={isFetchingNextPage}
-            className='flex items-center gap-2 rounded-full border border-gray-400 px-5 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-700 hover:text-white dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-950 lg:mb-3'
+            className='flex items-center gap-2 rounded-full border border-gray-400 px-5 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-200 dark:hover:bg-gray-950 dark:border-gray-600 dark:text-gray-300 lg:mb-3'
           >
             {isFetchingNextPage ? 'Loading...' : 'Load More'}
           </button>
