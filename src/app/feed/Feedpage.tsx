@@ -79,10 +79,10 @@ const FeedPage = async () => {
   return (
     <Container>
       <PageSection
-        title='My Feed'
+        title='Feed'
         link={{
           href: PROFILE_URL,
-          text: 'Visit Mastodon',
+          text: 'Mastodon',
           icon: <ArrowTopRightOnSquareIcon className='h-4 w-4' />,
         }}
         className='p-0 lg:p-0'
