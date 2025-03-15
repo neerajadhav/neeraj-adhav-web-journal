@@ -64,9 +64,11 @@ const fetchPosts = async () => {
     if (!postsResponse.ok) throw new Error('Failed to fetch posts');
 
     const posts = await postsResponse.json();
-    
+
     // Filter out replies
-    return posts.filter((post: MastodonPostProps['post']) => !post.in_reply_to_id);
+    return posts.filter(
+      (post: MastodonPostProps['post']) => !post.in_reply_to_id
+    );
   } catch (error) {
     console.error('Error fetching Mastodon posts:', error);
     return [];
@@ -97,6 +99,14 @@ const FeedPage = async () => {
               No posts available
             </p>
           )}
+          <div className='flex items-center justify-center'>
+            <a
+              href='//sciences.social/@neerajadhav'
+              className='flex items-center gap-2 rounded-full border border-gray-400 px-5 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-200 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-950 lg:mb-3'
+            >
+              Visit Mastodon Profile
+            </a>
+          </div>
         </div>
       </PageSection>
       <ContactMe />
