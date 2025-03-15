@@ -112,7 +112,6 @@ export default async function SlugLayout({
       <HydrationBoundary state={dehydrate(queryClient)}>
         {children}
       </HydrationBoundary>
-      <Script src='../utils/highlight.js' />
     </>
   );
 }
