@@ -126,6 +126,8 @@ export default function BlogContent({ params }: { params: { slug: string } }) {
             {post.content.markdown && (
               <MarkdownToHtml contentMarkdown={post.content.markdown} />
             )}
+            <br />
+            <br />
             {/* <hr className='mb-4 h-px border-0 bg-zinc-200 dark:bg-bgDark print:hidden' /> */}
             {post.tags?.length && (
               <div className='mt-5 flex w-full flex-wrap gap-3 text-gray-950 dark:text-zinc-300 print:hidden'>

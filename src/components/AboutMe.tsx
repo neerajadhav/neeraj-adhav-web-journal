@@ -61,7 +61,7 @@ export const AboutMe = async () => {
               alt='profile pic'
               width={150}
               height={150}
-              className='w-[150px] rounded-full border dark:border-bgDark'
+              className='w-[150px] rounded-full'
             />
             <div className='mb-4 flex flex-col items-center justify-between gap-2 font-bold sm:flex-row lg:gap-0'>
               {isAvailableLink && (
