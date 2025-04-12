@@ -25,13 +25,13 @@ const NAVLINKS = [
     activeIcon: <GoHomeFill className='h-6 w-6 lg:h-5 lg:w-5' />,
     tooltip: 'Home',
   },
-  {
-    name: 'Feed',
-    href: '/feed',
-    icon: <PiMastodonLogoLight className='h-6 w-6 lg:h-5 lg:w-5' />,
-    activeIcon: <PiMastodonLogoFill className='h-6 w-6 lg:h-5 lg:w-5' />,
-    tooltip: 'Feed',
-  },
+  // {
+  //   name: 'Feed',
+  //   href: '/feed',
+  //   icon: <PiMastodonLogoLight className='h-6 w-6 lg:h-5 lg:w-5' />,
+  //   activeIcon: <PiMastodonLogoFill className='h-6 w-6 lg:h-5 lg:w-5' />,
+  //   tooltip: 'Feed',
+  // },
   {
     name: 'Blog',
     href: '/blog',
